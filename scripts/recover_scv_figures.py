@@ -94,7 +94,7 @@ def recovery(out,checkpoints,repository):
         va_y=np.asarray(arrays["validation_labels"],dtype=np.int64)
     if len(classes)!=10 or len(set(classes))!=10:
         raise ValueError("Missing ten-class official category names")
-    if any(not np.isfinite(prob).all() for _ in [0]):
+    if not np.isfinite(prob).all():
         raise ValueError("Saved probabilities contain non-finite values")
     if prob.shape!=(len(truth),10) or len(pred)!=len(truth) or len(origins)!=len(truth):
         raise ValueError("Saved validation array shape inconsistent")
@@ -115,8 +115,10 @@ def recovery(out,checkpoints,repository):
     saved=pd.read_csv(out/"plot_data"/"confusion_validation.csv")
     if saved["true_class"].tolist()!=classes or not np.array_equal(matrix,saved[classes].to_numpy()):
         raise ValueError("Pre-crash confusion source mismatches saved predictions")
-    if abs(float(history["val_macro_f1"].max())-float(cfg.get("_placeholder_best",history["val_macro_f1"].max())))>1e-10:
-        raise ValueError("History inconsistent with config")
+    original_history_source=out/"plot_data"/"training_history.csv"
+    from_plot=pd.read_csv(original_history_source)
+    if not from_plot.equals(history):
+        raise ValueError("Pre-crash plot history differs from original epoch history")
     # Preserve original code provenance from environment, even after git pull.
     environment=(out/"environment.txt").read_text(encoding="utf-8")
     recorded=[line.split(":",1)[1].strip() for line in environment.splitlines()
