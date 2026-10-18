@@ -24,6 +24,12 @@ def test_pre_registered_same_targets_and_excluded_label_columns():
     cfg=json.loads(Path("configs/ctrl003_fast_tabular.json").read_text())
     assert cfg["train_target_rows"]==140328
     assert cfg["validation_target_rows"]==35005
+    # Preserve exactly the immutable input checksum from completed V0/V1/V2.
+    expected="bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa"
+    assert len(cfg["train_csv_sha256"])==64
+    assert cfg["train_csv_sha256"]==expected
+    assert len(cfg["reference_split_sha256"])==64
+    assert len(cfg["reference_pred_sha256"])==64
     assert cfg["official_test"]=="FORBIDDEN"
     assert cfg["features"]==42
     assert set(cfg["categorical_columns"])=={"proto","service","state"}

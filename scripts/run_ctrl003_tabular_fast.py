@@ -39,6 +39,8 @@ def source_commit(repo):
 def prepare(cfg,ref):
     raw=Path(cfg["train_csv"]);ref=Path(ref)
     assert raw.is_file(),f"Training CSV missing: {raw}"
+    if len(cfg["train_csv_sha256"])!=64:
+        raise ValueError("Configuration error: training CSV SHA256 must contain 64 hex characters")
     if digest(raw)!=cfg["train_csv_sha256"]:
         raise ValueError("Official training CSV SHA256 differs from frozen SCV source")
     split=ref/"split_indices.npz"
