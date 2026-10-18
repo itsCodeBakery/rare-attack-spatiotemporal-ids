@@ -1,0 +1,11 @@
+{
+  "task": "publisher_upload_vs_mirror_audit",
+  "stage": "read_only",
+  "official_training": "/kaggle/input/datasets/dsshayan/unsw-nb15/UNSW_NB15_training-set.csv",
+  "official_testing": "/kaggle/input/datasets/dsshayan/unsw-nb15/UNSW_NB15_testing-set.csv",
+  "mirror_manifest": "data/manifests/unsw_nb15/audit_summary.json",
+  "progress_bars": true,
+  "allows_training": false,
+  "secret_name": "pushRare",
+  "output": "data/manifests/unsw_nb15/publisher_comparison"
+}
