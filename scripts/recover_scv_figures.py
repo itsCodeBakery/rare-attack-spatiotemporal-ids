@@ -23,7 +23,10 @@ from sklearn.metrics import (accuracy_score, balanced_accuracy_score,
     f1_score, confusion_matrix, roc_auc_score, average_precision_score)
 
 from rareids.safe_projection import project_saved_embeddings
-from plot_scv_figures import Gallery
+try:
+    from scripts.plot_scv_figures import Gallery
+except ModuleNotFoundError:
+    from plot_scv_figures import Gallery
 
 PLOT_SOURCES=(
   "training_history.csv","per_class_validation.csv",
