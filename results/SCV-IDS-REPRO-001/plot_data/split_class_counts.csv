@@ -1,0 +1,11 @@
+class,train_count,validation_count
+Analysis,1572,428
+Backdoor,1396,350
+DoS,9755,2509
+Exploits,26709,6684
+Fuzzers,14505,3679
+Generic,32106,7894
+Normal,44889,11103
+Reconnaissance,8375,2116
+Shellcode,912,221
+Worms,109,21

@@ -1,0 +1,731 @@
+{
+  "status": "generated_from_observed_sources",
+  "figure_count": 28,
+  "source_data": [
+    {
+      "file": "plot_data/confidence_histogram.csv",
+      "sha256": "32719c1529e063f045435746615d644f84cd08fa03910d9daafa2366d9a5f828",
+      "bytes": 395
+    },
+    {
+      "file": "plot_data/confusion_validation.csv",
+      "sha256": "da5fdaaf5e865b14275076841a59e111dbbfa86ff66790f7065bd33b576d2a24",
+      "bytes": 450
+    },
+    {
+      "file": "plot_data/embedding_coordinates.csv",
+      "sha256": "f337e941996e980d73524fd2bea27296da38ee9b1444c3d9246907fb4f0673b4",
+      "bytes": 262801
+    },
+    {
+      "file": "plot_data/per_class_validation.csv",
+      "sha256": "6fec74c0b5e4408a22d9af0e60cb43b1108f641e9e606d4361b125746663418f",
+      "bytes": 725
+    },
+    {
+      "file": "plot_data/reliability_bins.csv",
+      "sha256": "1eeaf26a5bae1f18325ce2fddc746fa74ebff5cf153c9a5905aa8167b4342598",
+      "bytes": 915
+    },
+    {
+      "file": "plot_data/rgb_sample_pixels.csv",
+      "sha256": "369e136febb67af92c5d96e602f695c5fc37cf48fd9a331a662ef091654ea87d",
+      "bytes": 50078
+    },
+    {
+      "file": "plot_data/roc_pr_curves.csv",
+      "sha256": "5bd6ba3dd963121e2b46b6fb21e068a4339178a4b3e7eefc71671682121da4bf",
+      "bytes": 262154
+    },
+    {
+      "file": "plot_data/split_class_counts.csv",
+      "sha256": "9aed5476503fe5a75b5cde374e6a65e38344be85d12d9da52214ded9b7fb0581",
+      "bytes": 218
+    },
+    {
+      "file": "plot_data/training_history.csv",
+      "sha256": "392ae12e47c5911a0d8caee083b627a690eae7480d7a34fae5fc7c738b550152",
+      "bytes": 7927
+    }
+  ],
+  "figures": [
+    {
+      "stem": "01_class_support",
+      "caption": "Train versus validation window-label counts",
+      "source_files": [
+        "split_class_counts.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/01_class_support.png",
+          "sha256": "61c4c89d33e7e9ddf4ab87f2ab52f8d2a87a621234d9dad560c557024f4d4323",
+          "bytes": 127847
+        },
+        {
+          "path": "figures/01_class_support.svg",
+          "sha256": "03ad620d9b86c9f0145aa57d3f71fd60f498c2d954793b58534453b9ef694173",
+          "bytes": 12940
+        },
+        {
+          "path": "figures/01_class_support.pdf",
+          "sha256": "dbeab4bc8de152e4df0df624b3ad6a13fc69c071cab9aab4c20aacbc87189809",
+          "bytes": 13825
+        }
+      ]
+    },
+    {
+      "stem": "02_class_imbalance_log",
+      "caption": "Logarithmic class-imbalance overview",
+      "source_files": [
+        "split_class_counts.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/02_class_imbalance_log.png",
+          "sha256": "a05a4d3cc5b439ff4f05fe6d8e5e9747ef4823826bfa37fde194f185ddbc74f0",
+          "bytes": 70056
+        },
+        {
+          "path": "figures/02_class_imbalance_log.svg",
+          "sha256": "48de14687008a7824c4b5af75d3a3d9e217bcc6c53dd96954c5e54e116cb740d",
+          "bytes": 15073
+        },
+        {
+          "path": "figures/02_class_imbalance_log.pdf",
+          "sha256": "bdf0e9069582d5a17844aa5e325bf0275b78852ca6ef2f34fc9737d0a701ce5b",
+          "bytes": 13697
+        }
+      ]
+    },
+    {
+      "stem": "03_rgb_examples",
+      "caption": "Actual generated train-split RGB images, one per class",
+      "source_files": [
+        "rgb_sample_pixels.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/03_rgb_examples.png",
+          "sha256": "a403a949a64769e4533db97036ffdb6bb50ee3ce317e3aaaa276b6d111edd5e5",
+          "bytes": 54105
+        },
+        {
+          "path": "figures/03_rgb_examples.svg",
+          "sha256": "312a3eadc01965b1902508e61f17665eecb3e546ef279f4c620d67b571df18bc",
+          "bytes": 43251
+        },
+        {
+          "path": "figures/03_rgb_examples.pdf",
+          "sha256": "f8099201f94713e1a1d55e109073067882a6fe1519eb15b99509f4419c685fdd",
+          "bytes": 31667
+        }
+      ]
+    },
+    {
+      "stem": "04_rgb_luminance",
+      "caption": "Intensity distributions of one example from each class",
+      "source_files": [
+        "rgb_sample_pixels.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/04_rgb_luminance.png",
+          "sha256": "ce3fac9648c9028b6595f1be5f40d3885b4a4e4e3adefe11bf12b93a8bef0428",
+          "bytes": 142797
+        },
+        {
+          "path": "figures/04_rgb_luminance.svg",
+          "sha256": "1407f63755a78da1950bd534e13e966ed2934886461f8ab6d646a7c7a24092ca",
+          "bytes": 21333
+        },
+        {
+          "path": "figures/04_rgb_luminance.pdf",
+          "sha256": "579acc3db0f19a7ed084080efcc3af7c3c8e869f8d7227ba8b422e7c67dcce8b",
+          "bytes": 14985
+        }
+      ]
+    },
+    {
+      "stem": "05_train_validation_loss",
+      "caption": "Focal loss over training",
+      "source_files": [
+        "training_history.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/05_train_validation_loss.png",
+          "sha256": "7c26f03042aef80f316fbdf8e04395c4bffb92db129815c24d60779bcc88709f",
+          "bytes": 103722
+        },
+        {
+          "path": "figures/05_train_validation_loss.svg",
+          "sha256": "59d670b1fbda02e44d1d45581d991ae956a1a6170958def908b3047f8b9a314a",
+          "bytes": 13662
+        },
+        {
+          "path": "figures/05_train_validation_loss.pdf",
+          "sha256": "24a80e1712469bfbdaa436eda5979e0c84911f2d67b760b4aad7818c9e706d70",
+          "bytes": 11012
+        }
+      ]
+    },
+    {
+      "stem": "06_training_accuracy",
+      "caption": "Training accuracy by epoch",
+      "source_files": [
+        "training_history.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/06_training_accuracy.png",
+          "sha256": "337868bb0ac374acfc0b24a47587061ec9f71b8a8df892f67622f6ac1013cf87",
+          "bytes": 72429
+        },
+        {
+          "path": "figures/06_training_accuracy.svg",
+          "sha256": "41ad6c225a522b220d7ed9245871c3ff656f9b4db93761508d43beed2945edab",
+          "bytes": 11423
+        },
+        {
+          "path": "figures/06_training_accuracy.pdf",
+          "sha256": "abb1a5e05072201eb73ea0b2beffb397596fde67263c014b2caef06a3c4f3cfc",
+          "bytes": 10765
+        }
+      ]
+    },
+    {
+      "stem": "07_validation_accuracy",
+      "caption": "Internal-validation accuracy",
+      "source_files": [
+        "training_history.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/07_validation_accuracy.png",
+          "sha256": "b6a304455152322bd1aa31fcd43cadc91cbbd3c0f962cb460aff749d23f19f54",
+          "bytes": 86907
+        },
+        {
+          "path": "figures/07_validation_accuracy.svg",
+          "sha256": "b51cc13db3652408c4c20066987b6b6d4a997ac527ea27b38218147cd7ef3678",
+          "bytes": 10192
+        },
+        {
+          "path": "figures/07_validation_accuracy.pdf",
+          "sha256": "d92c85ac60dcbaa178c386e5c876b3a34a5214646b5d4ca588154375aa12c830",
+          "bytes": 10860
+        }
+      ]
+    },
+    {
+      "stem": "08_validation_macrof1",
+      "caption": "Internal-validation macro-F1",
+      "source_files": [
+        "training_history.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/08_validation_macrof1.png",
+          "sha256": "3b8e7ab186de7c76cefedcc9c2b15d6b069c7368a0331b48ef8c02767e5e772f",
+          "bytes": 102455
+        },
+        {
+          "path": "figures/08_validation_macrof1.svg",
+          "sha256": "39923c45a3b759c5ca1d7c303ba948ef03ff0005178a1fa285ff8fe82d53ce01",
+          "bytes": 10837
+        },
+        {
+          "path": "figures/08_validation_macrof1.pdf",
+          "sha256": "574a2103743cd016e094ff1edaf11499d2a309a97687c0a6c81ee39d2cb13b9b",
+          "bytes": 10252
+        }
+      ]
+    },
+    {
+      "stem": "09_validation_weightedf1",
+      "caption": "Weighted versus macro-F1",
+      "source_files": [
+        "training_history.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/09_validation_weightedf1.png",
+          "sha256": "aded4889581b9804f64fba814f82b1709e326595f6c7eed726cf5138a6484101",
+          "bytes": 93792
+        },
+        {
+          "path": "figures/09_validation_weightedf1.svg",
+          "sha256": "547cf01fb9f84d21c412047ea72247f0f2e1829ef38ae30e63127932240d6085",
+          "bytes": 11734
+        },
+        {
+          "path": "figures/09_validation_weightedf1.pdf",
+          "sha256": "12e7c5ff63262ab2c137842004b483d7b0772d594b68f42baa3caa49789859a7",
+          "bytes": 11790
+        }
+      ]
+    },
+    {
+      "stem": "10_learning_rate",
+      "caption": "Recorded optimizer learning rate",
+      "source_files": [
+        "training_history.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/10_learning_rate.png",
+          "sha256": "a758ae06c83dd9893837cc8f0addcc529e391ff3adcc33e7403d5ccd43bed9f2",
+          "bytes": 51138
+        },
+        {
+          "path": "figures/10_learning_rate.svg",
+          "sha256": "557800845d8c71378035a6b38246b12500fb453ce1f88805744a1198d3b97da0",
+          "bytes": 9636
+        },
+        {
+          "path": "figures/10_learning_rate.pdf",
+          "sha256": "d7b1eb31923c8877928f0cb2b36f1a4e95dedf54310317e18513645db8b56946",
+          "bytes": 10297
+        }
+      ]
+    },
+    {
+      "stem": "11_epoch_seconds",
+      "caption": "Training time per epoch",
+      "source_files": [
+        "training_history.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/11_epoch_seconds.png",
+          "sha256": "20b76b1d50590eebfbf4c726e2d45b4b7fcd2bf32ef1217b8ceec58a6c04de07",
+          "bytes": 89849
+        },
+        {
+          "path": "figures/11_epoch_seconds.svg",
+          "sha256": "0e599280f91478d731368bb1da6910ff6e73ddf92a4ec0f5fd3c881fc2b8d0d4",
+          "bytes": 10232
+        },
+        {
+          "path": "figures/11_epoch_seconds.pdf",
+          "sha256": "e12cc6871fab490ac8b248ab0aab458757eda1b86c3c83a8dee7706c32a46a9c",
+          "bytes": 10026
+        }
+      ]
+    },
+    {
+      "stem": "12_gpu_peak_memory",
+      "caption": "PyTorch allocated GPU peak per epoch",
+      "source_files": [
+        "training_history.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/12_gpu_peak_memory.png",
+          "sha256": "c1104a2513a3ab8494566bdd9829a5178133f2870046248fdc6b9a75536706c5",
+          "bytes": 41753
+        },
+        {
+          "path": "figures/12_gpu_peak_memory.svg",
+          "sha256": "68a3e4e430020540d788879916af051c770280cc62837c4d253f92b8da1e0945",
+          "bytes": 10279
+        },
+        {
+          "path": "figures/12_gpu_peak_memory.pdf",
+          "sha256": "69aa6067f3abbcd503cb09924878484676a8bde9d4faaca4b1cee887473dec26",
+          "bytes": 11075
+        }
+      ]
+    },
+    {
+      "stem": "13_train_validation_accuracy",
+      "caption": "Training versus validation accuracy",
+      "source_files": [
+        "training_history.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/13_train_validation_accuracy.png",
+          "sha256": "7eaa019c2b3b6e3e01216e9aa8e759be052b4b841ca085cdf7abb6f1e5b511c6",
+          "bytes": 109881
+        },
+        {
+          "path": "figures/13_train_validation_accuracy.svg",
+          "sha256": "73ae796fd71a81210f4dfac21e608cdea5abba48ccfab39a69e321b9d5be1561",
+          "bytes": 13593
+        },
+        {
+          "path": "figures/13_train_validation_accuracy.pdf",
+          "sha256": "89756ad72b14394586e5312b71f1ad8ad4407c2891a10f0c523084f9dcefecd6",
+          "bytes": 12221
+        }
+      ]
+    },
+    {
+      "stem": "14_confusion_counts",
+      "caption": "Validation confusion matrix; explicitly labelled metric",
+      "source_files": [
+        "confusion_validation.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/14_confusion_counts.png",
+          "sha256": "eca32defc7f81c7e970f5770a1f5112e4f8ea46819c9e0df2a9f17be5b44232f",
+          "bytes": 206957
+        },
+        {
+          "path": "figures/14_confusion_counts.svg",
+          "sha256": "586894e239ff3e7d2e73f2323e7de0f515d726091e4dd791b8bb38ca293a761e",
+          "bytes": 49392
+        },
+        {
+          "path": "figures/14_confusion_counts.pdf",
+          "sha256": "91ecfb876d32b1227e94e8d7afc0b19f7d13e57e9c07460c2a04ada97ab35365",
+          "bytes": 21354
+        }
+      ]
+    },
+    {
+      "stem": "15_confusion_normalized",
+      "caption": "Validation confusion matrix; explicitly labelled metric",
+      "source_files": [
+        "confusion_validation.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/15_confusion_normalized.png",
+          "sha256": "595d453ff6466d52389fb56ce4d2ce6fbf9d5528262e4eaf768ba6c930f7b833",
+          "bytes": 216044
+        },
+        {
+          "path": "figures/15_confusion_normalized.svg",
+          "sha256": "9e7386dd600e7f5c4b08c206aaa276ce46dac65fefe634941be1293e5d16ab73",
+          "bytes": 50122
+        },
+        {
+          "path": "figures/15_confusion_normalized.pdf",
+          "sha256": "27aba893ce5a714db5fdb73e84f3645138d3c5e7584220a8e11c95bd9f9d3166",
+          "bytes": 44611
+        }
+      ]
+    },
+    {
+      "stem": "16_per_class_prf",
+      "caption": "Class-wise validation precision, recall and F1",
+      "source_files": [
+        "per_class_validation.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/16_per_class_prf.png",
+          "sha256": "3ceb11203abf3f95d5abc01cb012472c09570749e0ac6dd23d27495763ed2466",
+          "bytes": 108204
+        },
+        {
+          "path": "figures/16_per_class_prf.svg",
+          "sha256": "e1eb0830ed6df76bd537752eb2f787cd4b500796a32fce1c37116d708bbaa888",
+          "bytes": 15611
+        },
+        {
+          "path": "figures/16_per_class_prf.pdf",
+          "sha256": "2bc28e70461bb0c2f599dfa0be6b2cb16e096169ca682fb3fef5a0aeffb20032",
+          "bytes": 13716
+        }
+      ]
+    },
+    {
+      "stem": "17_class_f1_ranked",
+      "caption": "Ranked class-wise validation F1",
+      "source_files": [
+        "per_class_validation.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/17_class_f1_ranked.png",
+          "sha256": "2afe534f7dacca34073b4f64763a41b73854762504bd956aa83f1a2e7b5675b9",
+          "bytes": 69321
+        },
+        {
+          "path": "figures/17_class_f1_ranked.svg",
+          "sha256": "1430028b0d7c091b2b7e1d0705e88439c995a197c07749411963b19d25d5b393",
+          "bytes": 10872
+        },
+        {
+          "path": "figures/17_class_f1_ranked.pdf",
+          "sha256": "4c5d238627f61dab1a8572e05c3fb32a2534594f0e9c32bbe30319cfa6217b8c",
+          "bytes": 13348
+        }
+      ]
+    },
+    {
+      "stem": "18_rare_class_recall",
+      "caption": "Selected difficult-attack recalls; selection specified a priori",
+      "source_files": [
+        "per_class_validation.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/18_rare_class_recall.png",
+          "sha256": "7f8b6ed4f21f515cfcb74bf8062b99c84078ec1cfb00f096c488afde2e0fbb44",
+          "bytes": 51074
+        },
+        {
+          "path": "figures/18_rare_class_recall.svg",
+          "sha256": "98a5bd4ea26c957f923fbe721ddf0fd167863331253eed7160149e6106a1c17a",
+          "bytes": 7916
+        },
+        {
+          "path": "figures/18_rare_class_recall.pdf",
+          "sha256": "17131a27a514e1adc2e76ec11aafcf008e91afd0b5abbf74380ada2882c9fe0c",
+          "bytes": 12648
+        }
+      ]
+    },
+    {
+      "stem": "19_support_vs_f1",
+      "caption": "Score relative to sample support",
+      "source_files": [
+        "per_class_validation.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/19_support_vs_f1.png",
+          "sha256": "b08913c4efc1994cfc86d4083b5403e4854201a99b95a3316331c74539a52c2d",
+          "bytes": 73219
+        },
+        {
+          "path": "figures/19_support_vs_f1.svg",
+          "sha256": "8374a3de6fadddbf621f480f19bd38631db5dd8996274ef79be15b3dbafe2b95",
+          "bytes": 15656
+        },
+        {
+          "path": "figures/19_support_vs_f1.pdf",
+          "sha256": "ad75ce81381711c4754b2946389724c0941f6443082b8effdb5d6772e5dfb9c8",
+          "bytes": 14349
+        }
+      ]
+    },
+    {
+      "stem": "20_class_prediction_shift",
+      "caption": "Predicted class imbalance relative to ground truth",
+      "source_files": [
+        "confusion_validation.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/20_class_prediction_shift.png",
+          "sha256": "c0b469070c6951919e9af0f5cd66975c72883f3634578b5dc71ff0172ea2a846",
+          "bytes": 118085
+        },
+        {
+          "path": "figures/20_class_prediction_shift.svg",
+          "sha256": "57d6eacda54c598d0b9a8475b2c7b0d987b5c4726a43b0c2a05104d3e3979016",
+          "bytes": 13688
+        },
+        {
+          "path": "figures/20_class_prediction_shift.pdf",
+          "sha256": "7892a8f8d565c039a425b688902a78cb40a075d8a608300b90150d7792a78032",
+          "bytes": 14376
+        }
+      ]
+    },
+    {
+      "stem": "21_reliability",
+      "caption": "Maximum-probability calibration bins on validation",
+      "source_files": [
+        "reliability_bins.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/21_reliability.png",
+          "sha256": "5a15bea40d346395cbb4c3373a8cd397a7781cdae1fa04dbb90ed4874684bf4a",
+          "bytes": 103716
+        },
+        {
+          "path": "figures/21_reliability.svg",
+          "sha256": "334bfdc73537953f5ce33eb50a429848f8587a0be9ebd4f0d7b6e09e98d4f173",
+          "bytes": 10892
+        },
+        {
+          "path": "figures/21_reliability.pdf",
+          "sha256": "5c242e99f36cac89c217589128729c134278e9e6248d63030b87de322d58b287",
+          "bytes": 12628
+        }
+      ]
+    },
+    {
+      "stem": "22_confidence_counts",
+      "caption": "Correct vs incorrect confidence histogram",
+      "source_files": [
+        "confidence_histogram.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/22_confidence_counts.png",
+          "sha256": "a65eece4f4010f5b6f958d371f5a885fd779ab9b2246c245595dfaa21ae52578",
+          "bytes": 77546
+        },
+        {
+          "path": "figures/22_confidence_counts.svg",
+          "sha256": "d3d760f314dbc175908b4721df9d876e196be2aae32915c39d954d54df2919ca",
+          "bytes": 17655
+        },
+        {
+          "path": "figures/22_confidence_counts.pdf",
+          "sha256": "11d8e91986fd1b5b7490d62195621ebc4c6bd644e7265e5ff9b7a9ce10b575ad",
+          "bytes": 12669
+        }
+      ]
+    },
+    {
+      "stem": "23_roc_ovr",
+      "caption": "Validation one-vs-rest ROC; plotted points downsampled for SVG clarity",
+      "source_files": [
+        "roc_pr_curves.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/23_roc_ovr.png",
+          "sha256": "1f6f0ffd7acf64493fa90987447abb6fae2f9a3fcc8b4517f13764c232242ec6",
+          "bytes": 187124
+        },
+        {
+          "path": "figures/23_roc_ovr.svg",
+          "sha256": "8c04c4526c978f8507747448aa3d5220b843c4f8277ec01fa38649f31da2bbdd",
+          "bytes": 43436
+        },
+        {
+          "path": "figures/23_roc_ovr.pdf",
+          "sha256": "98e582a4b4fe6c5cbc1aec4da17f94b54056b5e263693c521ad6553b914960c2",
+          "bytes": 26386
+        }
+      ]
+    },
+    {
+      "stem": "24_pr_ovr",
+      "caption": "Validation one-vs-rest Precision\u2013Recall; plotted points downsampled for SVG clarity",
+      "source_files": [
+        "roc_pr_curves.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/24_pr_ovr.png",
+          "sha256": "334d95e5997b381796ee55971d79d45cc2b658c2f2c656a26aa857e5ed23668a",
+          "bytes": 274201
+        },
+        {
+          "path": "figures/24_pr_ovr.svg",
+          "sha256": "d1b29e6a8a97942c4711db398470029d9863f9e9bdac85d712f553817cb84e00",
+          "bytes": 28309
+        },
+        {
+          "path": "figures/24_pr_ovr.pdf",
+          "sha256": "22b4e2e51789e9131ebb780dc77ea7a6b4ad1c87861fe9ec94fa584166b6d3a5",
+          "bytes": 19914
+        }
+      ]
+    },
+    {
+      "stem": "25_pca_raw",
+      "caption": "Exploratory PCA from frozen validation embeddings; ok",
+      "source_files": [
+        "embedding_coordinates.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/25_pca_raw.png",
+          "sha256": "e7719e15477faef60b7a421337efd2613d9c08adafb712ff2bfef993b66b6842",
+          "bytes": 200473
+        },
+        {
+          "path": "figures/25_pca_raw.svg",
+          "sha256": "94800ed1bf183b5d322c1a130cc0746380dca97857d76b3b184f63b8ed3cc705",
+          "bytes": 139817
+        },
+        {
+          "path": "figures/25_pca_raw.pdf",
+          "sha256": "9ce9e07f7580d5efb2c68665672927e813975f6fe37e03543fd1df149fb45703",
+          "bytes": 37400
+        }
+      ]
+    },
+    {
+      "stem": "26_pca_cnn",
+      "caption": "Exploratory PCA from frozen validation embeddings; zero_variance",
+      "source_files": [
+        "embedding_coordinates.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/26_pca_cnn.png",
+          "sha256": "c5758c4c6a8c7ac6f82eea39f8e45c820ef0e951ff94230d52b141c827faa13e",
+          "bytes": 76394
+        },
+        {
+          "path": "figures/26_pca_cnn.svg",
+          "sha256": "c45b1fa549b8a2183f11677c9ba7412630ddbf6a862f0b8e429e99d3546a7421",
+          "bytes": 7608
+        },
+        {
+          "path": "figures/26_pca_cnn.pdf",
+          "sha256": "faff31ed315bf08c7c01256f042d7f65bc15118f07ca8127d3dec31cf1c04db9",
+          "bytes": 11233
+        }
+      ]
+    },
+    {
+      "stem": "27_pca_vit",
+      "caption": "Exploratory PCA from frozen validation embeddings; ok",
+      "source_files": [
+        "embedding_coordinates.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/27_pca_vit.png",
+          "sha256": "dabb57c6a9199a6432bc83824535c67d64ac06bb9a23329fdd7be5f50506e1d0",
+          "bytes": 232487
+        },
+        {
+          "path": "figures/27_pca_vit.svg",
+          "sha256": "efd23d3c370c8ec5e817f459074ad6ce0c73e2e6c12fc0248412d7899cc1d32d",
+          "bytes": 140278
+        },
+        {
+          "path": "figures/27_pca_vit.pdf",
+          "sha256": "ecfb49a4c4e36059bc69227cdd4dd5f877292fb397113ab5ecccfcb2343ef307",
+          "bytes": 38046
+        }
+      ]
+    },
+    {
+      "stem": "28_pca_fused",
+      "caption": "Exploratory PCA from frozen validation embeddings; ok",
+      "source_files": [
+        "embedding_coordinates.csv"
+      ],
+      "exports": [
+        {
+          "path": "figures/28_pca_fused.png",
+          "sha256": "6783594b177c609a860f023b652015768e46d49f884973e9abeacccefb0e9546",
+          "bytes": 194245
+        },
+        {
+          "path": "figures/28_pca_fused.svg",
+          "sha256": "c0ba40576f936c9d098ed25d876ef3f280d7f65bbd9db553f037c56e819832b3",
+          "bytes": 139249
+        },
+        {
+          "path": "figures/28_pca_fused.pdf",
+          "sha256": "722e5f8a8363bf3012a43b4376d755f138a8bc3e61a6bc9d4feb8a91a6ae4792",
+          "bytes": 36760
+        }
+      ]
+    }
+  ],
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "note": "Figures generated from saved data; SCV-IDS author-implementation equivalence not claimed. No official-test predictions."
+}

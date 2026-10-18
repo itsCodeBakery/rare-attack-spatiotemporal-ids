@@ -1,0 +1,292 @@
+{
+  "development_training_row_count": 140332,
+  "experiment_id": "SCV-IDS-REPRO-001",
+  "figure_count": 28,
+  "figure_formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "figure_manifest_sha256": "d4e49729251cf1a6f18b26f38395476ab6788cc8da97dadca2d061a66bf27635",
+  "heavyweight_files": [
+    {
+      "file": "/kaggle/working/research_outputs/checkpoints/scv_best.pt",
+      "sha256": "1ff947f795162b747115fee6e3131eb10fd3955445a3040902a274fa71457c65",
+      "size_bytes": 10662529,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/checkpoints/scv_epoch_005.pt",
+      "sha256": "72edca472503b99f9193959276bd7351093358f9b541a089d8511f67f07652a2",
+      "size_bytes": 10659123,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/checkpoints/scv_epoch_010.pt",
+      "sha256": "b63712aec228e931fe867cd229b3520d9cb6877e41b83c4c2405b14ddd2a3998",
+      "size_bytes": 10659827,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/checkpoints/scv_epoch_015.pt",
+      "sha256": "d10eb9dc86b8744e9e20647c37334004fada15da25efa7ccac4388e0790310d6",
+      "size_bytes": 10660531,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/checkpoints/scv_epoch_020.pt",
+      "sha256": "cac900fe732ab71a657e7d0006afc0e50409345792c73351a7a0eefef91dad53",
+      "size_bytes": 10661235,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/checkpoints/scv_epoch_025.pt",
+      "sha256": "6980d0d1058f4162dea2f44c74b22f9dd29f74bc615e45a6af5e1e2f7c7b805a",
+      "size_bytes": 10661939,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/checkpoints/scv_epoch_030.pt",
+      "sha256": "c5f0669b5a173ab85b552ed4980167046e5549d85b47d8dde182db2ec1d97fb3",
+      "size_bytes": 10662643,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/checkpoints/scv_epoch_035.pt",
+      "sha256": "6c4928c8e5dacb272c009cb6fc0adbf2f8e1c1671ad781c53814495d4b45ebfa",
+      "size_bytes": 10663347,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/checkpoints/scv_epoch_040.pt",
+      "sha256": "c96b2078c61fd1cdc33e8756861844a1cf0264fa67e913a5d0378c45a0b97141",
+      "size_bytes": 10664051,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/checkpoints/scv_epoch_045.pt",
+      "sha256": "59749b85f39be8065c6905b6141b348f41afdbf30e3e0c86fe90ed926b73231c",
+      "size_bytes": 10664755,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/checkpoints/scv_epoch_050.pt",
+      "sha256": "53c0560df9d685f3b7944a25fac325bcf1ffbb70cc6a50fd84c2eccd67666166",
+      "size_bytes": 10665459,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/checkpoints/scv_last_resume.pt",
+      "sha256": "e57e98506acd93024ca19f2cbd9a050f17ed25949d6a564842b44e42e7ce27da",
+      "size_bytes": 10666119,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/SCV-IDS-REPRO-001/validation_predictions.npz",
+      "sha256": "54f6aa6cb50c3c6a1533623e1c7b619f38dfa7ccbac8ce03cb9392e13e617612",
+      "size_bytes": 1382450,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/SCV-IDS-REPRO-001/split_indices.npz",
+      "sha256": "01f6070e836317b09ba5f8ef662dba748ec19f9b7f6e211e4a5215d35bc4409c",
+      "size_bytes": 330511,
+      "storage": "original Kaggle run; preserve by saving a version"
+    },
+    {
+      "file": "/kaggle/working/research_outputs/SCV-IDS-REPRO-001/embedding_vectors.npz",
+      "sha256": "f6e5868bf36915ffafb15bafc8554182a9e62b35b82347a6d38ef0922af42d53",
+      "size_bytes": 1095009,
+      "storage": "original Kaggle run; preserve by saving a version"
+    }
+  ],
+  "note": "No new training, inference, or dataset downloads occurred. Numerical metrics recomputed from the originally saved best-checkpoint predictions.",
+  "official_test_used_for_training_validation_or_recovery": false,
+  "original_training_environment_available": false,
+  "original_training_finished_epochs": 50,
+  "original_training_source_git_sha": null,
+  "pca_diagnostics": {
+    "cnn": {
+      "explained_variance_ratio_first_two": [
+        0.0,
+        0.0
+      ],
+      "informative_feature_dimensions": 0,
+      "note": "All selected embeddings are constant; do not interpret separation.",
+      "projection": "PCA",
+      "status": "zero_variance",
+      "total_feature_dimensions": 128
+    },
+    "fused": {
+      "explained_variance_ratio_first_two": [
+        0.30937818076234425,
+        0.2516192313183736
+      ],
+      "informative_feature_dimensions": 128,
+      "note": "Exploratory PCA of saved embeddings; no physical time or class-separation inference.",
+      "projection": "PCA",
+      "status": "ok",
+      "total_feature_dimensions": 128
+    },
+    "raw": {
+      "explained_variance_ratio_first_two": [
+        0.24889546897852483,
+        0.11781239902614593
+      ],
+      "informative_feature_dimensions": 42,
+      "note": "Exploratory PCA of saved embeddings; no physical time or class-separation inference.",
+      "projection": "PCA",
+      "status": "ok",
+      "total_feature_dimensions": 42
+    },
+    "vit": {
+      "explained_variance_ratio_first_two": [
+        0.2515478457998131,
+        0.18641231522346352
+      ],
+      "informative_feature_dimensions": 128,
+      "note": "Exploratory PCA of saved embeddings; no physical time or class-separation inference.",
+      "projection": "PCA",
+      "status": "ok",
+      "total_feature_dimensions": 128
+    }
+  },
+  "plot_sources": [
+    {
+      "file": "plot_data/confidence_histogram.csv",
+      "sha256": "32719c1529e063f045435746615d644f84cd08fa03910d9daafa2366d9a5f828",
+      "size_bytes": 395
+    },
+    {
+      "file": "plot_data/confusion_validation.csv",
+      "sha256": "da5fdaaf5e865b14275076841a59e111dbbfa86ff66790f7065bd33b576d2a24",
+      "size_bytes": 450
+    },
+    {
+      "file": "plot_data/embedding_coordinates.csv",
+      "sha256": "f337e941996e980d73524fd2bea27296da38ee9b1444c3d9246907fb4f0673b4",
+      "size_bytes": 262801
+    },
+    {
+      "file": "plot_data/per_class_validation.csv",
+      "sha256": "6fec74c0b5e4408a22d9af0e60cb43b1108f641e9e606d4361b125746663418f",
+      "size_bytes": 725
+    },
+    {
+      "file": "plot_data/reliability_bins.csv",
+      "sha256": "1eeaf26a5bae1f18325ce2fddc746fa74ebff5cf153c9a5905aa8167b4342598",
+      "size_bytes": 915
+    },
+    {
+      "file": "plot_data/rgb_sample_pixels.csv",
+      "sha256": "369e136febb67af92c5d96e602f695c5fc37cf48fd9a331a662ef091654ea87d",
+      "size_bytes": 50078
+    },
+    {
+      "file": "plot_data/roc_pr_curves.csv",
+      "sha256": "5bd6ba3dd963121e2b46b6fb21e068a4339178a4b3e7eefc71671682121da4bf",
+      "size_bytes": 262154
+    },
+    {
+      "file": "plot_data/split_class_counts.csv",
+      "sha256": "9aed5476503fe5a75b5cde374e6a65e38344be85d12d9da52214ded9b7fb0581",
+      "size_bytes": 218
+    },
+    {
+      "file": "plot_data/training_history.csv",
+      "sha256": "392ae12e47c5911a0d8caee083b627a690eae7480d7a34fae5fc7c738b550152",
+      "size_bytes": 7927
+    }
+  ],
+  "recovery_algorithm": "Variance-safe deterministic two-dimensional PCA from saved embedding vectors",
+  "recovery_environment_manifest": "recovery_environment.json",
+  "recovery_source_git_sha": "f3dc7dd70bf0c2fa12118b89da38060af4a0febc",
+  "saved_dev_validation_index_overlap": 0,
+  "software_recovery": {
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "python": "3.13.15",
+    "sklearn": "1.6.1"
+  },
+  "source_training_data_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "status": "postprocessing_recovered_from_original_training",
+  "training_provenance_limitation": "Original environment.txt absent; original Python dependency freeze and exact training code SHA cannot be established from this file set.",
+  "unchanged_saved_predictions_sha256": "54f6aa6cb50c3c6a1533623e1c7b619f38dfa7ccbac8ce03cb9392e13e617612",
+  "unchanged_saved_split_sha256": "01f6070e836317b09ba5f8ef662dba748ec19f9b7f6e211e4a5215d35bc4409c",
+  "user_reported_failure": "Native SIGSEGV after t-SNE/PCA warnings in scikit-learn; post-epoch processing.",
+  "validation_performance_from_frozen_probabilities": {
+    "accuracy": 0.8273960862733896,
+    "balanced_accuracy": 0.5489735827320186,
+    "best_epoch": 41,
+    "best_epoch_history_macro_f1": 0.5586639076144937,
+    "ece_15_bins": 0.048233841050353984,
+    "epochs_executed": 50,
+    "focal_validation_loss_recomputed_from_saved_probabilities": 0.24316163187088446,
+    "label_classes": [
+      "Analysis",
+      "Backdoor",
+      "DoS",
+      "Exploits",
+      "Fuzzers",
+      "Generic",
+      "Normal",
+      "Reconnaissance",
+      "Shellcode",
+      "Worms"
+    ],
+    "macro_f1": 0.5586639076144937,
+    "metric_scope": "internal validation ONLY",
+    "normal_to_attack_false_positive_rate": 0.08727370980815996,
+    "one_vs_rest_auc_ap": {
+      "Analysis": {
+        "average_precision": 0.29177977886942613,
+        "roc_auc": 0.9400729010884282
+      },
+      "Backdoor": {
+        "average_precision": 0.09319236744842771,
+        "roc_auc": 0.9173296370344415
+      },
+      "DoS": {
+        "average_precision": 0.33684246142290963,
+        "roc_auc": 0.9148775020463016
+      },
+      "Exploits": {
+        "average_precision": 0.8077558590212053,
+        "roc_auc": 0.9511814320019458
+      },
+      "Fuzzers": {
+        "average_precision": 0.8124668101062051,
+        "roc_auc": 0.969350399572735
+      },
+      "Generic": {
+        "average_precision": 0.9966833823482266,
+        "roc_auc": 0.9984932964785884
+      },
+      "Normal": {
+        "average_precision": 0.9919366043555067,
+        "roc_auc": 0.9957431894909257
+      },
+      "Reconnaissance": {
+        "average_precision": 0.8684719563210759,
+        "roc_auc": 0.9794440180613246
+      },
+      "Shellcode": {
+        "average_precision": 0.6193116769849273,
+        "roc_auc": 0.9934107895865161
+      },
+      "Worms": {
+        "average_precision": 0.09905228122807203,
+        "roc_auc": 0.9844976751276775
+      }
+    },
+    "status": "recovered_from_frozen_probabilities",
+    "train_window_count": 140328,
+    "training_seconds_sum_logged_epochs": 2080.9908937819996,
+    "validation_window_count": 35005,
+    "wall_clock_training_duration_log_only": true,
+    "weighted_f1": 0.8120888326084874
+  },
+  "validation_row_count": 35009,
+  "validation_row_indices_sha256": "01f6070e836317b09ba5f8ef662dba748ec19f9b7f6e211e4a5215d35bc4409c",
+  "validation_window_count": 35005
+}

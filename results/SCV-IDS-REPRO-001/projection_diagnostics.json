@@ -1,0 +1,46 @@
+{
+  "cnn": {
+    "explained_variance_ratio_first_two": [
+      0.0,
+      0.0
+    ],
+    "informative_feature_dimensions": 0,
+    "note": "All selected embeddings are constant; do not interpret separation.",
+    "projection": "PCA",
+    "status": "zero_variance",
+    "total_feature_dimensions": 128
+  },
+  "fused": {
+    "explained_variance_ratio_first_two": [
+      0.30937818076234425,
+      0.2516192313183736
+    ],
+    "informative_feature_dimensions": 128,
+    "note": "Exploratory PCA of saved embeddings; no physical time or class-separation inference.",
+    "projection": "PCA",
+    "status": "ok",
+    "total_feature_dimensions": 128
+  },
+  "raw": {
+    "explained_variance_ratio_first_two": [
+      0.24889546897852483,
+      0.11781239902614593
+    ],
+    "informative_feature_dimensions": 42,
+    "note": "Exploratory PCA of saved embeddings; no physical time or class-separation inference.",
+    "projection": "PCA",
+    "status": "ok",
+    "total_feature_dimensions": 42
+  },
+  "vit": {
+    "explained_variance_ratio_first_two": [
+      0.2515478457998131,
+      0.18641231522346352
+    ],
+    "informative_feature_dimensions": 128,
+    "note": "Exploratory PCA of saved embeddings; no physical time or class-separation inference.",
+    "projection": "PCA",
+    "status": "ok",
+    "total_feature_dimensions": 128
+  }
+}

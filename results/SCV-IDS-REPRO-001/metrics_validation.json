@@ -1,0 +1,72 @@
+{
+  "accuracy": 0.8273960862733896,
+  "balanced_accuracy": 0.5489735827320186,
+  "best_epoch": 41,
+  "best_epoch_history_macro_f1": 0.5586639076144937,
+  "ece_15_bins": 0.048233841050353984,
+  "epochs_executed": 50,
+  "focal_validation_loss_recomputed_from_saved_probabilities": 0.24316163187088446,
+  "label_classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "macro_f1": 0.5586639076144937,
+  "metric_scope": "internal validation ONLY",
+  "normal_to_attack_false_positive_rate": 0.08727370980815996,
+  "one_vs_rest_auc_ap": {
+    "Analysis": {
+      "average_precision": 0.29177977886942613,
+      "roc_auc": 0.9400729010884282
+    },
+    "Backdoor": {
+      "average_precision": 0.09319236744842771,
+      "roc_auc": 0.9173296370344415
+    },
+    "DoS": {
+      "average_precision": 0.33684246142290963,
+      "roc_auc": 0.9148775020463016
+    },
+    "Exploits": {
+      "average_precision": 0.8077558590212053,
+      "roc_auc": 0.9511814320019458
+    },
+    "Fuzzers": {
+      "average_precision": 0.8124668101062051,
+      "roc_auc": 0.969350399572735
+    },
+    "Generic": {
+      "average_precision": 0.9966833823482266,
+      "roc_auc": 0.9984932964785884
+    },
+    "Normal": {
+      "average_precision": 0.9919366043555067,
+      "roc_auc": 0.9957431894909257
+    },
+    "Reconnaissance": {
+      "average_precision": 0.8684719563210759,
+      "roc_auc": 0.9794440180613246
+    },
+    "Shellcode": {
+      "average_precision": 0.6193116769849273,
+      "roc_auc": 0.9934107895865161
+    },
+    "Worms": {
+      "average_precision": 0.09905228122807203,
+      "roc_auc": 0.9844976751276775
+    }
+  },
+  "status": "recovered_from_frozen_probabilities",
+  "train_window_count": 140328,
+  "training_seconds_sum_logged_epochs": 2080.9908937819996,
+  "validation_window_count": 35005,
+  "wall_clock_training_duration_log_only": true,
+  "weighted_f1": 0.8120888326084874
+}
