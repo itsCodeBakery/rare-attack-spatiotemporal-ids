@@ -46,3 +46,11 @@ The mirror is *plausibly derived* from the designated original split given exact
 - Original-designated test candidate: `/kaggle/input/datasets/dsshayan/unsw-nb15/UNSW_NB15_testing-set.csv`.
 - Run [Notebook 04](../notebooks/04_verify_publisher_source.ipynb) **after uploads finish and both datasets are attached in Kaggle**. It displays progress bars, verifies full-row parsed-content equality and sequence ordering, and syncs aggregate results.
 - **Important provenance distinction:** the paths are user-provided as university-source files; even perfect equality with the mirror cannot independently authenticate a publisher download. Keep the acquisition record.
+
+## Completed source-comparison audit (2026-10-18)
+
+Kaggle [source-comparison commit](https://github.com/itsCodeBakery/rare-attack-spatiotemporal-ids/commit/6ee35ada942df078d6c7883b8a377279b7bf349b) reports `BYTE_IDENTICAL` for **both** user-uploaded designated UNSW files and their corresponding Kaggle mirror files. Raw bytes, file sizes, 45-column schema and ordering, every parsed record, duplicate multiplicities, and every record's relative row order match. Both splits have **0 unmatched records**. Training file SHA-256: `bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa` (175,341 rows, 32,293,018 bytes). Testing file SHA-256: `734fe6642edf758f7c94d7d9149426b49d202fe8e7bf0bef47392489c3c0a559` (82,332 rows, 15,380,800 bytes).
+
+**Scientific conclusion:** The two Kaggle datasets are reproducibly *the same digital data* by matching SHA-256 digests. This supports reusing earlier read-only audits and the baseline validation without repeating them for source-migration reasons. The user reports the `dsshayan` files were obtained from the original university source; the audit did **not** independently authenticate that distribution source. Byte-identity does not establish chronological traffic continuity or resolve identical feature signatures with inconsistent labels.
+
+**Source decision:** Prefer the explicitly labeled `dsshayan` paths for subsequent experiments. Keep both original SHA-256 identities and original run-specific source paths in experiment manifests; never revise history to pretend earlier experiments used the new path. The untouched designated test set remains held out for a final locked-model evaluation.
