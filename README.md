@@ -64,9 +64,9 @@ Experiments will run on **Kaggle** using a declared dataset source and GPU type.
 
 ## Research status
 
-**Phase 1 — Kaggle dataset audit prepared.** Audit notebook committed; awaiting execution on the user-provided Kaggle dataset. No dataset results or model training are claimed.
+**Phase 1 — official-split dataset audit verified and synced.** Kaggle manifests confirm the official class distributions, SHA-256 file hashes, 175,341 train / 82,332 test records and 42 features. The Kaggle mirror's filenames are reversed. **Phase 2 — exact-value feature-overlap and label-consistency audit prepared, awaiting execution.** No model has been trained.
 
-**Next gate:** execute [01_unsw_nb15_data_audit.ipynb](notebooks/01_unsw_nb15_data_audit.ipynb) on Kaggle, verify the observed data audit and synchronize its four aggregate manifests using a Kaggle GitHub token secret. The user-provided dataset mount must be validated before claiming equivalence with the official UNSW-NB15 split or implementing SCV-IDS.
+**Next gate:** execute [02_exact_overlap_audit.ipynb](notebooks/02_exact_overlap_audit.ipynb) in Kaggle and synchronize its aggregate SHA-256 equality/label-consistency report. Do not create temporal windows or start SCV-IDS training until overlap and temporal-order limitations are documented. The [Step 3 source audit](data/manifests/unsw_nb15/audit_summary.json) remains immutable evidence of the original Kaggle partition mapping.
 
 ## Citation and rights
 
