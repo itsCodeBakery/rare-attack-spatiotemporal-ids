@@ -39,3 +39,10 @@ The UNSW page permits academic research use, subject to authors' requested citat
 ### Training policy
 
 The mirror is *plausibly derived* from the designated original split given exact counts and labels, but **plausible is not publisher-verified**. A baseline performed on it before equivalence is confirmed must state the mirror provenance and must not be misrepresented as a publisher-original file experiment.
+
+### Publisher-upload Kaggle paths (provided 2026-10-18)
+
+- Original-designated training candidate: `/kaggle/input/datasets/dsshayan/unsw-nb15/UNSW_NB15_training-set.csv`.
+- Original-designated test candidate: `/kaggle/input/datasets/dsshayan/unsw-nb15/UNSW_NB15_testing-set.csv`.
+- Run [Notebook 04](../notebooks/04_verify_publisher_source.ipynb) **after uploads finish and both datasets are attached in Kaggle**. It displays progress bars, verifies full-row parsed-content equality and sequence ordering, and syncs aggregate results.
+- **Important provenance distinction:** the paths are user-provided as university-source files; even perfect equality with the mirror cannot independently authenticate a publisher download. Keep the acquisition record.
