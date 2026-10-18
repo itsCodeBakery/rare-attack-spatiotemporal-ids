@@ -1,0 +1,97 @@
+{
+  "count": 15,
+  "experiment_id": "CTRL-CAT-001-S43",
+  "exports": [
+    {
+      "bytes": 203278,
+      "path": "figures/01_accuracy.png",
+      "sha256": "fce654813a1c35a5f6b484c95d225f633f98c4ffc38cb01c979b2d4152323966",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 12524,
+      "path": "figures/01_accuracy.svg",
+      "sha256": "8a1413d475b2c9a48d03e971b676b79220774d151f7f18ef26268ad1dfd6ba4c",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 13097,
+      "path": "figures/01_accuracy.pdf",
+      "sha256": "4479d862c955f1eb962359cb00b51c73d9bfd20a2c54a0ad44ac037219118ced",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 182558,
+      "path": "figures/02_macro_f1.png",
+      "sha256": "8fbef890d3e40299cb1c85393e65654e63b0e52b59aa7f81d0247cb33d14aca1",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 11006,
+      "path": "figures/02_macro_f1.svg",
+      "sha256": "dad7d6b9884062d5b98e167a145810c96a64a2ea565944989d2ad7b72007dd7e",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 12878,
+      "path": "figures/02_macro_f1.pdf",
+      "sha256": "043f3809e2d303f0884e7fd9f0f4b0125190bc225a85d326ad18119cc815a497",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 204488,
+      "path": "figures/03_weighted_f1.png",
+      "sha256": "86a01311c492829f8826f563f8f6d32036b6148862fee4140f456f347c3c1235",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 12528,
+      "path": "figures/03_weighted_f1.svg",
+      "sha256": "c6aa6589988c75827ef204ba165e27aa210a07ed60b7ccd5af3f15d2cba52342",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 14105,
+      "path": "figures/03_weighted_f1.pdf",
+      "sha256": "f5c38736114e9a04812ba79dc683f1b26909b020927697588c3d289835ca24ab",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 210121,
+      "path": "figures/04_weighted_precision.png",
+      "sha256": "73ec2872b371c8156f9560304d5fea7a36c38850672129c9c121802f7729389a",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 12544,
+      "path": "figures/04_weighted_precision.svg",
+      "sha256": "f20847cc41ecbfe882f4eb4da946846385b15d9a57844ff6f91c6d98f44a6ff6",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 13288,
+      "path": "figures/04_weighted_precision.pdf",
+      "sha256": "bc7164417843921a727dad5c69f02d46952bca74eff534094316ef894717f074",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 141204,
+      "path": "figures/05_pareto_tradeoff.png",
+      "sha256": "923bbab9113e98dcc83e42944b81d63a15578fcdce407320547c251a4367d1bc",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 12334,
+      "path": "figures/05_pareto_tradeoff.svg",
+      "sha256": "e20f05907538411c19619ade4a046d32629b59329dd86141ec3e8d1eca734392",
+      "source": "summary_scores.csv"
+    },
+    {
+      "bytes": 14227,
+      "path": "figures/05_pareto_tradeoff.pdf",
+      "sha256": "db1e1420943544aa8e9de754df336acf564c5172562ef7e905cae72728f61463",
+      "source": "summary_scores.csv"
+    }
+  ],
+  "scope": "Development-only, thresholds from paper do not confirm matched test superiority."
+}
