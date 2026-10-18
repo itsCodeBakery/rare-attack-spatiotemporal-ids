@@ -1,0 +1,385 @@
+{
+  "experiment_id": "CTRL-VIT-001-S42",
+  "figure_count": 14,
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "note": "These are actual values only after Kaggle inference; data-independent CI tests use synthetic fixtures.",
+  "plot_sources": [
+    {
+      "bytes": 453,
+      "file": "plot_data/confusion_matrix.csv",
+      "sha256": "2b934c98b2d07ad65355d75369b7dcf2c001a75f0405a29035d396b56239b2d7"
+    },
+    {
+      "bytes": 270771,
+      "file": "plot_data/curves.csv",
+      "sha256": "e33ee0227939e58681b7ee25081eab7753c66588a7615164cf8830d763649e21"
+    },
+    {
+      "bytes": 739,
+      "file": "plot_data/per_class.csv",
+      "sha256": "3f4b630dde363cc402a7ad86d232a299d07a8d7fe8098e63d490a712b0c2826f"
+    },
+    {
+      "bytes": 538,
+      "file": "plot_data/prediction_proportions.csv",
+      "sha256": "2c20eda41544bc918c173cd2c740f44fde37d204e45f307461ec1e2c9e0adca8"
+    },
+    {
+      "bytes": 570,
+      "file": "plot_data/reliability.csv",
+      "sha256": "632b5acf01c8d8ca29cfe77da1badd918bda9207e8221173a8b6b1b9b6da9761"
+    },
+    {
+      "bytes": 222,
+      "file": "plot_data/split_support.csv",
+      "sha256": "edbe1c40384d812ead0c411d3c7205b9af1be82f66e19432ba7160c3d30cd19f"
+    },
+    {
+      "bytes": 7889,
+      "file": "plot_data/training_history.csv",
+      "sha256": "44b60fada9cf00ee2149dec5236b645ae347f24894f53cb29350db7a320d6be6"
+    }
+  ],
+  "plots": [
+    {
+      "caption": "Focal loss across training",
+      "exports": [
+        {
+          "bytes": 100255,
+          "file": "figures/01_train_validation_focal_loss.png",
+          "sha256": "8b02f0bd5db05db0cfc6b8494525b5182bbae85caab037c2ae60128d0122a942"
+        },
+        {
+          "bytes": 13676,
+          "file": "figures/01_train_validation_focal_loss.svg",
+          "sha256": "60ddf8e29f9ace7109c153d0b8cd278a941c34488dc6506de074b26684a4373e"
+        },
+        {
+          "bytes": 10834,
+          "file": "figures/01_train_validation_focal_loss.pdf",
+          "sha256": "c2855bfab319168bef0cf4b9e0cfb6e8d0c46c3a29640b860359431b419c09ec"
+        }
+      ],
+      "name": "01_train_validation_focal_loss",
+      "sources": [
+        "plot_data/training_history.csv"
+      ]
+    },
+    {
+      "caption": "Accuracy over 50 epochs",
+      "exports": [
+        {
+          "bytes": 113107,
+          "file": "figures/02_train_validation_accuracy.png",
+          "sha256": "2bce7982a7606f7c472cc6e59796296d0b1313f0fde5de1f5242577215251782"
+        },
+        {
+          "bytes": 12976,
+          "file": "figures/02_train_validation_accuracy.svg",
+          "sha256": "71949b99f7905e903c83509efb14c3bf3206db32cc5c635ef04fed595f610591"
+        },
+        {
+          "bytes": 11842,
+          "file": "figures/02_train_validation_accuracy.pdf",
+          "sha256": "9c8191f53a86a6bf0e4e70683c99458a03e86e0c97edd21318d6a8c91b6ccfd4"
+        }
+      ],
+      "name": "02_train_validation_accuracy",
+      "sources": [
+        "plot_data/training_history.csv"
+      ]
+    },
+    {
+      "caption": "Internal-validation macro-F1",
+      "exports": [
+        {
+          "bytes": 112979,
+          "file": "figures/03_macro_f1.png",
+          "sha256": "5f64e7b8fd8c69c74af9b2d869b4942e8a985e093ebb54fe9f00418b546496e6"
+        },
+        {
+          "bytes": 12071,
+          "file": "figures/03_macro_f1.svg",
+          "sha256": "a39d477a2cb117dc4a80f551d477be5c7589fbb30968cb52e2c7de6431d1a892"
+        },
+        {
+          "bytes": 10539,
+          "file": "figures/03_macro_f1.pdf",
+          "sha256": "c561df0906fa44ec8ee242ebe647e1af7d596f009c8bf327a63e760599d4de6a"
+        }
+      ],
+      "name": "03_macro_f1",
+      "sources": [
+        "plot_data/training_history.csv"
+      ]
+    },
+    {
+      "caption": "Weighted versus macro-F1",
+      "exports": [
+        {
+          "bytes": 114544,
+          "file": "figures/04_weighted_vs_macro_f1.png",
+          "sha256": "06d834811d5dd484b62fca62ee0488eea054f6c5ad587868c9d2d164f0e567f2"
+        },
+        {
+          "bytes": 13656,
+          "file": "figures/04_weighted_vs_macro_f1.svg",
+          "sha256": "8fb14957773a8493f1a440d22e228b2f4e155d3abe57820c7082763ab2f31aa1"
+        },
+        {
+          "bytes": 11888,
+          "file": "figures/04_weighted_vs_macro_f1.pdf",
+          "sha256": "aeb0b5316d1d3a3567176e2b9acdc39fe46fd95535f7c8c03487972b432b0226"
+        }
+      ],
+      "name": "04_weighted_vs_macro_f1",
+      "sources": [
+        "plot_data/training_history.csv"
+      ]
+    },
+    {
+      "caption": "Training duration per epoch",
+      "exports": [
+        {
+          "bytes": 117823,
+          "file": "figures/05_epoch_runtime.png",
+          "sha256": "7cc8ff2f7db3e15e016497756cd87f9366e806624b0db08c0070a8e6a243506a"
+        },
+        {
+          "bytes": 9603,
+          "file": "figures/05_epoch_runtime.svg",
+          "sha256": "6e2c981f595ab131031a2cf10a7ae6808d99ec3358cd00b5cc7d6ff261d9d977"
+        },
+        {
+          "bytes": 10310,
+          "file": "figures/05_epoch_runtime.pdf",
+          "sha256": "99f2b9087a91a53cfd17656c32ba646a926c4211b178349613698ae7a9ba12ea"
+        }
+      ],
+      "name": "05_epoch_runtime",
+      "sources": [
+        "plot_data/training_history.csv"
+      ]
+    },
+    {
+      "caption": "Train and validation class support, original partition/window labels",
+      "exports": [
+        {
+          "bytes": 128868,
+          "file": "figures/06_partition_support.png",
+          "sha256": "bd4497e32899be9f1c38d2f07acf63d30e838c0138e47f06f1493018f1f12971"
+        },
+        {
+          "bytes": 12964,
+          "file": "figures/06_partition_support.svg",
+          "sha256": "2eb919d787a194f4ac1d1a99e5c32a9ad462c21e86f2cb091f7b5aa35543967f"
+        },
+        {
+          "bytes": 13902,
+          "file": "figures/06_partition_support.pdf",
+          "sha256": "0cd6fffbab4974e1439c87b3ef4b235fabd2e707517e2d67a068a446882a9a42"
+        }
+      ],
+      "name": "06_partition_support",
+      "sources": [
+        "plot_data/split_support.csv"
+      ]
+    },
+    {
+      "caption": "Best-checkpoint class-wise F1",
+      "exports": [
+        {
+          "bytes": 62688,
+          "file": "figures/07_per_class_f1.png",
+          "sha256": "bc464c4be7401db84e22e7768af158807f2028806a467a0c9db4b57ed24e41d9"
+        },
+        {
+          "bytes": 10863,
+          "file": "figures/07_per_class_f1.svg",
+          "sha256": "d804e90f8d7a7f52e01e27064c7dd5c858a53c9088f48fc343020221c76cd6af"
+        },
+        {
+          "bytes": 12735,
+          "file": "figures/07_per_class_f1.pdf",
+          "sha256": "0ba604b758bdd0a7894dd643bb4f5e2e73a83baeaf7301c8b43a82a8f74746c5"
+        }
+      ],
+      "name": "07_per_class_f1",
+      "sources": [
+        "plot_data/per_class.csv"
+      ]
+    },
+    {
+      "caption": "Precision and recall calculated from frozen best-checkpoint predictions",
+      "exports": [
+        {
+          "bytes": 107689,
+          "file": "figures/08_class_precision_recall.png",
+          "sha256": "604217ef822b25f9047f4abf5f69d0dc41298e9f42e3b5bc203b76585583b403"
+        },
+        {
+          "bytes": 13089,
+          "file": "figures/08_class_precision_recall.svg",
+          "sha256": "566975a6e26dc184c61b5df64cd6a2614fd502cc751097d40bb3a03630f88998"
+        },
+        {
+          "bytes": 13202,
+          "file": "figures/08_class_precision_recall.pdf",
+          "sha256": "a6d31590a27d9b705139bc499b5042f6c2ca7b0e80f61afb55272682a5de86c9"
+        }
+      ],
+      "name": "08_class_precision_recall",
+      "sources": [
+        "plot_data/per_class.csv"
+      ]
+    },
+    {
+      "caption": "Best-checkpoint confusion matrix",
+      "exports": [
+        {
+          "bytes": 200926,
+          "file": "figures/09_confusion_counts.png",
+          "sha256": "8cc753517dc3f982b4556c710205ceb683470eeedd2dc2ce319997e90473ac6f"
+        },
+        {
+          "bytes": 49894,
+          "file": "figures/09_confusion_counts.svg",
+          "sha256": "54125b0f2ad0fc69d53466f4f885e404e1fee9169c662d66c531c93a182d238d"
+        },
+        {
+          "bytes": 34849,
+          "file": "figures/09_confusion_counts.pdf",
+          "sha256": "3fe871e69828bbdfcd25a58a106309e46fa15aabbf882b01baf2eccbe3da2354"
+        }
+      ],
+      "name": "09_confusion_counts",
+      "sources": [
+        "plot_data/confusion_matrix.csv"
+      ]
+    },
+    {
+      "caption": "Best-checkpoint confusion matrix",
+      "exports": [
+        {
+          "bytes": 198071,
+          "file": "figures/10_confusion_normalized.png",
+          "sha256": "14ed184e15e6db9c80beac8aa5551068b65381d823c116d688935afec71d3314"
+        },
+        {
+          "bytes": 50376,
+          "file": "figures/10_confusion_normalized.svg",
+          "sha256": "f54f299aec55aabcd6aa4e41bdd2f77272bf8594e40669582f563af9822c52db"
+        },
+        {
+          "bytes": 44898,
+          "file": "figures/10_confusion_normalized.pdf",
+          "sha256": "39af593d3a87e76ea1f7e6eb11c2a9693c2131dc67478e2c61e71d907590b8e1"
+        }
+      ],
+      "name": "10_confusion_normalized",
+      "sources": [
+        "plot_data/confusion_matrix.csv"
+      ]
+    },
+    {
+      "caption": "Calibration diagnostic using 15 equal-width confidence bins",
+      "exports": [
+        {
+          "bytes": 105756,
+          "file": "figures/11_reliability.png",
+          "sha256": "823595baf6f319f53f8e530f017658cc689789732939cc0785f2322266204604"
+        },
+        {
+          "bytes": 10905,
+          "file": "figures/11_reliability.svg",
+          "sha256": "a689e50e2e97837dade299fe3cdf6d4ea81d161968683979dd4e205de8495480"
+        },
+        {
+          "bytes": 12716,
+          "file": "figures/11_reliability.pdf",
+          "sha256": "0500e79f040f6d880e9e1cc3170ae55d85b09d1eb7c765fbe827b057782ac2f5"
+        }
+      ],
+      "name": "11_reliability",
+      "sources": [
+        "plot_data/reliability.csv"
+      ]
+    },
+    {
+      "caption": "Full probabilities used for scores; curve points downsampled for display",
+      "exports": [
+        {
+          "bytes": 180503,
+          "file": "figures/12_roc_ovr.png",
+          "sha256": "0d474fa8cd805f816fb43ad7734b475b274e2d9b12dc3dcbcb90c31ac6ec7c8d"
+        },
+        {
+          "bytes": 42117,
+          "file": "figures/12_roc_ovr.svg",
+          "sha256": "0a2af394c6e1319d2d51f3577ccf4f534bdbe6a1adf2dab49deb268abf136f63"
+        },
+        {
+          "bytes": 26198,
+          "file": "figures/12_roc_ovr.pdf",
+          "sha256": "2e038a5c3fe0172a1a44df1707f9cfe9837eecf6a5c553f8e7fd406a8ad2d0e2"
+        }
+      ],
+      "name": "12_roc_ovr",
+      "sources": [
+        "plot_data/curves.csv"
+      ]
+    },
+    {
+      "caption": "Full probabilities used for scores; curve points downsampled for display",
+      "exports": [
+        {
+          "bytes": 263002,
+          "file": "figures/13_precision_recall_ovr.png",
+          "sha256": "a59651980d432eed6fdc3f264bddf64c723a2d9fbd99a8c6fe6e21dd105556eb"
+        },
+        {
+          "bytes": 29093,
+          "file": "figures/13_precision_recall_ovr.svg",
+          "sha256": "f9f39ca08b9bf8094890b1a11fe3d8971ec59ce6f79d5e439c31580c5719cbd1"
+        },
+        {
+          "bytes": 20780,
+          "file": "figures/13_precision_recall_ovr.pdf",
+          "sha256": "2b64f86b5bd103e299b351a57580b1ffa582b3ff1627e994aa3b3d08eb444aae"
+        }
+      ],
+      "name": "13_precision_recall_ovr",
+      "sources": [
+        "plot_data/curves.csv"
+      ]
+    },
+    {
+      "caption": "Prediction distribution shift, best checkpoint",
+      "exports": [
+        {
+          "bytes": 123662,
+          "file": "figures/14_class_frequency_shift.png",
+          "sha256": "fab2c750872a5cafea5151553510d9130293d7793226e4ebfbf4041183d72aa4"
+        },
+        {
+          "bytes": 13684,
+          "file": "figures/14_class_frequency_shift.svg",
+          "sha256": "65037938858f3de7ee5a654a3ea0fef965fd4762dedebc2bafdd5dc613b0b8d9"
+        },
+        {
+          "bytes": 14559,
+          "file": "figures/14_class_frequency_shift.pdf",
+          "sha256": "66b3daaa38ae6683e7461f48906cde2021db1445b9470303f39e57db241596b2"
+        }
+      ],
+      "name": "14_class_frequency_shift",
+      "sources": [
+        "plot_data/prediction_proportions.csv"
+      ]
+    }
+  ]
+}

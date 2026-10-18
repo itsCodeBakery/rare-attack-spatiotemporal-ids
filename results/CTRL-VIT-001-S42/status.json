@@ -1,0 +1,25 @@
+{
+  "best_checkpoint_epoch": 44,
+  "best_macro_f1": 0.5744094617438289,
+  "checkpoint_sha256": "79ee5c25b51f031b5f1d635b2988c331e88695fd6012909a925c9cc53604eb3b",
+  "class_names": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "completed": true,
+  "epochs": 50,
+  "note": "50 epochs of original train-derived group-disjoint controls; report figures separately",
+  "official_test_used": false,
+  "parameter_count": 573450,
+  "predictions_sha256": "ea71220a30c2895eb283fb3c3cf225ed95231cdf07d6172de58363c96cb65c31",
+  "train_windows": 140328,
+  "validation_windows": 35005
+}

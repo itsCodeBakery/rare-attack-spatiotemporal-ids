@@ -1,0 +1,62 @@
+{
+  "accuracy": 0.8323668047421797,
+  "balanced_accuracy": 0.5491552220249418,
+  "best_epoch": 44,
+  "control_vs_original_reference_same_targets": true,
+  "correct": 29137,
+  "ece_15_bins": 0.04923680617143182,
+  "epochs_completed": 50,
+  "experiment_id": "CTRL-VIT-001-S42",
+  "macro_f1": 0.5744094617438289,
+  "no_official_test": true,
+  "normal_false_positive_rate": 0.05935332792938845,
+  "original_reference_accuracy": 0.8273960862733896,
+  "original_reference_comparison_note": "Single-seed control comparison; NO significance or journal superiority claim.",
+  "original_reference_macro_f1": 0.5586639076144937,
+  "parameter_count": 573450,
+  "per_class_auc_ap": {
+    "Analysis": {
+      "average_precision": 0.2574757926170597,
+      "roc_auc": 0.9382265884161021
+    },
+    "Backdoor": {
+      "average_precision": 0.16904242868715197,
+      "roc_auc": 0.9225946369313849
+    },
+    "DoS": {
+      "average_precision": 0.36538573835927757,
+      "roc_auc": 0.9206170133653756
+    },
+    "Exploits": {
+      "average_precision": 0.8156150408544331,
+      "roc_auc": 0.9542805421415778
+    },
+    "Fuzzers": {
+      "average_precision": 0.8383465593225348,
+      "roc_auc": 0.9728650701597006
+    },
+    "Generic": {
+      "average_precision": 0.9971437124927692,
+      "roc_auc": 0.9987162068855665
+    },
+    "Normal": {
+      "average_precision": 0.9917508960323347,
+      "roc_auc": 0.9956673069692479
+    },
+    "Reconnaissance": {
+      "average_precision": 0.8722746505213737,
+      "roc_auc": 0.9805356632646639
+    },
+    "Shellcode": {
+      "average_precision": 0.6287707346265062,
+      "roc_auc": 0.9950406282391238
+    },
+    "Worms": {
+      "average_precision": 0.13916091583912732,
+      "roc_auc": 0.9512661570459421
+    }
+  },
+  "result_scope": "TRAINING-DERIVED ORIGINAL INTERNAL VALIDATION ONLY",
+  "validation_window_count": 35005,
+  "weighted_f1": 0.8195583731272865
+}
