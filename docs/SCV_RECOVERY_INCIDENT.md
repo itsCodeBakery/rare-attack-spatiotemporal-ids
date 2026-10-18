@@ -22,3 +22,7 @@ The user-supplied epoch log is **provisional** until the recovered metrics are s
 ## Risks
 
 If the original Kaggle session or `/kaggle/working` files are gone and there is no saved run output version or downloaded checkpoint archive, the full training run may have to be repeated. We cannot claim successful preservation of those files until they are independently verified or saved.
+
+## Full artifact archival after recovery
+
+Run [archive_scv_outputs.py](../scripts/archive_scv_outputs.py) with `--base /kaggle/working/research_outputs --archive /kaggle/working/SCV-IDS-REPRO-001_FULL_ARTIFACTS.tar` after successful local recovery. The script exports a standalone `tar` backup of model checkpoints and every run artifact, including a SHA-256 catalog. **Manually download this archive or preserve it in a private, versioned Kaggle dataset.** Syncing the figures to GitHub alone does not protect original per-row prediction arrays or trained weights.

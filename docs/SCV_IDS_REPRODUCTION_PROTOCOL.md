@@ -42,7 +42,7 @@ Kaggle notebook: [05_scv_ids_baseline.ipynb](../notebooks/05_scv_ids_baseline.ip
 - Training/validation split indices with label IDs in `split_indices.npz`.
 - Every epoch: `training_history.csv`, latest resumable checkpoint, best validation checkpoint, periodic full checkpoints every five epochs.
 - Full `validation_predictions.npz` with ground-truth labels, predictions, probabilities, and validation-row lineage.
-- `embedding_vectors.npz` with stratified raw/CNN/ViT/fused features for independent projection recomputation.
+- `embedding_vectors.npz` with stratified raw/CNN/ViT/fused features for independent projection recomputation. **Post-crash correction:** use [safe_projection.py](../src/rareids/safe_projection.py) for deterministic PCA; report collapsed or constant representations explicitly. Initial t-SNE postprocessing terminated natively after 50 trained epochs, so no t-SNE figure from that run is claimed.
 - `preprocessing.json`: ordered feature list, categorical vocabularies, training-only min and max parameters.
 - `config_effective.json`, `environment.txt` (pip freeze), `artifact_manifest.json` with SHA-256 hashes and git commit.
 - `plot_data/`: individual source tables for every chart and reproducible class-image pixels.
@@ -85,12 +85,12 @@ All 28 are rebuilt by `scripts/plot_scv_figures.py --run RESULTS_DIR` using the 
 | 22 | Confidence histogram, correct and wrong | confidence_histogram |
 | 23 | OvR ROC curves for ten classes | roc_pr_curves |
 | 24 | OvR precision–recall curves | roc_pr_curves |
-| 25 | Stratified raw-feature t-SNE | embedding_coordinates |
-| 26 | Stratified CNN-feature t-SNE | embedding_coordinates |
-| 27 | Stratified ViT-feature t-SNE | embedding_coordinates |
-| 28 | Stratified fused-feature t-SNE | embedding_coordinates |
+| 25 | Stratified raw-feature PCA | embedding_coordinates |
+| 26 | Stratified CNN-feature PCA | embedding_coordinates |
+| 27 | Stratified ViT-feature PCA | embedding_coordinates |
+| 28 | Stratified fused-feature PCA | embedding_coordinates |
 
-t-SNE is exploratory and not evidence of generalization, and the curves are downsampled to at most 301 plotted points **per class** while the exact AUC/AP scores are computed from all prediction probabilities and stored in `metrics_validation.json`.
+PCA projections from saved embeddings are exploratory and not evidence of generalization, and the curves are downsampled to at most 301 plotted points **per class** while the exact AUC/AP scores are computed from all prediction probabilities and stored in `metrics_validation.json`.
 
 ### Figure editing later
 
@@ -108,3 +108,7 @@ To change the *statistic*, e.g., validation confidence intervals, use `validatio
 - Run the Step 7 experiment once and inspect loss/metrics, completed training epochs, class confusion, image representations and source hashes.
 - Repeat key baselines over multiple seeds and record uncertainty before freezing a final architecture; do not tune on official-test results.
 - Compare the published SCV-IDS baseline on the untouched official test **only after** the training-only protocol, checkpoints, evaluations and uncertainties are agreed. Secondary overlap/nonoverlap subsets must be reported transparently.
+
+## 2026-10-18 postprocessing SIGSEGV correction
+
+The original Kaggle training process completed **50/50 epochs**, then terminated during scikit-learn PCA/t-SNE feature plotting. The successful training is **not repeated**. A [recovery-only script](../scripts/recover_scv_figures.py) reconstructs metrics and 28 figures from saved probabilities/embeddings. A [recovery-only notebook](../notebooks/06_scv_postcrash_recovery.ipynb) must be run in the **same existing Kaggle session**; it does not reexecute the model. Figures 25–28 are now **PCA**, never claimed to be t-SNE. A [full-artifact archiver](../scripts/archive_scv_outputs.py) bundles original checkpoints, prediction probabilities, split indices, embeddings, plot data and figure files in a single downloadable `.tar` file. The archive is not uploaded to public GitHub and must be saved/downloaded before the Kaggle working environment expires.
