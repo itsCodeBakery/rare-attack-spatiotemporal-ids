@@ -1,0 +1,31 @@
+{
+  "audit_version": "0.2.0",
+  "data_modified": false,
+  "dataset_sha256_test": "734fe6642edf758f7c94d7d9149426b49d202fe8e7bf0bef47392489c3c0a559",
+  "dataset_sha256_train": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "feature_count": 42,
+  "interpretation": "Matching feature values do not alone establish acquisition duplication or train/test leakage. No rows were removed.",
+  "metrics": {
+    "duplicate_test_feature_records_beyond_first": 28386,
+    "duplicate_train_feature_records_beyond_first": 74301,
+    "exact_shared_feature_signatures": 1302,
+    "shared_feature_groups_with_disjoint_train_test_labels": 425,
+    "shared_feature_groups_with_label_conflict": 548,
+    "test_records_sharing_train_feature_values": 8541,
+    "test_records_with_exact_feature_and_label_match_in_train": 4247,
+    "test_records_with_feature_match_but_no_matching_train_label": 4294,
+    "train_records_sharing_test_feature_values": 10279,
+    "within_test_feature_groups_with_label_conflict": 575,
+    "within_train_feature_groups_with_label_conflict": 1772
+  },
+  "observed_utc": "2026-10-18T11:34:45.962093+00:00",
+  "pandas_version": "2.3.3",
+  "python_version": "3.13.15",
+  "row_equality": "SHA-256 of type-preserving canonical JSON of parsed feature values",
+  "source_commit": "c6cfbacb1174f9366c2840cfbb65299743cc380b",
+  "source_step3_manifest_sha256": "0916af67458256c0e71fe0c921c394c8c86d68761a8d87d8d6f70e3798ea83b3",
+  "test_rows": 82332,
+  "time_audit": "No reliable timestamp/session metadata in these 42 features; row order unvalidated",
+  "train_rows": 175341,
+  "training_performed": false
+}
