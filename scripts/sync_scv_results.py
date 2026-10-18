@@ -19,8 +19,10 @@ REPO="itsCodeBakery/rare-attack-spatiotemporal-ids"
 RUN_ID="SCV-IDS-REPRO-001"
 PREFIX="results/"+RUN_ID
 TEXT_FILES=("metrics_validation.json","config_effective.json","preprocessing.json",
-            "training_history.csv","environment.txt","artifact_manifest.json","run_report.md",
+            "training_history.csv","artifact_manifest.json","run_report.md",
             "figure_manifest.json")
+OPTIONAL_TEXT_FILES=("environment.txt","recovery_environment.json",
+                     "projection_diagnostics.json")
 MAX_SINGLE_BYTES=12*1024*1024
 MAX_TOTAL_BYTES=90*1024*1024
 
@@ -34,6 +36,13 @@ def collect(root):
         f=root/name
         if not f.is_file():raise FileNotFoundError(str(f))
         results.append(f)
+    for name in OPTIONAL_TEXT_FILES:
+        path=root/name
+        if path.is_file():
+            results.append(path)
+    if not any((root/name).is_file() for name in
+               ("environment.txt","recovery_environment.json")):
+        raise FileNotFoundError("Neither original nor recovery environment metadata present")
     for folder in ("plot_data","figures"):
         directory=root/folder
         if not directory.is_dir():raise FileNotFoundError(str(directory))

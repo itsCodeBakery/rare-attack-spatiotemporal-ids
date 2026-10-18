@@ -53,7 +53,7 @@ def try_source_sha(repository):
 
 def verify_saved_data(out,checkpoints):
     paths=[out/"training_history.csv",out/"config_effective.json",
-           out/"preprocessing.json",out/"environment.txt",
+           out/"preprocessing.json",
            out/"split_indices.npz",out/"validation_predictions.npz",
            out/"embedding_vectors.npz",checkpoints/"scv_best.pt",
            checkpoints/"scv_last_resume.pt"]
@@ -122,11 +122,31 @@ def recovery(out,checkpoints,repository):
     from_plot=pd.read_csv(original_history_source)
     if not from_plot.equals(history):
         raise ValueError("Pre-crash plot history differs from original epoch history")
-    # Preserve original code provenance from environment, even after git pull.
-    environment=(out/"environment.txt").read_text(encoding="utf-8")
-    recorded=[line.split(":",1)[1].strip() for line in environment.splitlines()
-              if line.startswith("Git commit:")]
-    original_sha=recorded[0] if recorded else None
+    # Do not pretend the recovery environment represents the training environment.
+    training_environment_path=out/"environment.txt"
+    original_environment_available=training_environment_path.is_file()
+    if original_environment_available:
+        environment=training_environment_path.read_text(encoding="utf-8")
+        recorded=[line.split(":",1)[1].strip() for line in environment.splitlines()
+                  if line.startswith("Git commit:")]
+        original_sha=recorded[0] if recorded else None
+    else:
+        original_sha=None
+        print("WARNING: environment.txt was not captured by the original run. "
+              "Training software freeze and exact training Git SHA remain unverified. "
+              "Preserving observed recovery environment SEPARATELY.",flush=True)
+    recovery_environment={
+        "capture_scope":"RECOVERY_PROCESS_ONLY_NOT_ORIGINAL_TRAINING",
+        "original_training_environment_txt_present":original_environment_available,
+        "original_training_git_sha_verified":original_sha,
+        "python":platform.python_version(),"pandas":pd.__version__,
+        "numpy":np.__version__,
+        "scikit_learn":__import__("sklearn").__version__,
+        "matplotlib":__import__("matplotlib").__version__,
+        "source_recovery_git_sha":try_source_sha(repository),
+        "recorded_utc":datetime.now(timezone.utc).isoformat()
+    }
+    save_json(recovery_environment,out/"recovery_environment.json")
     n=int(len(truth))
     cls_idx=classes.index("Normal")
     normal=truth==cls_idx
@@ -198,6 +218,12 @@ def recovery(out,checkpoints,repository):
       "experiment_id":cfg["experiment_id"],
       "status":"postprocessing_recovered_from_original_training",
       "original_training_source_git_sha":original_sha,
+      "original_training_environment_available":original_environment_available,
+      "training_provenance_limitation":(
+          "Original environment.txt absent; original Python dependency freeze "
+          "and exact training code SHA cannot be established from this file set."
+          if not original_environment_available else None),
+      "recovery_environment_manifest":"recovery_environment.json",
       "recovery_source_git_sha":try_source_sha(repository),
       "original_training_finished_epochs":int(len(history)),
       "source_training_data_sha256":cfg["official_training_sha256"],
@@ -242,9 +268,10 @@ def recovery(out,checkpoints,repository):
       f"- Figures: **{figures['figure_count']}** × 3 formats = "
            f"**{figures['figure_count']*3}** exports",
       f"- PCA diagnostics: **{ {k:v['status'] for k,v in details.items()} }**",
-      f"- Original training Git SHA: \`{original_sha}\`",
-      f"- Recovery code Git SHA: \`{evidence['recovery_source_git_sha']}\`",
-      f"- Original best model checkpoint SHA-256: \`{hash_file(checkpoints/'scv_best.pt')}\`",
+      f"- Original training Git SHA: `{original_sha or 'unavailable; original environment file missing'}`",
+      f"- Original training environment.txt present: **{original_environment_available}**",
+      f"- Recovery code Git SHA: `{evidence['recovery_source_git_sha']}`",
+      f"- Original best model checkpoint SHA-256: `{hash_file(checkpoints/'scv_best.pt')}`",
       "",
       "The figure scripts, source CSV tables, metrics and SHA-256 manifest are synchronized",
       "separately. Original checkpoint files, raw per-row probabilities, split indices and",

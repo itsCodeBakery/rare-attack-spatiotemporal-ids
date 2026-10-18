@@ -32,7 +32,7 @@ def main(base,output):
     must=[run/"validation_predictions.npz",run/"split_indices.npz",
           run/"embedding_vectors.npz",run/"metrics_validation.json",
           run/"figure_manifest.json",run/"artifact_manifest.json",
-          run/"environment.txt",check/"scv_best.pt",check/"scv_last_resume.pt"]
+          run/"recovery_environment.json",check/"scv_best.pt",check/"scv_last_resume.pt"]
     if any(not f.is_file() for f in must):
         raise FileNotFoundError("Required results missing: "+
             ", ".join(str(f) for f in must if not f.is_file()))

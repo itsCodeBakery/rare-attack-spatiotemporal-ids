@@ -10,7 +10,7 @@ def test_complete_backup_archive_synthetic(tmp_path):
     weights=base/"checkpoints"
     run.mkdir(parents=True);weights.mkdir(parents=True)
     for name in ("validation_predictions.npz","split_indices.npz","embedding_vectors.npz",
-                 "metrics_validation.json","figure_manifest.json","artifact_manifest.json","environment.txt"):
+                 "metrics_validation.json","figure_manifest.json","artifact_manifest.json","recovery_environment.json"):
         (run/name).write_bytes(b"synthetic fixture only")
     for name in ("scv_best.pt","scv_last_resume.pt"):
         (weights/name).write_bytes(b"synthetic fixture checkpoint")

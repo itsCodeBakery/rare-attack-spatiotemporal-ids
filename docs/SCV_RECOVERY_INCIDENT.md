@@ -26,3 +26,7 @@ If the original Kaggle session or `/kaggle/working` files are gone and there is 
 ## Full artifact archival after recovery
 
 Run [archive_scv_outputs.py](../scripts/archive_scv_outputs.py) with `--base /kaggle/working/research_outputs --archive /kaggle/working/SCV-IDS-REPRO-001_FULL_ARTIFACTS.tar` after successful local recovery. The script exports a standalone `tar` backup of model checkpoints and every run artifact, including a SHA-256 catalog. **Manually download this archive or preserve it in a private, versioned Kaggle dataset.** Syncing the figures to GitHub alone does not protect original per-row prediction arrays or trained weights.
+
+## 2026-10-18 missing optional training environment file
+
+The original Kaggle run contains all **six primary model and prediction artifacts** verified by the user, but `environment.txt` is absent. This file is not required for numerical recovery. Versioned recovery code now treats it as **optional**, explicitly sets the original training-environment/commit provenance to unavailable when absent, and writes a new `recovery_environment.json` that describes **only the recovery process**. The sync and full archive scripts preserve any original `environment.txt` if it exists, but accept the separate recovery environment file. No training or inference is repeated. The `\`` Markdown backtick syntax warnings in the earlier script have also been corrected.

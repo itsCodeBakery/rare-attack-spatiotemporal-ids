@@ -58,7 +58,7 @@ def test_recover_all_50_epoch_evidence_without_any_training(tmp_path):
         "official_training_sha256":"synthetic-test-hash",
         "training":{"epochs":50},"preprocessing":{"window":5}}))
     (out/"preprocessing.json").write_text("{}")
-    (out/"environment.txt").write_text("Git commit: original-training-sha\n")
+    # Regression: training completed with no environment.txt; recovery must not fail.
     result=recovery(out,weights,Path("."))
     assert result["original_training_finished_epochs"]==50
     assert result["figure_count"]==28
@@ -69,5 +69,9 @@ def test_recover_all_50_epoch_evidence_without_any_training(tmp_path):
     assert result["pca_diagnostics"]["vit"]["status"]=="zero_variance"
     assert abs(result["validation_performance_from_frozen_probabilities"]["macro_f1"]-1.0)<1e-9
     assert (out/"figures"/"27_pca_vit.svg").is_file()
-    assert result["original_training_source_git_sha"]=="original-training-sha"
+    assert result["original_training_source_git_sha"] is None
+    assert result["original_training_environment_available"] is False
+    rec_env=json.loads((out/"recovery_environment.json").read_text())
+    assert rec_env["capture_scope"]=="RECOVERY_PROCESS_ONLY_NOT_ORIGINAL_TRAINING"
+    assert rec_env["original_training_git_sha_verified"] is None
     assert len(result["heavyweight_files"])==5
