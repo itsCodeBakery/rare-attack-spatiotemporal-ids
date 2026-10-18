@@ -218,6 +218,19 @@ def main(args):
         raise ValueError("Source dataset SHA-256 mismatches verified manifest")
     out.mkdir(parents=True,exist_ok=True);weights.mkdir(parents=True,exist_ok=True)
     save_json(config,out/"config_effective.json")
+    # Full resolved environment, preserving dependency details for later figure edits.
+    try:
+        freeze=subprocess.check_output(
+            [os.sys.executable,"-m","pip","freeze"],
+            text=True,stderr=subprocess.DEVNULL,timeout=90)
+    except (OSError,subprocess.CalledProcessError,subprocess.TimeoutExpired):
+        freeze="DEPENDENCY FREEZE UNAVAILABLE; see artifact_manifest.json"
+    (out/"environment.txt").write_text(
+        "Python: "+platform.python_version()+"\n"
+        "PyTorch: "+str(torch.__version__)+"\n"
+        "CUDA build: "+str(torch.version.cuda)+"\n"
+        "Git commit: "+source_git()+"\n\n"
+        "=== pip freeze ===\n"+freeze,encoding="utf-8")
     frame=pd.read_csv(dataset_path,low_memory=False)
     if len(frame)!=175341 or frame.shape[1]!=45:
         raise ValueError("Designated training partition has unexpected size/schema")
@@ -365,6 +378,8 @@ def main(args):
         "out_of_range_feature_values":{"train":int(train_out),"validation":int(val_out)},
         "software":{"python":platform.python_version(),"torch":torch.__version__,
                     "numpy":np.__version__,"pandas":pd.__version__,
+                    "scikit_learn":__import__("sklearn").__version__,
+                    "matplotlib":__import__("matplotlib").__version__,
                     "cuda":torch.version.cuda},
         "gpu":{"name":torch.cuda.get_device_name(device),
                "max_memory_allocated_mb":float(torch.cuda.max_memory_allocated(device)/1048576)},
