@@ -169,6 +169,20 @@ def main(repo,config_path,out,weights):
     imgs_tr,y_tr,imgs_va,y_va,classes,lineage=prepare(cfg,reference)
     save_json(out/"config_effective.json",cfg)
     save_json(out/"data_lineage.json",lineage)
+    # Freeze package versions during ORIGINAL new control training, not after recovery.
+    try:
+        freeze=subprocess.check_output(
+            [os.sys.executable,"-m","pip","freeze"],
+            text=True,stderr=subprocess.DEVNULL,timeout=90)
+    except (OSError,subprocess.CalledProcessError,subprocess.TimeoutExpired):
+        freeze="pip freeze unavailable"
+    (out/"training_environment.txt").write_text(
+        "Capture scope: ORIGINAL CTRL-VIT-001-S42 training\\n"
+        + "Python: "+platform.python_version()+"\\n"
+        + "Torch: "+str(torch.__version__)+"\\n"
+        + "CUDA: "+str(torch.version.cuda)+"\\n"
+        + "Git commit: "+git_head(repo)+"\\n\\n"
+        + freeze+"\\n",encoding="utf-8")
     (out/"source_code_commit.txt").write_text(git_head(repo)+"\n")
     tr_set=TensorDataset(torch.from_numpy(imgs_tr),torch.from_numpy(y_tr))
     va_set=TensorDataset(torch.from_numpy(imgs_va),torch.from_numpy(y_va))
