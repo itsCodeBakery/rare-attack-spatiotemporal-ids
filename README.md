@@ -64,9 +64,9 @@ Experiments will run on **Kaggle** using a declared dataset source and GPU type.
 
 ## Research status
 
-**Phase 1 — official-split dataset audit verified and synced.** Kaggle manifests confirm the official class distributions, SHA-256 file hashes, 175,341 train / 82,332 test records and 42 features. The Kaggle mirror's filenames are reversed. **Phase 2 — exact-value feature-overlap and label-consistency audit prepared, awaiting execution.** No model has been trained.
+**Phases 1–2 — official dataset and exact-feature-overlap audits verified and synchronized.** Dataset roles and all source hashes are recorded. The official test partition contains 8,541 records whose 42-feature tuples also occur in training, and 4,294 of those records lack any matching training label tuple. These are data-quality findings, not model results. **Phase 3 — tabular CatBoost group-disjoint validation prepared.** No model has been trained yet.
 
-**Next gate:** execute [02_exact_overlap_audit.ipynb](notebooks/02_exact_overlap_audit.ipynb) in Kaggle and synchronize its aggregate SHA-256 equality/label-consistency report. Do not create temporal windows or start SCV-IDS training until overlap and temporal-order limitations are documented. The [Step 3 source audit](data/manifests/unsw_nb15/audit_summary.json) remains immutable evidence of the original Kaggle partition mapping.
+**Next gate:** run [Notebook 03 — group-disjoint CatBoost validation](notebooks/03_catboost_groupval.ipynb) on Kaggle GPU and synchronize aggregate validation outputs. This trains **only on the official training partition** and never uses official test predictions. See the [audited overlap findings](docs/EXACT_OVERLAP_FINDINGS.md), [locked evaluation protocol](docs/EVALUATION_PROTOCOL_V1.md) and [open integrity tracking issue](https://github.com/itsCodeBakery/rare-attack-spatiotemporal-ids/issues/1).
 
 ## Citation and rights
 

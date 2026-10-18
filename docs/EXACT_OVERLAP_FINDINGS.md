@@ -4,8 +4,8 @@
 
 ## Provenance
 
-- Source: Kaggle user-provided mirror \`primus11/unsw-nb15-dataset\`.
-- Original file names reverse the officially designated roles: \`unsw_test.csv\` = **175,341 training records**, \`unsw_train.csv\` = **82,332 testing records**.
+- Source: Kaggle user-provided mirror `primus11/unsw-nb15-dataset`.
+- Original file names reverse the officially designated roles: `unsw_test.csv` = **175,341 training records**, `unsw_train.csv` = **82,332 testing records**.
 - The SHA-256 file hashes and all ten class distributions matched the official benchmark definitions.
 - [Initial synchronized audit](../data/manifests/unsw_nb15/audit_summary.json)
 - [Exact-value overlap audit](../data/manifests/unsw_nb15/exact_overlap/overlap_summary.json) and [per-class table](../data/manifests/unsw_nb15/exact_overlap/per_class_overlap.csv)
@@ -13,7 +13,7 @@
 
 ## What was compared?
 
-SHA-256 digests were computed from **type-preserving canonical JSON of all 42 parsed feature values** in their column order. The \`id\`, \`attack_cat\`, and \`label\` columns were excluded from feature signatures. Individual traffic rows and digests were **not** published.
+SHA-256 digests were computed from **type-preserving canonical JSON of all 42 parsed feature values** in their column order. The `id`, `attack_cat`, and `label` columns were excluded from feature signatures. Individual traffic rows and digests were **not** published.
 
 This verifies equality of *parsed feature tuples* and is **not** evidence that equal-valued examples came from the same captured network event. There are no reliable timestamps/session IDs in the distributed CSV feature schema.
 
@@ -70,4 +70,4 @@ See the full CSV for all ten classes and both splits.
 
 ## Next experimental gate
 
-Establish a **single-row, group-disjoint CatBoost benchmark on the official training partition**, with no test-set predictions yet. This is an important non-image control: improved rare-attack scores must ultimately justify the extra image-serialization and attention overhead relative to strong tabular modeling. See notebook \`03_catboost_groupval.ipynb\`.
+Establish a **single-row, group-disjoint CatBoost benchmark on the official training partition**, with no test-set predictions yet. This is an important non-image control: improved rare-attack scores must ultimately justify the extra image-serialization and attention overhead relative to strong tabular modeling. See notebook `03_catboost_groupval.ipynb`.
