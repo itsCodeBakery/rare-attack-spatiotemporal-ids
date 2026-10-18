@@ -1,0 +1,11 @@
+true_class,Analysis,Backdoor,DoS,Exploits,Fuzzers,Generic,Normal,Reconnaissance,Shellcode,Worms
+Analysis,80,1,113,186,0,0,48,0,0,0
+Backdoor,8,43,112,178,2,0,0,3,4,0
+DoS,4,12,879,1551,22,2,3,15,21,0
+Exploits,14,15,882,5424,81,4,56,163,43,2
+Fuzzers,4,1,107,263,2916,0,355,7,26,0
+Generic,0,2,48,134,8,7698,1,1,2,0
+Normal,41,0,3,97,1035,0,9905,8,14,0
+Reconnaissance,0,2,158,305,4,3,2,1641,1,0
+Shellcode,0,0,0,26,24,0,1,8,162,0
+Worms,0,0,0,11,2,0,0,2,1,5
