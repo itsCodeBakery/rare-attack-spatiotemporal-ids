@@ -41,4 +41,10 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 
+# Allow compact research evidence while keeping raw traffic CSV ignored.
+!results/**/*.csv
+!experiments/**/*.csv
+!reports/**/*.csv
+!data/manifests/**/*.csv
+
 # Keep small reports, vector figures, text logs and manifests versioned.
