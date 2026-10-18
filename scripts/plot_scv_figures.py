@@ -5,6 +5,7 @@ Output: figures/{png,svg,pdf} and figure_manifest.json.
 No metrics fabricated; plotting code never accesses the official test partition.
 """
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
@@ -36,7 +37,7 @@ class Gallery:
             "axes.titlesize":12,"axes.labelsize":10,
             "figure.dpi":120,"savefig.dpi":240,
             "axes.spines.top":False,"axes.spines.right":False,
-            "axes.grid":False,"pdf.fonttype":42,"svg.fonttype":"none"
+            "axes.grid":False,"pdf.fonttype":42,"svg.fonttype":"none", "svg.hashsalt":"SCV-IDS-REPRO-001"
         })
 
     def csv(self,name):
@@ -49,8 +50,13 @@ class Gallery:
         fig.tight_layout(pad=1.7)
         for ext in ("png","svg","pdf"):
             dest=self.figdir/(name+"."+ext)
-            fig.savefig(dest,dpi=240,bbox_inches="tight",
-                        metadata={"Creator":"rare-attack-spatiotemporal-ids"} if ext=="pdf" else None)
+            metadata=(
+                {"Creator":"rare-attack-spatiotemporal-ids",
+                 "CreationDate":datetime(2000,1,1,tzinfo=timezone.utc)}
+                if ext=="pdf" else
+                {"Date":"2000-01-01"} if ext=="svg" else None
+            )
+            fig.savefig(dest,dpi=240,bbox_inches="tight",metadata=metadata)
             files.append({"path":str(dest.relative_to(self.root)),"sha256":sha256(dest),"bytes":dest.stat().st_size})
         plt.close(fig)
         self.files.append({"stem":name,"caption":caption,
@@ -252,6 +258,14 @@ class Gallery:
                   "note":"Figures generated from saved data; SCV-IDS author-implementation equivalence not claimed. No official-test predictions."}
         (self.root/"figure_manifest.json").write_text(
             json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
+        # If figures are rebuilt later without model retraining, refresh provenance.
+        evidence_path=self.root/"artifact_manifest.json"
+        if evidence_path.is_file():
+            evidence=json.loads(evidence_path.read_text(encoding="utf-8"))
+            evidence["figure_manifest_sha256"]=sha256(self.root/"figure_manifest.json")
+            evidence["figure_count"]=len(self.files)
+            evidence_path.write_text(json.dumps(evidence,indent=2,sort_keys=True)+"\n",
+                                     encoding="utf-8")
         print(f"Generated {len(self.files)} scientifically defined figures in PNG/SVG/PDF")
         return manifest
 
