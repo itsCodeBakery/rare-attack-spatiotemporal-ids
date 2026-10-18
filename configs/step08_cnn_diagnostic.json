@@ -19,7 +19,7 @@
     "vit_zeroed",
     "both_zeroed"
   ],
-  "output_figure_count": 10,
+  "output_figure_count": 12,
   "plot_formats": [
     "png",
     "svg",
