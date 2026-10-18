@@ -1,0 +1,85 @@
+{
+  "experiment_id": "SCV-IDS-REPRO-001",
+  "stage": "training_only_validation",
+  "paper": "Chen et al., SCV-IDS, IEEE Internet of Things Journal 2026, DOI 10.1109/JIOT.2026.3695912",
+  "official_training_csv": "/kaggle/input/datasets/dsshayan/unsw-nb15/UNSW_NB15_training-set.csv",
+  "official_training_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "official_test_csv": "DO_NOT_READ_DURING_THIS_EXPERIMENT",
+  "official_test_sha256_reference_only": "734fe6642edf758f7c94d7d9149426b49d202fe8e7bf0bef47392489c3c0a559",
+  "seed": 42,
+  "validation": {
+    "method": "StratifiedGroupKFold",
+    "n_splits": 5,
+    "selected_rule": "closest to 20% validation among folds retaining all ten classes",
+    "same_feature_signature_both_sides": false
+  },
+  "preprocessing": {
+    "categorical_encoding": "train-only index encoding",
+    "normalization": "train-only MinMax",
+    "out_of_range": "clip and count",
+    "image": "16x16x3",
+    "window": 5,
+    "label": "most recent row",
+    "rgb_quantization": "round(x * 16777215), split R,G,B bytes",
+    "num_features": 42
+  },
+  "model": {
+    "cnn_channels": [
+      32,
+      64,
+      128
+    ],
+    "cnn_pooled_grid": [
+      4,
+      4
+    ],
+    "vit_patch_size": 8,
+    "vit_dim": 128,
+    "vit_depth": 4,
+    "vit_heads": 8,
+    "vit_mlp_dim": 256,
+    "cnn_tokens": 16,
+    "vit_fusion_tokens": 4,
+    "fusion": "bidirectional cross-attention; mean token pooling",
+    "classifier_hidden": 128,
+    "dropout": 0.2
+  },
+  "training": {
+    "epochs": 50,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.001,
+    "optimizer": "AdamW",
+    "loss": "multiclass focal, gamma=2.0, alpha=none",
+    "mixed_precision": false,
+    "checkpoint_every": 5,
+    "early_stopping": false,
+    "num_workers": 2,
+    "pin_memory": true
+  },
+  "selection": {
+    "criterion": "max_validation_macro_f1",
+    "tiebreaker": "lowest_validation_loss"
+  },
+  "figure_generation": {
+    "figure_count_planned": 28,
+    "formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "data_dir": "plot_data",
+    "tsne_sample_per_class_max": 120,
+    "tsne_perplexity": 30,
+    "export_predictions_npz_to_github": false
+  },
+  "data_notes": [
+    "CSV row order is NOT validated chronological sequence",
+    "No sample window crosses internal train/validation split",
+    "Only training data used to fit preprocessing",
+    "Publisher-upload files byte identical to prior Kaggle mirror",
+    "Test labels must remain untouched until frozen final evaluation"
+  ],
+  "result_scope": "internal group-disjoint validation, not official test",
+  "baseline_status": "independent paper-aligned reconstruction; not author-code equivalence"
+}
