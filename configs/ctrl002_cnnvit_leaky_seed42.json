@@ -47,5 +47,6 @@
   "comparison_note": "same original train-derived validation indices/labels and nominal budget as V0 and V1; CNN-final-activation-only change versus V0; seed42 single-run",
   "output_model_archive": "private GitHub draft Release separate from V0/V1; no public checkpoint or per-record predictions",
   "time_sequence_caveat": "filtered CSV rows are not verified temporal neighbors",
-  "novelty_claim": "none, controlled repair baseline only"
+  "novelty_claim": "none, controlled repair baseline only",
+  "negative_slope": 0.1
 }
