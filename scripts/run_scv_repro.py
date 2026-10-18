@@ -23,8 +23,6 @@ from sklearn.metrics import (
     f1_score, precision_recall_fscore_support, roc_curve, precision_recall_curve,
     roc_auc_score, average_precision_score
 )
-from sklearn.manifold import TSNE
-from sklearn.preprocessing import StandardScaler
 import torch
 from torch.utils.data import TensorDataset, DataLoader
 
@@ -186,21 +184,12 @@ def metric_plot_sources(out,history,classes,train_targets,val_targets,
     # Keep raw embeddings in persistent Kaggle-only NPZ as independent evidence.
     np.savez_compressed(out/"embedding_vectors.npz",sample_index=sample,
                         y=truth[sample],**embeddings)
-    coords=[]
-    for key in ("raw","cnn","vit","fused"):
-        input_emb=embeddings[key]
-        if len(input_emb)<10: continue
-        scaled=StandardScaler().fit_transform(input_emb)
-        projected=TSNE(n_components=2,
-                       perplexity=min(config["figure_generation"]["tsne_perplexity"],
-                                      (len(input_emb)-1)/3),
-                       random_state=config["seed"],init="pca",
-                       learning_rate="auto").fit_transform(scaled)
-        for row,j in enumerate(sample):
-            coords.append({"representation":key,"class":classes[int(truth[j])],
-                           "sample_id":int(j),"x":float(projected[row,0]),
-                           "y":float(projected[row,1])})
-    pd.DataFrame(coords).to_csv(plot/"embedding_coordinates.csv",index=False)
+    # The original run used scikit-learn t-SNE and crashed after saving
+    # embedding_vectors.npz on a degenerate feature map. Do not silently
+    # retry that native implementation; use deterministic variance-safe PCA.
+    from rareids.safe_projection import project_saved_embeddings
+    project_saved_embeddings(out/"embedding_vectors.npz",
+                             plot/"embedding_coordinates.csv",classes)
     return class_df,cm,float(ece),auc_info
 
 def main(args):
