@@ -1,0 +1,50 @@
+{
+  "candidates": [
+    {
+      "early_stopping_rounds": 80,
+      "id": "lgbm_unweighted",
+      "learning_rate": 0.06,
+      "max_depth": -1,
+      "min_data_in_leaf": 60,
+      "num_boost_round": 700,
+      "num_leaves": 63,
+      "weight_power": 0
+    },
+    {
+      "early_stopping_rounds": 80,
+      "id": "lgbm_rare_sqrt",
+      "learning_rate": 0.06,
+      "max_class_weight": 12,
+      "max_depth": -1,
+      "min_data_in_leaf": 60,
+      "num_boost_round": 850,
+      "num_leaves": 63,
+      "weight_power": 0.5
+    }
+  ],
+  "categorical_columns": [
+    "proto",
+    "service",
+    "state"
+  ],
+  "comparison_scope": "training-derived validation on exact same original 35005 targets; single-seed exploratory screen only",
+  "do_not_claim": "No 2026 SCV-IDS author model equivalence; no official test outperformance; no guaranteed score",
+  "experiment_id": "CTRL-TAB-001-S42",
+  "features": 42,
+  "metric": "ten-class macro F1",
+  "no_external_dataset": true,
+  "objective": "multiclass",
+  "official_test": "FORBIDDEN",
+  "preservation": "save per-model predictions and trained lightgbm text checkpoints in Kaggle output, sha256-verified; public GitHub sync later aggregate only",
+  "purpose": "FAST COMPETITIVE TABULAR IDS BASELINE, not a novel proposed method",
+  "reference_experiment": "SCV-IDS-REPRO-001",
+  "reference_pred_sha256": "54f6aa6cb50c3c6a1533623e1c7b619f38dfa7ccbac8ce03cb9392e13e617612",
+  "reference_split_sha256": "01f6070e836317b09ba5f8ef662dba748ec19f9b7f6e211e4a5215d35bc4409c",
+  "seed": 42,
+  "target_window": 5,
+  "train_csv": "/kaggle/input/datasets/dsshayan/unsw-nb15/UNSW_NB15_training-set.csv",
+  "train_csv_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "train_target_rows": 140328,
+  "validation_selection": "early-stopping and model ranking on internal validation; no unbiased result asserted",
+  "validation_target_rows": 35005
+}

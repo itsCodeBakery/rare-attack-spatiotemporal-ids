@@ -1,0 +1,31 @@
+{
+  "Backdoor_to_Exploits": 42,
+  "DoS_to_Exploits": 431,
+  "accuracy": 0.8071418368804456,
+  "balanced_accuracy": 0.6559305747297249,
+  "best_iteration": 58,
+  "checkpoint_sha256": "e9b5430eb5d45560fab711ca2ac154e416222e66eef71d771d801e2377c00c33",
+  "class_weights": [
+    5.343720006835162,
+    5.670577054063766,
+    2.145143394862161,
+    1.29640635499381,
+    1.759183320909649,
+    1.1824338791354796,
+    1.0,
+    2.3151415932972492,
+    7.01572481906482,
+    12.0
+  ],
+  "correct": 28254,
+  "count": 35005,
+  "delta_f1_vs_reconstructed_scv": 0.07802695056418862,
+  "delta_f1_vs_vit_only": 0.06228139643485342,
+  "feature_count": 42,
+  "fit_elapsed_seconds": 23.36,
+  "internal_validation_only": true,
+  "macro_f1": 0.6366908581786823,
+  "model_id": "lgbm_rare_sqrt",
+  "private_predictions_sha256": "4c8cd22a09bf0cd2b188aa400e45210b92d316237088885d4f4f0c95f3d181bb",
+  "weighted_f1": 0.8173268163849339
+}

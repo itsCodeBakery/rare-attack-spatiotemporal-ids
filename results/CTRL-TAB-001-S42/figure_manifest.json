@@ -1,0 +1,96 @@
+{
+  "experiment_id": "CTRL-TAB-001-S42",
+  "exports": [
+    {
+      "bytes": 91588,
+      "file": "figures/01_macro_f1_comparison.png",
+      "sha256": "4539d348281294e244d1a78cb04fcbb4867a9c43bf42f77105d3402106435bdf",
+      "source": "aggregate_model_scores.csv"
+    },
+    {
+      "bytes": 9811,
+      "file": "figures/01_macro_f1_comparison.svg",
+      "sha256": "ab1d2a7640b7e4b3273887993c3b3cc3da016f62ad3030c12215eb4b578d5a7a",
+      "source": "aggregate_model_scores.csv"
+    },
+    {
+      "bytes": 13094,
+      "file": "figures/01_macro_f1_comparison.pdf",
+      "sha256": "7d96ac4fa02346134632b6766e9bbc376304f9282367688e0766813e248b9500",
+      "source": "aggregate_model_scores.csv"
+    },
+    {
+      "bytes": 78687,
+      "file": "figures/02_lgbm_unweighted_per_class_f1.png",
+      "sha256": "dc659cfda73a1ebc489ab76046abca6243819d3c546d81469f8c1f9710f33495",
+      "source": "lgbm_unweighted/per_class.csv"
+    },
+    {
+      "bytes": 13606,
+      "file": "figures/02_lgbm_unweighted_per_class_f1.svg",
+      "sha256": "1dc66897ec63c47580b209fffb177c3049f032f43e4dda7361837c28fc20efa1",
+      "source": "lgbm_unweighted/per_class.csv"
+    },
+    {
+      "bytes": 14459,
+      "file": "figures/02_lgbm_unweighted_per_class_f1.pdf",
+      "sha256": "7e5dbb1f7bcb1a66443481cf29b1e41f1c939a7981f44ec15e8461e6f2ba4b36",
+      "source": "lgbm_unweighted/per_class.csv"
+    },
+    {
+      "bytes": 151343,
+      "file": "figures/03_lgbm_unweighted_confusion.png",
+      "sha256": "5ba060eb075fb0a5605acc2b1c9b7c28ce87cbd91875bddf2d4c7f399be89cdb",
+      "source": "lgbm_unweighted/confusion.csv"
+    },
+    {
+      "bytes": 33385,
+      "file": "figures/03_lgbm_unweighted_confusion.svg",
+      "sha256": "fa87f58dc73a9e25225b92daff60846494108eab6b268a52b46e79fc383f3a87",
+      "source": "lgbm_unweighted/confusion.csv"
+    },
+    {
+      "bytes": 27027,
+      "file": "figures/03_lgbm_unweighted_confusion.pdf",
+      "sha256": "b5958096cdb325309eba7bcd04d6805cc380149542df03ff39ea9a8bd72e6947",
+      "source": "lgbm_unweighted/confusion.csv"
+    },
+    {
+      "bytes": 76689,
+      "file": "figures/02_lgbm_rare_sqrt_per_class_f1.png",
+      "sha256": "25f2f40e815b9e3c2f8ff1da1a57bb14ab092b64e2de69284a16ca3740fbfaf9",
+      "source": "lgbm_rare_sqrt/per_class.csv"
+    },
+    {
+      "bytes": 13609,
+      "file": "figures/02_lgbm_rare_sqrt_per_class_f1.svg",
+      "sha256": "324322097687a131c898e29408167ded17920154c8097e625828f25834e723cf",
+      "source": "lgbm_rare_sqrt/per_class.csv"
+    },
+    {
+      "bytes": 14165,
+      "file": "figures/02_lgbm_rare_sqrt_per_class_f1.pdf",
+      "sha256": "aeb9d420520d81efac7fd560c6c21a5dc38a44ec5d708804d9073511396d5445",
+      "source": "lgbm_rare_sqrt/per_class.csv"
+    },
+    {
+      "bytes": 150220,
+      "file": "figures/03_lgbm_rare_sqrt_confusion.png",
+      "sha256": "3932e4eb78bbadf0091dc64f485a8e953393ab36a329d0b17e2f701f601a25c8",
+      "source": "lgbm_rare_sqrt/confusion.csv"
+    },
+    {
+      "bytes": 33360,
+      "file": "figures/03_lgbm_rare_sqrt_confusion.svg",
+      "sha256": "0615c5307ac0b6053cd2972aac6b1ced0a580c52d47d405603c5a2435d24f8a3",
+      "source": "lgbm_rare_sqrt/confusion.csv"
+    },
+    {
+      "bytes": 26884,
+      "file": "figures/03_lgbm_rare_sqrt_confusion.pdf",
+      "sha256": "e93bf9ca15390f642eef9ded1f289ad249b31b50d7aba239cad306487f6a371c",
+      "source": "lgbm_rare_sqrt/confusion.csv"
+    }
+  ],
+  "note": "Observed classification metrics only; no synthetic result plot values."
+}

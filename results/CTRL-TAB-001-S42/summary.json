@@ -1,0 +1,77 @@
+{
+  "best_internal_validation_macro_f1": 0.6366908581786823,
+  "best_internal_validation_model": "lgbm_rare_sqrt",
+  "comparison_warning": "Single seed; models selected using internal validation; no official test or published-paper superiority claims.",
+  "experiment_id": "CTRL-TAB-001-S42",
+  "model_results": {
+    "lgbm_rare_sqrt": {
+      "metrics": {
+        "Backdoor_to_Exploits": 42,
+        "DoS_to_Exploits": 431,
+        "accuracy": 0.8071418368804456,
+        "balanced_accuracy": 0.6559305747297249,
+        "best_iteration": 58,
+        "checkpoint_sha256": "e9b5430eb5d45560fab711ca2ac154e416222e66eef71d771d801e2377c00c33",
+        "class_weights": [
+          5.343720006835162,
+          5.670577054063766,
+          2.145143394862161,
+          1.29640635499381,
+          1.759183320909649,
+          1.1824338791354796,
+          1.0,
+          2.3151415932972492,
+          7.01572481906482,
+          12.0
+        ],
+        "correct": 28254,
+        "count": 35005,
+        "delta_f1_vs_reconstructed_scv": 0.07802695056418862,
+        "delta_f1_vs_vit_only": 0.06228139643485342,
+        "feature_count": 42,
+        "fit_elapsed_seconds": 23.36,
+        "internal_validation_only": true,
+        "macro_f1": 0.6366908581786823,
+        "model_id": "lgbm_rare_sqrt",
+        "private_predictions_sha256": "4c8cd22a09bf0cd2b188aa400e45210b92d316237088885d4f4f0c95f3d181bb",
+        "weighted_f1": 0.8173268163849339
+      }
+    },
+    "lgbm_unweighted": {
+      "metrics": {
+        "Backdoor_to_Exploits": 258,
+        "DoS_to_Exploits": 2082,
+        "accuracy": 0.832595343522354,
+        "balanced_accuracy": 0.5757599185613054,
+        "best_iteration": 224,
+        "checkpoint_sha256": "426bc3288edcb9f82f8e7055f0d01446cd4c02e129f1c527900677978ae95aa3",
+        "class_weights": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "correct": 29145,
+        "count": 35005,
+        "delta_f1_vs_reconstructed_scv": 0.043830515571824824,
+        "delta_f1_vs_vit_only": 0.02808496144248962,
+        "feature_count": 42,
+        "fit_elapsed_seconds": 53.69,
+        "internal_validation_only": true,
+        "macro_f1": 0.6024944231863185,
+        "model_id": "lgbm_unweighted",
+        "private_predictions_sha256": "67c81ac6df24acca846bc7871117db66ca8691722fdfb4cb6af4b3b9a7533782",
+        "weighted_f1": 0.8169301170756996
+      }
+    }
+  },
+  "official_test_used": false,
+  "reference_validation_target_count": 35005,
+  "same_original_validation_targets": true
+}

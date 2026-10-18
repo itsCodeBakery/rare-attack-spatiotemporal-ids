@@ -1,0 +1,30 @@
+{
+  "categorical_features": [
+    "proto",
+    "service",
+    "state"
+  ],
+  "class_names": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "exact_train_target_indices_sha256": "30c0398640642c67c509c2a770a2cb76b6d6b689126f7fd7fd7d32f83c209ccc",
+  "exact_validation_target_indices_sha256": "cc3550fed7b2a928bc084206facb2a09ac2ca1db7fd17d53ffe56b7462861e73",
+  "original_saved_predictions_sha256": "54f6aa6cb50c3c6a1533623e1c7b619f38dfa7ccbac8ce03cb9392e13e617612",
+  "original_split_sha256": "01f6070e836317b09ba5f8ef662dba748ec19f9b7f6e211e4a5215d35bc4409c",
+  "raw_feature_count": 42,
+  "source_order_is_not_verified_chronological": true,
+  "test_dataset_accessed": false,
+  "train_source_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "training_target_rows": 140328,
+  "validation_target_rows": 35005,
+  "validation_target_sequence_matches_original": true
+}
