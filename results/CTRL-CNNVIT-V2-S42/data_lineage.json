@@ -1,0 +1,13 @@
+{
+  "development_train_row_count": 140332,
+  "development_validation_row_count": 35009,
+  "frozen_reference_predictions_sha256": "54f6aa6cb50c3c6a1533623e1c7b619f38dfa7ccbac8ce03cb9392e13e617612",
+  "frozen_reference_split_sha256": "01f6070e836317b09ba5f8ef662dba748ec19f9b7f6e211e4a5215d35bc4409c",
+  "row_index_digest": "fef7d2776e772e4a0b52940a63afe5b30bbdf261213beb73506ae9e7d76d67fc",
+  "train_clipped_values": 0,
+  "train_window_count": 140328,
+  "validated_test_access": false,
+  "validation_clipped_values": 6,
+  "validation_window_count": 35005,
+  "window_target_equal_to_original": true
+}

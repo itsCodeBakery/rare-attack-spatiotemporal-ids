@@ -1,0 +1,80 @@
+{
+  "accuracy": 0.8246536209112983,
+  "balanced_accuracy": 0.5358180952147433,
+  "best_epoch": 45,
+  "cnn_best_health": {
+    "activation_health_pass": false,
+    "cnn_constant_token_fraction": 1.0,
+    "cnn_pooled_between_sample_mean_std": 0.0,
+    "cnn_pooled_constant_dimension_fraction": 1.0,
+    "cnn_token_between_sample_mean_std": 0.0,
+    "cnn_token_mean_absolute": 0.003215089971476459,
+    "cnn_token_nonzero_fraction": 1.0,
+    "cnn_zero_mask_changed_prediction_fraction": 0.0,
+    "cnn_zero_mask_mean_logit_l2": 0.0052209684801880485,
+    "health_sample_size": 512,
+    "note": "Predeclared health gate; failed health remains a valid, reported negative result."
+  },
+  "cnn_health_pass": false,
+  "control_vs_original_reference_same_targets": true,
+  "correct": 28867,
+  "ece_15_bins": 0.04554313731064134,
+  "epochs_completed": 50,
+  "experiment_id": "CTRL-CNNVIT-V2-S42",
+  "macro_f1": 0.5524639554162631,
+  "macro_f1_delta_v0": -0.006199952198230552,
+  "macro_f1_delta_v1": -0.021945506327565756,
+  "model_difference": "Only final CNN ReLU -> LeakyReLU(slope=0.1) versus V0",
+  "no_official_test": true,
+  "normal_false_positive_rate": 0.09411870665585878,
+  "original_reference_accuracy": 0.8273960862733896,
+  "original_reference_comparison_note": "Single-seed control comparison; NO significance or journal superiority claim.",
+  "original_reference_macro_f1": 0.5586639076144937,
+  "parameter_count": 878378,
+  "per_class_auc_ap": {
+    "Analysis": {
+      "average_precision": 0.26434391599916507,
+      "roc_auc": 0.9384753897504662
+    },
+    "Backdoor": {
+      "average_precision": 0.13556319761652907,
+      "roc_auc": 0.920057175835274
+    },
+    "DoS": {
+      "average_precision": 0.34856638891276925,
+      "roc_auc": 0.9177666027608341
+    },
+    "Exploits": {
+      "average_precision": 0.8054838106303089,
+      "roc_auc": 0.9506268844537271
+    },
+    "Fuzzers": {
+      "average_precision": 0.8281941818173562,
+      "roc_auc": 0.9704620944087409
+    },
+    "Generic": {
+      "average_precision": 0.9966367438529001,
+      "roc_auc": 0.9985262008320437
+    },
+    "Normal": {
+      "average_precision": 0.9913554500925381,
+      "roc_auc": 0.995474147177561
+    },
+    "Reconnaissance": {
+      "average_precision": 0.8664670264592081,
+      "roc_auc": 0.9791981173312466
+    },
+    "Shellcode": {
+      "average_precision": 0.5479255749404923,
+      "roc_auc": 0.9925164531880263
+    },
+    "Worms": {
+      "average_precision": 0.1430427379217152,
+      "roc_auc": 0.9826328770703341
+    }
+  },
+  "result_scope": "TRAINING-DERIVED ORIGINAL INTERNAL VALIDATION ONLY",
+  "validation_window_count": 35005,
+  "vit_control_macro_f1": 0.5744094617438289,
+  "weighted_f1": 0.8070967281976856
+}

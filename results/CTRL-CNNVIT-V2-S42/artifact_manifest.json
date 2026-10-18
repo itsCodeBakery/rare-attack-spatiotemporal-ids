@@ -1,0 +1,134 @@
+{
+  "activation_health_pass": false,
+  "all_checkpoint_and_private_prediction_files": [
+    {
+      "bytes": 1324824,
+      "path": "/kaggle/working/research_outputs/CTRL-CNNVIT-V2-S42/best_validation_predictions.npz",
+      "sha256": "ec907759928db679e574a2e280d36c4b814716b7b0cc7c2161ad4607ca91bb59"
+    },
+    {
+      "bytes": 1269,
+      "path": "/kaggle/working/research_outputs/CTRL-CNNVIT-V2-S42/health_sample_indices.npz",
+      "sha256": "4b6458de9063536aa6d08e20a8cdbe3db59c08186b7c47c4c39cbf1c56181a54"
+    },
+    {
+      "bytes": 10671771,
+      "path": "/kaggle/working/research_outputs/checkpoints_ctrl_cnnvit_v2_s42/best_val_macro_f1.pt",
+      "sha256": "dac3e98af74a4112f0f02555ba8e814e077022a58676d0d35c409f19266aa4a7"
+    },
+    {
+      "bytes": 10658699,
+      "path": "/kaggle/working/research_outputs/checkpoints_ctrl_cnnvit_v2_s42/epoch_005.pt",
+      "sha256": "b263a71301f9d3debb4c453a3c710dc67c5c530c2f873103b99e9ee86f2c041e"
+    },
+    {
+      "bytes": 10659979,
+      "path": "/kaggle/working/research_outputs/checkpoints_ctrl_cnnvit_v2_s42/epoch_010.pt",
+      "sha256": "fdd62bd7e057dbd4c5ac077ea88509686a1c56fdfaa71eb9a0e344b763aa7bd1"
+    },
+    {
+      "bytes": 10661323,
+      "path": "/kaggle/working/research_outputs/checkpoints_ctrl_cnnvit_v2_s42/epoch_015.pt",
+      "sha256": "8311576d1b04626b6f6d13e51a5a97698ae8ff41d9c0c32b5dedb23527a00da4"
+    },
+    {
+      "bytes": 10662603,
+      "path": "/kaggle/working/research_outputs/checkpoints_ctrl_cnnvit_v2_s42/epoch_020.pt",
+      "sha256": "ba8b42b00b90bb04d771287de0dfcfe107c602bbf75d6f94dfdc1f17ca39520f"
+    },
+    {
+      "bytes": 10663883,
+      "path": "/kaggle/working/research_outputs/checkpoints_ctrl_cnnvit_v2_s42/epoch_025.pt",
+      "sha256": "3443b571d43ecc59f35ffca5752b737e450376035aae8bd75218e7d286d45fde"
+    },
+    {
+      "bytes": 10665227,
+      "path": "/kaggle/working/research_outputs/checkpoints_ctrl_cnnvit_v2_s42/epoch_030.pt",
+      "sha256": "77a650468f481b7b04a1caef2e92e665b089aa96e2776f9b9836af4baaaa7ab3"
+    },
+    {
+      "bytes": 10666507,
+      "path": "/kaggle/working/research_outputs/checkpoints_ctrl_cnnvit_v2_s42/epoch_035.pt",
+      "sha256": "fcf44bf7c91c742053913d3997d62acd54d89387ff9f240e2183acf978b07e49"
+    },
+    {
+      "bytes": 10667851,
+      "path": "/kaggle/working/research_outputs/checkpoints_ctrl_cnnvit_v2_s42/epoch_040.pt",
+      "sha256": "3ee081ed8ae54b93b5c33b9daf850e6a23921d9aa708d2002f11755b0eed7f9d"
+    },
+    {
+      "bytes": 10669131,
+      "path": "/kaggle/working/research_outputs/checkpoints_ctrl_cnnvit_v2_s42/epoch_045.pt",
+      "sha256": "0d1ed1a8eb88afe7d3783028ab4d4e100219eba02d390834eeed7865b6340f97"
+    },
+    {
+      "bytes": 10670411,
+      "path": "/kaggle/working/research_outputs/checkpoints_ctrl_cnnvit_v2_s42/epoch_050.pt",
+      "sha256": "451a00f405457810ca20a984b7459b2aa11d9fa3d30005bbc93c68526326f899"
+    },
+    {
+      "bytes": 10671071,
+      "path": "/kaggle/working/research_outputs/checkpoints_ctrl_cnnvit_v2_s42/last_resume.pt",
+      "sha256": "9702db0843b8d8d187f61f4c83df5dfb1d6962603a26bb211132d2c42e40e869"
+    }
+  ],
+  "control_best_predictions_sha256": "ec907759928db679e574a2e280d36c4b814716b7b0cc7c2161ad4607ca91bb59",
+  "experiment_id": "CTRL-CNNVIT-V2-S42",
+  "figure_count": 18,
+  "figure_exports": 54,
+  "figure_manifest_sha256": "3967e3d2f20514a35dc0afa6eeeb7ae7f4885f1698f39c744898fdc82e7dafb9",
+  "frozen_original_split_sha256": "01f6070e836317b09ba5f8ef662dba748ec19f9b7f6e211e4a5215d35bc4409c",
+  "health_summary_sha256": "9811c8bea951eb11dbd2eea532880f9c89a6d5c0f68437691dae044e383d957a",
+  "numeric_sources": [
+    {
+      "bytes": 448,
+      "path": "/kaggle/working/research_outputs/CTRL-CNNVIT-V2-S42/plot_data/confusion_matrix.csv",
+      "sha256": "b97cbfec9c14f1ce1b884e1f17c2d5f736ddad051b66345a75336c244f5f7c3c"
+    },
+    {
+      "bytes": 261941,
+      "path": "/kaggle/working/research_outputs/CTRL-CNNVIT-V2-S42/plot_data/curves.csv",
+      "sha256": "8fdd7207b3e7c76e5721a7d924ce23d62be6c728f98ec82b4d1120e6b1f782e4"
+    },
+    {
+      "bytes": 3896,
+      "path": "/kaggle/working/research_outputs/CTRL-CNNVIT-V2-S42/plot_data/health_history.csv",
+      "sha256": "43e9ba199faaabb4530275ef1aa57f100b4698ee62296d7ec85edc6ddc6d41d8"
+    },
+    {
+      "bytes": 713,
+      "path": "/kaggle/working/research_outputs/CTRL-CNNVIT-V2-S42/plot_data/per_class.csv",
+      "sha256": "8675d2df745587e6c7e5fb5c3f4d06bf9ceca6bbbfed6c7e59614cb0b59f619f"
+    },
+    {
+      "bytes": 537,
+      "path": "/kaggle/working/research_outputs/CTRL-CNNVIT-V2-S42/plot_data/prediction_proportions.csv",
+      "sha256": "fec4f94f4639d6470e0d97a6c83b730948ef39c3bffe10777003ad04fb66c5d5"
+    },
+    {
+      "bytes": 555,
+      "path": "/kaggle/working/research_outputs/CTRL-CNNVIT-V2-S42/plot_data/reliability.csv",
+      "sha256": "5b4b51afe86364ff4c494e646ae1c8fbfbfd169675631996b79134f43b130e5a"
+    },
+    {
+      "bytes": 222,
+      "path": "/kaggle/working/research_outputs/CTRL-CNNVIT-V2-S42/plot_data/split_support.csv",
+      "sha256": "edbe1c40384d812ead0c411d3c7205b9af1be82f66e19432ba7160c3d30cd19f"
+    },
+    {
+      "bytes": 11641,
+      "path": "/kaggle/working/research_outputs/CTRL-CNNVIT-V2-S42/plot_data/training_history.csv",
+      "sha256": "dce42218e5147cd859f9591ac7e7450c0d5a72350152025e810bd2e5bfb86791"
+    }
+  ],
+  "official_test_used": false,
+  "original_reference_predictions_sha256": "54f6aa6cb50c3c6a1533623e1c7b619f38dfa7ccbac8ce03cb9392e13e617612",
+  "reference_original_train_source_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "software_finalization": {
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "python": "3.13.15"
+  },
+  "source_training_commit": "5b48696d24d59a179df7a8bed83ba22dd7f2ba63",
+  "warning": "Binary checkpoints and individual prediction rows NOT synced publicly. Save a Kaggle version and archive separately."
+}

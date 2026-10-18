@@ -1,0 +1,13 @@
+{
+  "activation_health_pass": false,
+  "cnn_constant_token_fraction": 1.0,
+  "cnn_pooled_between_sample_mean_std": 0.0,
+  "cnn_pooled_constant_dimension_fraction": 1.0,
+  "cnn_token_between_sample_mean_std": 0.0,
+  "cnn_token_mean_absolute": 0.003215089971476459,
+  "cnn_token_nonzero_fraction": 1.0,
+  "cnn_zero_mask_changed_prediction_fraction": 0.0,
+  "cnn_zero_mask_mean_logit_l2": 0.0052209684801880485,
+  "health_sample_size": 512,
+  "note": "Predeclared health gate; failed health remains a valid, reported negative result."
+}

@@ -1,0 +1,37 @@
+{
+  "activation_health_pass": false,
+  "best_checkpoint_epoch": 45,
+  "best_cnn_health": {
+    "cnn_constant_token_fraction": 1.0,
+    "cnn_pooled_between_sample_mean_std": 0.0,
+    "cnn_pooled_constant_dimension_fraction": 1.0,
+    "cnn_token_between_sample_mean_std": 0.0,
+    "cnn_token_mean_absolute": 0.003215089971476459,
+    "cnn_token_nonzero_fraction": 1.0,
+    "cnn_zero_mask_changed_prediction_fraction": 0.0,
+    "cnn_zero_mask_mean_logit_l2": 0.0052209684801880485,
+    "health_sample_size": 512
+  },
+  "best_macro_f1": 0.5524639554162631,
+  "checkpoint_sha256": "dac3e98af74a4112f0f02555ba8e814e077022a58676d0d35c409f19266aa4a7",
+  "class_names": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "completed": true,
+  "epochs": 50,
+  "note": "Minimal CNN activation-only engineering control, single seed; official test locked",
+  "official_test_used": false,
+  "parameter_count": 878378,
+  "predictions_sha256": "ec907759928db679e574a2e280d36c4b814716b7b0cc7c2161ad4607ca91bb59",
+  "train_windows": 140328,
+  "validation_windows": 35005
+}
