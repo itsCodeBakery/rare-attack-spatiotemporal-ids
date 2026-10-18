@@ -234,20 +234,30 @@ class Gallery:
             self.store("23_roc_ovr" if kind=="roc" else "24_pr_ovr",fig,
                        ["roc_pr_curves.csv"],"Validation one-vs-rest "+name+"; plotted points downsampled for SVG clarity")
 
-        # 25–28 stratified t-SNE from saved coordinates (reproducible without rerunning model)
+        # 25-28 frozen PCA projections; no embedding optimizer or retraining.
         for i,view in enumerate(("raw","cnn","vit","fused"),start=25):
             subset=coordinates[coordinates["representation"]==view]
-            if subset.empty: continue
+            if subset.empty: raise ValueError("Missing frozen embedding projection: "+view)
+            if "projection" in subset and not subset["projection"].eq("PCA").all():
+                raise ValueError("Projection labels are inconsistent for "+view)
+            status=(subset["projection_status"].iloc[0]
+                    if "projection_status" in subset else "ok")
             fig,ax=plt.subplots(figsize=(8,6.6))
-            for name,color in zip(classes,colors):
-                cls_subset=subset[subset["class"]==name]
-                ax.scatter(cls_subset["x"],cls_subset["y"],s=12,alpha=.75,
-                           color=color,label=name,linewidths=0)
-            ax.set_xlabel("t-SNE dimension 1");ax.set_ylabel("t-SNE dimension 2")
-            ax.set_title("Stratified validation t-SNE — "+view.upper())
-            ax.legend(fontsize=7,frameon=False,ncol=2)
-            self.store(f"{i:02d}_tsne_{view}",fig,["embedding_coordinates.csv"],
-                       "Exploratory t-SNE; no global-distance interpretation")
+            if status=="zero_variance":
+                ax.text(.5,.5,"No informative feature variance\\n"
+                             "All sampled embeddings are identical.",
+                             transform=ax.transAxes,ha="center",va="center",fontsize=11)
+                ax.set_xlim(0,1);ax.set_ylim(0,1)
+            else:
+                for name,color in zip(classes,colors):
+                    cls_subset=subset[subset["class"]==name]
+                    ax.scatter(cls_subset["x"],cls_subset["y"],s=12,alpha=.75,
+                               color=color,label=name,linewidths=0)
+                ax.legend(fontsize=7,frameon=False,ncol=2)
+            ax.set_xlabel("PCA component 1");ax.set_ylabel("PCA component 2")
+            ax.set_title("Stratified validation PCA — "+view.upper())
+            self.store(f"{i:02d}_pca_{view}",fig,["embedding_coordinates.csv"],
+                       "Exploratory PCA from frozen validation embeddings; "+status)
 
         manifest={"status":"generated_from_observed_sources",
                   "figure_count":len(self.files),
