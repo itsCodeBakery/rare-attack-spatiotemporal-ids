@@ -66,9 +66,12 @@ def plot_run(folder):
         old["plots"].append({"name":stem,"caption":title,
                              "sources":["plot_data/health_history.csv"],
                              "exports":outs})
-    old["plot_sources"].append({"file":"plot_data/health_history.csv",
-                               "sha256":sha(health_file),
-                               "bytes":health_file.stat().st_size})
+    # The shared base renderer already discovers all CSV files, including
+    # health_history.csv. Do not duplicate its source manifest entry.
+    health_entries=[x for x in old["plot_sources"]
+                    if x["file"]=="plot_data/health_history.csv"]
+    if len(health_entries)!=1 or health_entries[0]["sha256"]!=sha(health_file):
+        raise ValueError("Health-plot source must appear once with the true SHA-256")
     old["figure_count"]=len(old["plots"])
     if old["figure_count"]!=18:raise AssertionError("Must produce 18 figures")
     (folder/"figure_manifest.json").write_text(
