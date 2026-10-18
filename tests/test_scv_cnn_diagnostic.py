@@ -73,3 +73,12 @@ def test_diag_source_forbids_model_fitting_and_official_test():
     assert "optimizer.step(" not in text
     assert "loss.backward(" not in text
     assert "validation_predictions.npz" in text
+
+
+def test_diagnostic_provenance_helper_defined():
+    import ast
+    tree=ast.parse(Path("scripts/run_scv_cnn_diagnostic.py").read_text())
+    defined={node.name for node in tree.body if isinstance(node,ast.FunctionDef)}
+    assert "source_sha" in defined
+    assert "run" in defined
+    assert "sha" in defined
