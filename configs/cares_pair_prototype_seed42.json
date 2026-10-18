@@ -55,5 +55,8 @@
   "original_training_only": true,
   "official_test": "FORBIDDEN",
   "novelty_not_verified": true,
-  "warning": "Pairs were chosen from development-validation confusion; this is exploratory, not unbiased official-test evidence."
+  "warning": "Pairs were chosen from development-validation confusion; this is exploratory, not unbiased official-test evidence.",
+  "parent_macro_f1_internal": 0.6366908581786823,
+  "parent_model_sha256": "e9b5430eb5d45560fab711ca2ac154e416222e66eef71d771d801e2377c00c33",
+  "parent_probabilities_sha256": "4c8cd22a09bf0cd2b188aa400e45210b92d316237088885d4f4f0c95f3d181bb"
 }
