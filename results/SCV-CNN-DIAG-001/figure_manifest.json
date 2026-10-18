@@ -1,0 +1,347 @@
+{
+  "experiment_id": "SCV-CNN-DIAG-001",
+  "figure_count": 12,
+  "formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "notes": "Figures generated solely from observed, frozen-checkpoint aggregate CSVs.",
+  "plots": [
+    {
+      "caption": "CNN stage variation between sampled validation images",
+      "exports": [
+        {
+          "bytes": 79217,
+          "path": "figures/01_layer_between_image_std.png",
+          "sha256": "9e29eec00a94a5e56230e109afbb312338c9e296e89b7c309e442b07a51d607a"
+        },
+        {
+          "bytes": 16609,
+          "path": "figures/01_layer_between_image_std.svg",
+          "sha256": "67bde96a47df2ef895dff93539cb4dd7150657b4a670eb51ca941f4b8ec820ff"
+        },
+        {
+          "bytes": 12382,
+          "path": "figures/01_layer_between_image_std.pdf",
+          "sha256": "a8f03bab5dae0db4c2a41adfefdcad71300c025a1f52a02b2852bc6f7219ecf6"
+        }
+      ],
+      "source_files": [
+        "layer_statistics.csv"
+      ],
+      "stem": "01_layer_between_image_std"
+    },
+    {
+      "caption": "CNN layer fraction of exact zeros",
+      "exports": [
+        {
+          "bytes": 58543,
+          "path": "figures/02_layer_zero_fraction.png",
+          "sha256": "5ba683575afaa12b6c5b763fb5ce6997bfce654960047e82ba8b78ca30334cc9"
+        },
+        {
+          "bytes": 12251,
+          "path": "figures/02_layer_zero_fraction.svg",
+          "sha256": "61a288d45ad1d84e48316f45d2ef255ab26dc82887b53bdaddd5470c6145cd30"
+        },
+        {
+          "bytes": 12218,
+          "path": "figures/02_layer_zero_fraction.pdf",
+          "sha256": "caa82773471b6a1c72dfb27010226c6d60e8482b3963f134309a8f698104987a"
+        }
+      ],
+      "source_files": [
+        "layer_statistics.csv"
+      ],
+      "stem": "02_layer_zero_fraction"
+    },
+    {
+      "caption": "Fraction of constant CNN channels by layer",
+      "exports": [
+        {
+          "bytes": 61133,
+          "path": "figures/03_layer_constant_fraction.png",
+          "sha256": "c5e8d2d2b3447378e87668f50b7f318263ad9a1a275e471b2cdeda4d82b1a027"
+        },
+        {
+          "bytes": 12274,
+          "path": "figures/03_layer_constant_fraction.svg",
+          "sha256": "5ae203eb5ed6369751a3e5d28df9d79d5e01e6b91133f4c3cbbc84565ddd80b8"
+        },
+        {
+          "bytes": 12193,
+          "path": "figures/03_layer_constant_fraction.pdf",
+          "sha256": "b2faab7a5c6cdf887116bd98a24976ef4fbaf79c441be877dd8d47c3d8810cf8"
+        }
+      ],
+      "source_files": [
+        "layer_statistics.csv"
+      ],
+      "stem": "03_layer_constant_fraction"
+    },
+    {
+      "caption": "CNN within-image spatial variation",
+      "exports": [
+        {
+          "bytes": 66104,
+          "path": "figures/04_layer_spatial_std.png",
+          "sha256": "edf0855bb99b7edb8cf0bd03157dd74c3273d4d116face1ae928b67c65c570fe"
+        },
+        {
+          "bytes": 17343,
+          "path": "figures/04_layer_spatial_std.svg",
+          "sha256": "ced69e821ba50805e2cf06322f0ed491e1e7214eb7915ccf02191ae39ef474ab"
+        },
+        {
+          "bytes": 12165,
+          "path": "figures/04_layer_spatial_std.pdf",
+          "sha256": "92f43d3584e44f46c89edc8f218cc02e599d68a0fbb646c49c0c4a5b7687b178"
+        }
+      ],
+      "source_files": [
+        "layer_statistics.csv"
+      ],
+      "stem": "04_layer_spatial_std"
+    },
+    {
+      "caption": "Branch feature variance measured on frozen validation sample",
+      "exports": [
+        {
+          "bytes": 125998,
+          "path": "figures/05_branch_variance.png",
+          "sha256": "5d8a2de5aa5653e2e2d1a75b7c61f985b8b3c1518ecfe05aec58aedef982dbdd"
+        },
+        {
+          "bytes": 15396,
+          "path": "figures/05_branch_variance.svg",
+          "sha256": "03bec270389c3fc82fdec65ef4b907357dcfa98d8d97b81d9a6651c54918507c"
+        },
+        {
+          "bytes": 12839,
+          "path": "figures/05_branch_variance.pdf",
+          "sha256": "7b0632c5f4750137ce5454368101619fcd4b5152858cc1f44e2f23dff599db5b"
+        }
+      ],
+      "source_files": [
+        "branch_variance.csv"
+      ],
+      "stem": "05_branch_variance"
+    },
+    {
+      "caption": "Inference-only masking, out-of-distribution, not causal training ablation",
+      "exports": [
+        {
+          "bytes": 82482,
+          "path": "figures/06_masked_branch_metrics.png",
+          "sha256": "fe71ee85ea54961b5411bc838c85cc52e7f522dee25d697d0ebf111d3677a3e6"
+        },
+        {
+          "bytes": 8700,
+          "path": "figures/06_masked_branch_metrics.svg",
+          "sha256": "1137f998ece2735fbddc781f44e9c9d57a72d65ef4a201cfc448179f6361d5a1"
+        },
+        {
+          "bytes": 12352,
+          "path": "figures/06_masked_branch_metrics.pdf",
+          "sha256": "aabc56a3c8b5fce85c422c2e18e7df57aa821ed8a8c30fe584b05928007b0f70"
+        }
+      ],
+      "source_files": [
+        "ablation_overall.csv"
+      ],
+      "stem": "06_masked_branch_metrics"
+    },
+    {
+      "caption": "Validation subset recall; branch suppression is a diagnostic intervention",
+      "exports": [
+        {
+          "bytes": 117712,
+          "path": "figures/07_class_recall_masking.png",
+          "sha256": "9fd69121b6a275f3b933597ef0b4fedb860d746173be280acdcbe9bfca169164"
+        },
+        {
+          "bytes": 15586,
+          "path": "figures/07_class_recall_masking.svg",
+          "sha256": "c5a67486433990e565ffd66f13bd978835b7312e488f7d2c41194550541caada"
+        },
+        {
+          "bytes": 14792,
+          "path": "figures/07_class_recall_masking.pdf",
+          "sha256": "b7fb6222fdc7737edc7e55bb4a262998beaf4df9809b0575206360456a8749f2"
+        }
+      ],
+      "source_files": [
+        "ablation_per_class.csv"
+      ],
+      "stem": "07_class_recall_masking"
+    },
+    {
+      "caption": "Paired sample logits change",
+      "exports": [
+        {
+          "bytes": 71551,
+          "path": "figures/08_logit_masking.png",
+          "sha256": "e49e5ee08d9275fe7da502117d68f82297e6f64ebddf93e893428803308be309"
+        },
+        {
+          "bytes": 6235,
+          "path": "figures/08_logit_masking.svg",
+          "sha256": "a78373113f8723bf1f05bf1f7dac6483c009f2580182c1f76fbd7a026d6f3109"
+        },
+        {
+          "bytes": 10793,
+          "path": "figures/08_logit_masking.pdf",
+          "sha256": "48786d4429c87b8e8272f967efaf7e9fb1bc00acc56af1c4c90415b163ee44cc"
+        }
+      ],
+      "source_files": [
+        "ablation_overall.csv"
+      ],
+      "stem": "08_logit_masking"
+    },
+    {
+      "caption": "Image-channel aggregates, not network-traffic raw records",
+      "exports": [
+        {
+          "bytes": 64396,
+          "path": "figures/09_rgb_image_input.png",
+          "sha256": "6c1f364d691c3306a62e8794f7cfe4d7b2b422fa0cd66e2a7da0e10924390c6a"
+        },
+        {
+          "bytes": 8822,
+          "path": "figures/09_rgb_image_input.svg",
+          "sha256": "7d02787ab5cd1739fb7962b6bc0f33832c44a25433ee2318d0d7824b172a86a9"
+        },
+        {
+          "bytes": 11957,
+          "path": "figures/09_rgb_image_input.pdf",
+          "sha256": "09285813d782a3a6731f280bc802757dda71f36c2b343e6e2fdbd5cd4ac60416"
+        }
+      ],
+      "source_files": [
+        "rgb_channel_stats.csv"
+      ],
+      "stem": "09_rgb_image_input"
+    },
+    {
+      "caption": "Image-space perturbation control, NOT adversarial attack accuracy",
+      "exports": [
+        {
+          "bytes": 62300,
+          "path": "figures/10_flip_sensitivity.png",
+          "sha256": "dc3f97b24840c3765cf4a93b8ab06afebc749b17a7f3a4df500b093099541a0d"
+        },
+        {
+          "bytes": 8087,
+          "path": "figures/10_flip_sensitivity.svg",
+          "sha256": "cb1401d440975c26a4d7d625e8422d316374225baf65a7a2b453aaeeda496813"
+        },
+        {
+          "bytes": 11007,
+          "path": "figures/10_flip_sensitivity.pdf",
+          "sha256": "9b7f10ce425191823a546c63b95a542e34ad1c7330f3f3a924268e4ca43b9049"
+        }
+      ],
+      "source_files": [
+        "flip_sensitivity.csv"
+      ],
+      "stem": "10_flip_sensitivity"
+    },
+    {
+      "caption": "Channel activation variation; log-plot floor is display-only",
+      "exports": [
+        {
+          "bytes": 80116,
+          "path": "figures/11_channel_variability.png",
+          "sha256": "9d73a3241fa0a646a027a09f4579c3df1a0474fa3f6c440dbe2d529319fd5907"
+        },
+        {
+          "bytes": 26338,
+          "path": "figures/11_channel_variability.svg",
+          "sha256": "2f42271e910c49c4f49cfee1b02ad11995b7ccc6b969f272e1c8a0d6afdbe523"
+        },
+        {
+          "bytes": 14399,
+          "path": "figures/11_channel_variability.pdf",
+          "sha256": "ba74fcf35baa715e6021f8424f437d598f2e55bf0ecb8a1eaa4942089f188296"
+        }
+      ],
+      "source_files": [
+        "channel_statistics.csv"
+      ],
+      "stem": "11_channel_variability"
+    },
+    {
+      "caption": "Counts row-normalized; diagnostic subset, NOT full test set",
+      "exports": [
+        {
+          "bytes": 145483,
+          "path": "figures/12_sampled_confusion.png",
+          "sha256": "370290307d0ead27635e463210824db2a7035cced53b43666267c67fcfa15316"
+        },
+        {
+          "bytes": 28427,
+          "path": "figures/12_sampled_confusion.svg",
+          "sha256": "d3f02c6cc98d40aa629507605aa6a53db7d0a05ef327894da02e786335764675"
+        },
+        {
+          "bytes": 26762,
+          "path": "figures/12_sampled_confusion.pdf",
+          "sha256": "7c46fe9d30016911c183598c9e1fa76f21e92ff5c7b6f6140971b06552606626"
+        }
+      ],
+      "source_files": [
+        "sampled_confusion.csv"
+      ],
+      "stem": "12_sampled_confusion"
+    }
+  ],
+  "sources": [
+    {
+      "bytes": 322,
+      "path": "ablation_overall.csv",
+      "sha256": "0888f4ee4259106bc7cdad28c77f72228a8e5367b5a57ffef08d990e3214e4a6"
+    },
+    {
+      "bytes": 2247,
+      "path": "ablation_per_class.csv",
+      "sha256": "179ebe48b2fa27ee8caa0fc635bd4fa69666c188f5e0cb743adfa050b2bfdb52"
+    },
+    {
+      "bytes": 483,
+      "path": "branch_variance.csv",
+      "sha256": "c5d4545936251c39e8248fc34d0c0aaed49281ae96fe28f00e79486e080b7605"
+    },
+    {
+      "bytes": 27085,
+      "path": "channel_statistics.csv",
+      "sha256": "5c62439cb29acc9b7a98040a4a1d88fa96113ca5675352d9262bae4d70937e42"
+    },
+    {
+      "bytes": 135,
+      "path": "flip_sensitivity.csv",
+      "sha256": "2ea8685fadbc4b915d8bc85a81fc82fe1e44006b6dc0dab7b614ad7e083bc741"
+    },
+    {
+      "bytes": 1074,
+      "path": "layer_statistics.csv",
+      "sha256": "f160b3f19425a75822d8df13ce30ae5b4bcdc319272da8aa4845f5a8138d6249"
+    },
+    {
+      "bytes": 223,
+      "path": "rgb_channel_stats.csv",
+      "sha256": "80fd8aa2a1a26d230c5d0826014ec7a5fb93982cfb286af607f14e2374884757"
+    },
+    {
+      "bytes": 145,
+      "path": "sample_support.csv",
+      "sha256": "b1d5553c5f159a117308dd9d68cc298e6362a3c0b7276d508f9980a2dcce276b"
+    },
+    {
+      "bytes": 405,
+      "path": "sampled_confusion.csv",
+      "sha256": "b65b378b4b2c578e1467a4aca6917e53ba95dce6ddc74d56b0c7c8289aee7000"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+class,sample_support
+Analysis,124
+Backdoor,123
+DoS,156
+Exploits,235
+Fuzzers,174
+Generic,227
+Normal,271
+Reconnaissance,148
+Shellcode,121
+Worms,21

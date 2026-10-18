@@ -1,0 +1,33 @@
+{
+  "ablations": [
+    "original",
+    "cnn_zeroed",
+    "vit_zeroed",
+    "both_zeroed"
+  ],
+  "additional_random_windows": 512,
+  "archive_sha256": "644629dd24e142906569ac771ec8c9ec4b86b47c6605f01cf96c307b8fc3bd00",
+  "batch_size": 64,
+  "checkpoint_sha256": "1ff947f795162b747115fee6e3131eb10fd3955445a3040902a274fa71457c65",
+  "experiment_id": "SCV-CNN-DIAG-001",
+  "input": "/kaggle/input/datasets/dsshayan/unsw-nb15/UNSW_NB15_training-set.csv",
+  "input_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "limitations": [
+    "Zero variance on a finite sample is not evidence of universal CNN collapse.",
+    "Branch zeroing is out-of-distribution, not training-time causal attribution.",
+    "This step does not fit a model or evaluate the official test."
+  ],
+  "max_total_windows": 1800,
+  "mode": "frozen_validation_diagnostic_only",
+  "official_test": "FORBIDDEN",
+  "output_figure_count": 12,
+  "perturbation": "horizontal flip of rendered traffic RGB pixels",
+  "plot_formats": [
+    "png",
+    "svg",
+    "pdf"
+  ],
+  "reference_run": "SCV-IDS-REPRO-001",
+  "replay_max_absolute_probability_error": 0.002,
+  "seed": 42
+}
