@@ -1,0 +1,62 @@
+{
+  "baseline": "CTRL-TAB-001-S42/lgbm_rare_sqrt",
+  "experiment_id": "CARES-PAIR-001-S42",
+  "metrics": [
+    "macro_f1",
+    "accuracy",
+    "balanced_accuracy",
+    "per_class_f1",
+    "confusion",
+    "changes_vs_baseline"
+  ],
+  "novelty_not_verified": true,
+  "official_test": "FORBIDDEN",
+  "original_training_only": true,
+  "pairs": [
+    [
+      "DoS",
+      "Exploits"
+    ],
+    [
+      "Backdoor",
+      "Exploits"
+    ],
+    [
+      "Analysis",
+      "Exploits"
+    ]
+  ],
+  "parent_macro_f1_internal": 0.6366908581786823,
+  "parent_model_sha256": "e9b5430eb5d45560fab711ca2ac154e416222e66eef71d771d801e2377c00c33",
+  "parent_probabilities_sha256": "4c8cd22a09bf0cd2b188aa400e45210b92d316237088885d4f4f0c95f3d181bb",
+  "purpose": "First implemented confusion-aware specialist method, evaluated only on development validation",
+  "router": {
+    "ablation_modes": [
+      "baseline",
+      "dos_only",
+      "backdoor_only",
+      "analysis_only",
+      "all_unrestricted",
+      "all_selective"
+    ],
+    "confidence_full": 0.45,
+    "confidence_threshold": 0.1,
+    "frozen_before_run": true,
+    "mass_full": 0.7,
+    "mass_threshold": 0.3
+  },
+  "seed": 42,
+  "spec": {
+    "calibration": "Platt logistic on disjoint calibration 15%",
+    "calibration_fraction": 0.15,
+    "early_stop": 35,
+    "iterations": 280,
+    "learning_rate": 0.05,
+    "min_data_in_leaf": 20,
+    "num_leaves": 20,
+    "positive_weight": "min(12,sqrt(n_negative/n_positive))",
+    "stop_fraction": 0.15,
+    "train_fraction": 0.7
+  },
+  "warning": "Pairs were chosen from development-validation confusion; this is exploratory, not unbiased official-test evidence."
+}

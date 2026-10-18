@@ -1,0 +1,339 @@
+{
+  "experiment_id": "CARES-PAIR-001-S42",
+  "export_count": 36,
+  "figure_count": 12,
+  "figures": [
+    {
+      "exports": [
+        {
+          "bytes": 94416,
+          "file": "figures/01_macro_f1.png",
+          "sha256": "cb53fa2fb85ca569114e9befe52721d3aa4650ad1daa3fd8fb37ddec8e9cd0e6"
+        },
+        {
+          "bytes": 12224,
+          "file": "figures/01_macro_f1.svg",
+          "sha256": "44d152d586d0b60ad4486fdfb2bb014e7db0652ee9600c293cfd95ee45419ed9"
+        },
+        {
+          "bytes": 12895,
+          "file": "figures/01_macro_f1.pdf",
+          "sha256": "4d3f84ff99ebf5d49c63acd7e51b9037ee89c96d42657356e9b8b1c46e5381c6"
+        }
+      ],
+      "name": "01_macro_f1",
+      "source": "comparison_scores.csv",
+      "title": "Actual 10-class macro-F1"
+    },
+    {
+      "exports": [
+        {
+          "bytes": 96888,
+          "file": "figures/02_accuracy.png",
+          "sha256": "cafc5f8714bab0c7515fb9e495be353822b49a3da717a8b55eaaa5747bdc4a7e"
+        },
+        {
+          "bytes": 10376,
+          "file": "figures/02_accuracy.svg",
+          "sha256": "5d53bc0e854e45fbc1ae7b53790a006e753da986927198b0038fd88b4723c2eb"
+        },
+        {
+          "bytes": 13235,
+          "file": "figures/02_accuracy.pdf",
+          "sha256": "b898e19ba4d241e0271589a83ec7ca4a784f27956be6bb6c277b157150c11423"
+        }
+      ],
+      "name": "02_accuracy",
+      "source": "comparison_scores.csv",
+      "title": "Accuracy after each fixed routing intervention"
+    },
+    {
+      "exports": [
+        {
+          "bytes": 106283,
+          "file": "figures/03_balanced_accuracy.png",
+          "sha256": "18df7e2d459fd11ae3cf7fc21ddeefe32c478a001c570b4de66f2e7e6e840e86"
+        },
+        {
+          "bytes": 12252,
+          "file": "figures/03_balanced_accuracy.svg",
+          "sha256": "8ec652ce7bf5d548b71d12a817d214e47b09dcf558e6e8c822e3cfdbfde07420"
+        },
+        {
+          "bytes": 12948,
+          "file": "figures/03_balanced_accuracy.pdf",
+          "sha256": "a8312bb60928197df641ebd482279abf6334bfcf16dfebbe1cd3dbef70e2b70f"
+        }
+      ],
+      "name": "03_balanced_accuracy",
+      "source": "comparison_scores.csv",
+      "title": "Macro-average recall (balanced accuracy)"
+    },
+    {
+      "exports": [
+        {
+          "bytes": 109925,
+          "file": "figures/04_changed_predictions.png",
+          "sha256": "6517918261af7712672e44438de5480e2a56ad17109ca3d782bcc271e66a106d"
+        },
+        {
+          "bytes": 11645,
+          "file": "figures/04_changed_predictions.svg",
+          "sha256": "f7f1696cef7a5e0fed55fdbb89f8c8a6bb407a52859dc812bbd2281154c17017"
+        },
+        {
+          "bytes": 13448,
+          "file": "figures/04_changed_predictions.pdf",
+          "sha256": "908dc7d2c458989ae2f9087e6d7941771be6ef91492c1a98296de4705056d619"
+        }
+      ],
+      "name": "04_changed_predictions",
+      "source": "comparison_scores.csv",
+      "title": "Argmax labels changed versus frozen baseline"
+    },
+    {
+      "exports": [
+        {
+          "bytes": 101240,
+          "file": "figures/05_dos_correct.png",
+          "sha256": "97bf27c2de955a72bd115e853205f1fd6c23873917a4299163f488dc6c173e2e"
+        },
+        {
+          "bytes": 10380,
+          "file": "figures/05_dos_correct.svg",
+          "sha256": "dbe11649c0486c18c9dc1342dfa29f571c2eb115619debf594f37d7d62750618"
+        },
+        {
+          "bytes": 12949,
+          "file": "figures/05_dos_correct.pdf",
+          "sha256": "1f3cad21f8f9c13d222ed8523d2008369670953c114f58026fac42a7259ca51e"
+        }
+      ],
+      "name": "05_dos_correct",
+      "source": "comparison_scores.csv",
+      "title": "DoS attacks correctly identified"
+    },
+    {
+      "exports": [
+        {
+          "bytes": 97888,
+          "file": "figures/06_backdoor_correct.png",
+          "sha256": "814322f3752381b905c6d8d434e08720c4ca928ba2037b59c6540f5384642011"
+        },
+        {
+          "bytes": 11607,
+          "file": "figures/06_backdoor_correct.svg",
+          "sha256": "62bdf86fe241acfa2f95f1f1dece634f3dbb48d397b1108ccaee02f464e6c2ba"
+        },
+        {
+          "bytes": 12676,
+          "file": "figures/06_backdoor_correct.pdf",
+          "sha256": "75ef449975b12f0ddb140304e460a9036c70ecda008edfbb852253e090106287"
+        }
+      ],
+      "name": "06_backdoor_correct",
+      "source": "comparison_scores.csv",
+      "title": "Backdoor attacks correctly identified"
+    },
+    {
+      "exports": [
+        {
+          "bytes": 101430,
+          "file": "figures/07_dos_to_exploits.png",
+          "sha256": "3ae872b0866a445a263f68b3e5348b85c743714e92001bd13336d6e33acc7101"
+        },
+        {
+          "bytes": 11000,
+          "file": "figures/07_dos_to_exploits.svg",
+          "sha256": "20a686e3cc5976796eabb7efd61107405af92d72031ed02747cc255e4c718219"
+        },
+        {
+          "bytes": 12186,
+          "file": "figures/07_dos_to_exploits.pdf",
+          "sha256": "4459edc944c7e3dcfc5f3f769b3863b1fc82742ee24201f0209e2c10a89d8e95"
+        }
+      ],
+      "name": "07_dos_to_exploits",
+      "source": "comparison_scores.csv",
+      "title": "DoS incorrectly predicted as Exploits"
+    },
+    {
+      "exports": [
+        {
+          "bytes": 105520,
+          "file": "figures/08_backdoor_to_exploits.png",
+          "sha256": "76923de849df8301ffdfb1e8aba6817e6800bf1cfef32254fde452e447eca98a"
+        },
+        {
+          "bytes": 12266,
+          "file": "figures/08_backdoor_to_exploits.svg",
+          "sha256": "d97f06f51e74945d02911c0dcb359f74d1a2534485e442be939ab4cdc53507b0"
+        },
+        {
+          "bytes": 12182,
+          "file": "figures/08_backdoor_to_exploits.pdf",
+          "sha256": "4f9d96ba4ec2ec238db6f400a8294e9e3572428ae64dd052f7c7e441c9ab575f"
+        }
+      ],
+      "name": "08_backdoor_to_exploits",
+      "source": "comparison_scores.csv",
+      "title": "Backdoor incorrectly predicted as Exploits"
+    },
+    {
+      "exports": [
+        {
+          "bytes": 141433,
+          "file": "figures/09_classwise_f1_delta.png",
+          "sha256": "de2c6094d2fb085c59e027799285e7d25b17a4fdfacfb482a4632b31241dc1e3"
+        },
+        {
+          "bytes": 26309,
+          "file": "figures/09_classwise_f1_delta.svg",
+          "sha256": "2d1c462c7bce8f1ec524160385e3b180e11a99fb8e296ae75ca641efaa658890"
+        },
+        {
+          "bytes": 20220,
+          "file": "figures/09_classwise_f1_delta.pdf",
+          "sha256": "3efc0931dcd8f4b0801338e5f93e3df551f9993d83964856b4d3f457d0eb8dc1"
+        }
+      ],
+      "name": "09_classwise_f1_delta",
+      "source": "each_variant/per_class.csv",
+      "title": "Per-class F1 differences to frozen baseline"
+    },
+    {
+      "exports": [
+        {
+          "bytes": 146935,
+          "file": "figures/10_confusion_baseline.png",
+          "sha256": "eb5aa35007debbeeefeaf5be089b555646982009a0a4c9d6e0c87ab136ad2e52"
+        },
+        {
+          "bytes": 28629,
+          "file": "figures/10_confusion_baseline.svg",
+          "sha256": "105bbeec9f37aa76c7e7e94ec958174999d9ebc7d33502c5a38947675f6d6e11"
+        },
+        {
+          "bytes": 27975,
+          "file": "figures/10_confusion_baseline.pdf",
+          "sha256": "f7755468a15b9004e578b5d1f58fa6723f3b6e4909ab026fe437ebe95e304981"
+        }
+      ],
+      "name": "10_confusion_baseline",
+      "source": "baseline/confusion.csv",
+      "title": "Row-normalized confusion matrix: baseline"
+    },
+    {
+      "exports": [
+        {
+          "bytes": 146345,
+          "file": "figures/11_confusion_dos_only.png",
+          "sha256": "891dfebb72d72061f84318b95dd6f8bac22dfb63ac4dc321c03cbe2cdf58532d"
+        },
+        {
+          "bytes": 28629,
+          "file": "figures/11_confusion_dos_only.svg",
+          "sha256": "85bcc99923260edb9835dda5699811335cde8588d3ce03aa18a274c6bab372af"
+        },
+        {
+          "bytes": 27902,
+          "file": "figures/11_confusion_dos_only.pdf",
+          "sha256": "18bce78c36971c15ce00e6dba2328f2efcbc8ea3694072da2a16d4958a412b0d"
+        }
+      ],
+      "name": "11_confusion_dos_only",
+      "source": "dos_only/confusion.csv",
+      "title": "Row-normalized confusion matrix: dos_only"
+    },
+    {
+      "exports": [
+        {
+          "bytes": 147529,
+          "file": "figures/12_confusion_all_selective.png",
+          "sha256": "785ead0cfdf5788e651bcaa0877a260c6c9f6d28b4c2c48a77b2d5557d35fa32"
+        },
+        {
+          "bytes": 28622,
+          "file": "figures/12_confusion_all_selective.svg",
+          "sha256": "74c8263c8d8dffe80b5423e6c94e2cca3ec962fccce59e8eb14ef5bac94c6315"
+        },
+        {
+          "bytes": 26895,
+          "file": "figures/12_confusion_all_selective.pdf",
+          "sha256": "999d24673d20985d1cc858e0df69c4777335033d7337c7992c560c002d673120"
+        }
+      ],
+      "name": "12_confusion_all_selective",
+      "source": "all_selective/confusion.csv",
+      "title": "Row-normalized confusion matrix: all_selective"
+    }
+  ],
+  "numeric_sources": [
+    {
+      "bytes": 449,
+      "file": "all_selective/confusion.csv",
+      "sha256": "42b517dd820fbbf75d72898f7b3251ab949cf7fdf90df7d15614db308bd24f26"
+    },
+    {
+      "bytes": 742,
+      "file": "all_selective/per_class.csv",
+      "sha256": "bc35e52f8c11bb7e8f1a9f7c6112a448aa83ddf0df619624d7ebea0c604e3489"
+    },
+    {
+      "bytes": 440,
+      "file": "all_unrestricted/confusion.csv",
+      "sha256": "1d66093579a13c5f9f2c532259e875bb9991f04fe6d23989c39356dd76761aed"
+    },
+    {
+      "bytes": 711,
+      "file": "all_unrestricted/per_class.csv",
+      "sha256": "84bf4ec92739be65f416cb8288d57b3299b346c4cebfbcb35103c273caa346e9"
+    },
+    {
+      "bytes": 449,
+      "file": "analysis_only/confusion.csv",
+      "sha256": "01c742a6b21058375966b65d16812ad55261200e6f6a59c3bed94bbaad0d0c39"
+    },
+    {
+      "bytes": 739,
+      "file": "analysis_only/per_class.csv",
+      "sha256": "8e51d2d61cfda0ed0d0b12b7e395e81815ca5d0eb59ee23d55509f2824d8914e"
+    },
+    {
+      "bytes": 448,
+      "file": "backdoor_only/confusion.csv",
+      "sha256": "ad0ca5ef026889efedebfa74a791784c4ad4880338e435c979d18485c8b0e225"
+    },
+    {
+      "bytes": 737,
+      "file": "backdoor_only/per_class.csv",
+      "sha256": "af9b371e9e2b9f8fdf04e0634e81c5f9f24ca18b5224f2ede2bbb9838177599a"
+    },
+    {
+      "bytes": 448,
+      "file": "baseline/confusion.csv",
+      "sha256": "d7b583118b62f08733392a6f637d43f2408f3f37b274267b8a641ff82a6e24d5"
+    },
+    {
+      "bytes": 740,
+      "file": "baseline/per_class.csv",
+      "sha256": "8397312e491d01541b8cdb14ec1a266c4e5f2e9790d10601f7c0c78f1f5bf08b"
+    },
+    {
+      "bytes": 1508,
+      "file": "comparison_scores.csv",
+      "sha256": "e377ceb740fd41f6207bf1a65215770fc52462c8ddd18ca0febb9de240e7f8c2"
+    },
+    {
+      "bytes": 448,
+      "file": "dos_only/confusion.csv",
+      "sha256": "3ebb0c798dbfe187b743d0a569f6e46de89caa5045e12d1906da5ff4a4ec1508"
+    },
+    {
+      "bytes": 740,
+      "file": "dos_only/per_class.csv",
+      "sha256": "c11f4f515ba19dd50b4b17134f14c4faea6827593b375fa4ab066995abad8e35"
+    }
+  ],
+  "scope": "35,005 training-derived internal-validation examples, six genuine saved variants"
+}

@@ -1,0 +1,16 @@
+{
+  "best_iteration": 121,
+  "calibration_examples": 4216,
+  "calibration_positive_rate": 0.049573055028463,
+  "checkpoint_sha256": "2d128a36ca470f0dbfea6ccc67da8d58513ff58d0825beb943765926f95d3c7d",
+  "compared_class": "Exploits",
+  "earlystop_examples": 4216,
+  "elapsed_seconds": 0.65,
+  "platt_coefficient": 0.8506457620112289,
+  "platt_intercept": -1.4840960676750217,
+  "positive_class": "Backdoor",
+  "positive_train_examples": 977,
+  "positive_weight": 4.374486371370477,
+  "private_conditional_sha256": "d14dfeb80134973a4d2e5763b563fad1f3760f980ecee2ebf82a16fe394d0c59",
+  "training_examples": 19673
+}

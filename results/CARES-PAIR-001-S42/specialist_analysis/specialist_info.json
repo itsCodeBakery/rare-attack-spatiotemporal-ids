@@ -1,0 +1,16 @@
+{
+  "best_iteration": 110,
+  "calibration_examples": 4243,
+  "calibration_positive_rate": 0.055621022861183124,
+  "checkpoint_sha256": "d1c4774bf03cf782119d15ebfc6d435360e5cc14e20f374c68f7e16ba7ac088c",
+  "compared_class": "Exploits",
+  "earlystop_examples": 4242,
+  "elapsed_seconds": 0.58,
+  "platt_coefficient": 0.880269702275771,
+  "platt_intercept": -1.396639570974632,
+  "positive_class": "Analysis",
+  "positive_train_examples": 1100,
+  "positive_weight": 4.122664628169946,
+  "private_conditional_sha256": "94e34c2139907740817b0c41e4f828ef8d0904762766bf926b5f0e2920b439b1",
+  "training_examples": 19796
+}

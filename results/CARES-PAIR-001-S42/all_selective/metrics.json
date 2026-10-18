@@ -1,0 +1,17 @@
+{
+  "Analysis_correct": 101,
+  "Analysis_to_Exploits": 85,
+  "Backdoor_correct": 50,
+  "Backdoor_to_Exploits": 105,
+  "DoS_correct": 1537,
+  "DoS_to_Exploits": 881,
+  "accuracy": 0.8123982288244537,
+  "balanced_accuracy": 0.6448752088177627,
+  "changed_predictions_vs_baseline": 1391,
+  "correct": 28438,
+  "delta_macro_f1_vs_baseline_pp": -0.24480119427735536,
+  "macro_f1": 0.6342428462359088,
+  "n": 35005,
+  "predictions_sha256": "0aa6fd4a7cfa14854abaa4438b23862f39071035944788abe1920ee268b7b7e0",
+  "weighted_f1": 0.8198468933109612
+}
