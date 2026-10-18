@@ -145,8 +145,8 @@ def make_figures(root):
     names=channel["layer"].astype(str).unique().tolist()
     values=[channel[channel["layer"].astype(str)==l]["between_image_std"].values
             for l in names]
-    ax.boxplot([np.maximum(v,1e-12) for v in values],labels=names,
-               showfliers=False)
+    ax.boxplot([np.maximum(v,1e-12) for v in values],showfliers=False)
+    ax.set_xticks(np.arange(1,len(names)+1),names)
     ax.set_yscale("log");ax.set_xlabel("CNN Sequential module index")
     ax.set_ylabel("Channel-wise between-image std (floor 1e-12)")
     ax.set_title("Channel-level variability across the CNN hierarchy")
