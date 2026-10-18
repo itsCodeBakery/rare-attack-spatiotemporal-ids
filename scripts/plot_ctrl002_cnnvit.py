@@ -8,7 +8,13 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import pandas as pd
-from scripts.plot_ctrl001_vit import plot_run as base_plot
+# Support both import forms:
+#  - pytest / package: scripts.plot_ctrl002_cnnvit
+#  - Kaggle direct entry point: python scripts/finalize_ctrl002_cnnvit.py
+if __package__:
+    from scripts.plot_ctrl001_vit import plot_run as base_plot
+else:
+    from plot_ctrl001_vit import plot_run as base_plot
 
 def sha(path):
     h=hashlib.sha256()
