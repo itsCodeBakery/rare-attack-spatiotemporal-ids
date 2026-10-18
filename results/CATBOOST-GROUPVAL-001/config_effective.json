@@ -1,0 +1,22 @@
+{
+  "catboost": {
+    "auto_class_weights": null,
+    "depth": 6,
+    "devices": "0",
+    "eval_metric": "MultiClass",
+    "iterations": 600,
+    "l2_leaf_reg": 3,
+    "learning_rate": 0.05,
+    "loss_function": "MultiClass",
+    "od_wait": 80,
+    "thread_count": 4
+  },
+  "dataset_manifest": "data/manifests/unsw_nb15/audit_summary.json",
+  "device": "GPU",
+  "experiment_id": "CATBOOST-GROUPVAL-001",
+  "features": 42,
+  "n_splits": 5,
+  "no_official_test_predictions": true,
+  "seed": 42,
+  "stage": "training-only-validation"
+}

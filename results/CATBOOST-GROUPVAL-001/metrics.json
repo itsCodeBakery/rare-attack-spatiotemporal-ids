@@ -1,0 +1,11 @@
+{
+  "accuracy": 0.8240452455082978,
+  "balanced_accuracy": 0.5360539816685511,
+  "elapsed_train_seconds": 11.475,
+  "macro_f1": 0.5541073752522101,
+  "model_selected_best_iteration": 599,
+  "normal_to_attack_false_positive_rate": 0.09093364544881606,
+  "training_size": 140332,
+  "validation_size": 35009,
+  "weighted_f1": 0.799037287564873
+}
