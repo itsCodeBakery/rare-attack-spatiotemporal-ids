@@ -11,7 +11,10 @@ import os
 from pathlib import Path
 import requests
 from tqdm.auto import tqdm
-from archive_cares_pair001 import validated_outputs, CANDIDATES, SPECIALISTS
+if __package__:
+    from scripts.archive_cares_pair001 import validated_outputs, CANDIDATES, SPECIALISTS
+else:
+    from archive_cares_pair001 import validated_outputs, CANDIDATES, SPECIALISTS
 
 REPO="itsCodeBakery/rare-attack-spatiotemporal-ids"
 PREFIX="results/CARES-PAIR-001-S42"

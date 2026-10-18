@@ -12,7 +12,10 @@ import os
 from pathlib import Path
 import tarfile
 from datetime import datetime,timezone
-import archive_ctrl003_tabular as upload
+if __package__:
+    from scripts import archive_ctrl003_tabular as upload
+else:
+    import archive_ctrl003_tabular as upload
 from tqdm.auto import tqdm
 
 ID="CARES-PAIR-001-S42"
