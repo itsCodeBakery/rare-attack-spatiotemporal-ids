@@ -1,0 +1,8 @@
+{
+  "dataset": "primus11/unsw-nb15-dataset",
+  "train": "/kaggle/input/datasets/primus11/unsw-nb15-dataset/unsw_train.csv",
+  "test": "/kaggle/input/datasets/primus11/unsw-nb15-dataset/unsw_test.csv",
+  "output": "data/manifests/unsw_nb15",
+  "audit_only": true,
+  "secret": "GITHUB_TOKEN"
+}
