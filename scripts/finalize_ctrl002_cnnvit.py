@@ -1,7 +1,8 @@
-"""Finalize CTRL-VIT-001 from frozen best-checkpoint probabilities. NO TRAINING.
+"""Finalize CTRL-CNNVIT-V2-S42 from best-checkpoint probabilities. NO TRAINING.
 
-Build metrics, 8 independent numeric plot source tables, 14 PNG/SVG/PDF figures,
-and a complete checkpoint/prediction SHA-256 artifact manifest. No official test.
+Build metrics, 8 independent numeric CSV sources, 18 PNG/SVG/PDF figure triplets,
+50-epoch CNN-health evidence and cryptographic checkpoint/prediction manifest.
+Only the designated original training-derived validation split is evaluated.
 """
 import argparse
 import hashlib
