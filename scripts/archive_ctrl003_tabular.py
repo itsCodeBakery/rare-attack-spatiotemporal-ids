@@ -157,7 +157,17 @@ if __name__=="__main__":
     p.add_argument("--run",required=True)
     p.add_argument("--archive",required=True)
     a=p.parse_args()
-    archive,sidecar,checksum=create_archive(a.run,a.archive)
+    archive=Path(a.archive)
+    sidecar=archive.with_suffix(".tar.sha256")
+    if archive.is_file():
+        if not sidecar.is_file():
+            raise FileNotFoundError("Existing archive lacks SHA256 sidecar; refusing overwrite")
+        checksum=sha(archive)
+        if sidecar.read_text(encoding="utf-8").split()[0]!=checksum:
+            raise ValueError("Existing local archive/checksum mismatch; refusing overwrite")
+        print("REUSING VERIFIED PRIVATE TABULAR ARCHIVE:",archive,"SHA-256:",checksum)
+    else:
+        archive,sidecar,checksum=create_archive(a.run,archive)
     published=publish_draft(archive,sidecar,checksum,os.environ.get("GITHUB_TOKEN"))
     if published:
         print("CTRL-TAB PRIVATE ARCHIVE UPLOAD COMPLETE")
