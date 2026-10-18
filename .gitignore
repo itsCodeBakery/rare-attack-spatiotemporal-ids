@@ -1,0 +1,44 @@
+# Datasets and raw inputs
+*.csv
+*.parquet
+*.feather
+*.pcap
+*.pcapng
+*.arrow
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.zip
+*.7z
+*.tar
+*.tar.gz
+
+# Models and heavyweight outputs
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.joblib
+*.pkl
+wandb/
+mlruns/
+lightning_logs/
+checkpoint*/
+
+# Local secrets and environments
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# Keep small reports, vector figures, text logs and manifests versioned.
