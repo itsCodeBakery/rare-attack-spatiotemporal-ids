@@ -19,7 +19,7 @@ REPO="itsCodeBakery/rare-attack-spatiotemporal-ids"
 RUN_ID="SCV-IDS-REPRO-001"
 PREFIX="results/"+RUN_ID
 TEXT_FILES=("metrics_validation.json","config_effective.json","preprocessing.json",
-            "training_history.csv","artifact_manifest.json","run_report.md",
+            "training_history.csv","environment.txt","artifact_manifest.json","run_report.md",
             "figure_manifest.json")
 MAX_SINGLE_BYTES=12*1024*1024
 MAX_TOTAL_BYTES=90*1024*1024
