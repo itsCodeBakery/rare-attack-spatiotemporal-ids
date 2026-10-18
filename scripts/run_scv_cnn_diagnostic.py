@@ -28,6 +28,14 @@ def sha(path):
     return h.hexdigest()
 
 
+def source_sha(repository):
+    """Resolve the diagnostic code revision; fail closed if Git provenance unavailable."""
+    return subprocess.check_output(
+        ["git", "-C", str(repository), "rev-parse", "HEAD"],
+        text=True, stderr=subprocess.DEVNULL, timeout=15
+    ).strip()
+
+
 def write_json(path,value):
     Path(path).write_text(json.dumps(value,indent=2,sort_keys=True)+"\n",encoding="utf-8")
 
