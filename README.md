@@ -64,9 +64,9 @@ Experiments will run on **Kaggle** using a declared dataset source and GPU type.
 
 ## Research status
 
-**Phase 0 — repository initialization.** No training has started.
+**Phase 1 — Kaggle dataset audit prepared.** Audit notebook committed; awaiting execution on the user-provided Kaggle dataset. No dataset results or model training are claimed.
 
-**Next gate:** audit UNSW-NB15 source files, column schema, official split, label counts, ordering/timestamps and hashes before implementing the published SCV-IDS baseline.
+**Next gate:** execute [01_unsw_nb15_data_audit.ipynb](notebooks/01_unsw_nb15_data_audit.ipynb) on Kaggle, verify the observed data audit and synchronize its four aggregate manifests using a Kaggle GitHub token secret. The user-provided dataset mount must be validated before claiming equivalence with the official UNSW-NB15 split or implementing SCV-IDS.
 
 ## Citation and rights
 
