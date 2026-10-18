@@ -1,0 +1,31 @@
+{
+  "accuracy": 0.8260248535923439,
+  "analysis_TP": 60,
+  "backdoor_TP": 40,
+  "balanced_accuracy": 0.5424358821709181,
+  "best_iteration": 799,
+  "class_weights": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "correct": 28915,
+  "count": 35005,
+  "doS_TP": 219,
+  "experiment_id": "CTRL-CAT-001-S45",
+  "is_predeclared_ensemble": false,
+  "macro_f1": 0.564208576890284,
+  "model_sha256": "4abbc81ef8b4e6ec374d7578c72487dc7982127eeb728bb3945fab90f9c4b94c",
+  "private_probabilities_sha256": "b671d4a623959461e8c6216f73ca30eb4f5c748cebefb9d12e46b6fd59bd6bcf",
+  "training_seconds": 879.8052633890002,
+  "weighted_f1": 0.8055303080625156,
+  "weighted_precision": 0.8250068304900051,
+  "weighted_recall": 0.8260248535923439
+}

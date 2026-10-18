@@ -1,0 +1,151 @@
+{
+  "catboost": {
+    "early_stopping_rounds": 80,
+    "l2_leaf_reg": 5,
+    "seed": 45,
+    "selection_metric": "MultiClass logarithmic loss",
+    "task_type": "CPU",
+    "thread_count": 6
+  },
+  "current_development_baseline": {
+    "accuracy": 0.8071418368804456,
+    "macro_f1": 0.6366908581786823,
+    "model": "CTRL-TAB-001-S42/lgbm_rare_sqrt",
+    "validation_examples": 35005
+  },
+  "experiment_id": "CTRL-CAT-001-S45",
+  "fairness": "Paper Table V accuracy 85.77%, aggregate precision 85.16%, recall 85.77%, F1 84.59%. Paper additionally reports macro-F1 46.87%. The paper does not explicitly define the average type for all four aggregates; record our weighted statistics and clarify before claiming superiority.",
+  "fallback": "If both CatBoost candidates fail Pareto constraints, report them and use feature evidence for a new class-aware model, not test-set tuning.",
+  "fixed_ensembles": [
+    {
+      "id": "cat_standard",
+      "parents": [
+        "catboost_standard"
+      ],
+      "weights": [
+        1
+      ]
+    },
+    {
+      "id": "cat_balanced",
+      "parents": [
+        "catboost_balanced"
+      ],
+      "weights": [
+        1
+      ]
+    },
+    {
+      "id": "cat_equal_mix",
+      "parents": [
+        "catboost_standard",
+        "catboost_balanced"
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "cat_standard_lgbm_standard",
+      "parents": [
+        "catboost_standard",
+        "lgbm_unweighted"
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "cat_standard_lgbm_rare",
+      "parents": [
+        "catboost_standard",
+        "lgbm_rare_sqrt"
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "cat_balanced_lgbm_standard",
+      "parents": [
+        "catboost_balanced",
+        "lgbm_unweighted"
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "cat_balanced_lgbm_rare",
+      "parents": [
+        "catboost_balanced",
+        "lgbm_rare_sqrt"
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "cat_balanced_lgbm_standard75",
+      "parents": [
+        "catboost_balanced",
+        "lgbm_unweighted"
+      ],
+      "weights": [
+        0.25,
+        0.75
+      ]
+    }
+  ],
+  "metrics": [
+    "accuracy",
+    "macro_f1",
+    "weighted_precision",
+    "weighted_recall",
+    "weighted_f1",
+    "balanced_accuracy",
+    "classwise_recall"
+  ],
+  "models": [
+    {
+      "depth": 7,
+      "id": "catboost_standard",
+      "iterations": 800,
+      "learning_rate": 0.085,
+      "weight_power": 0
+    },
+    {
+      "depth": 7,
+      "id": "catboost_balanced",
+      "iterations": 800,
+      "learning_rate": 0.085,
+      "max_weight": 8,
+      "weight_power": 0.35
+    }
+  ],
+  "official_test": "LOCKED",
+  "paper_thresholds": {
+    "accuracy": 0.8577,
+    "f1_aggregate": 0.8459,
+    "macro_f1": 0.4687,
+    "precision_aggregate": 0.8516,
+    "recall_aggregate": 0.8577
+  },
+  "reference_probabilities": {
+    "unweighted": "67c81ac6df24acca846bc7871117db66ca8691722fdfb4cb6af4b3b9a7533782",
+    "weighted": "4c8cd22a09bf0cd2b188aa400e45210b92d316237088885d4f4f0c95f3d181bb"
+  },
+  "research_goal": "Beat SCV-IDS across multiclass accuracy, reported aggregate precision/recall/F1 and macro-F1, using strictly comparable final official test protocol",
+  "scope": "Only original training-derived targets and 42 network-flow features, no verified chronology",
+  "seed_role": "fixed-seed training stochasticity check with identical single original holdout; not a new train-validation fold",
+  "selection_note": "Score all fixed ensembles on training-derived development validation; choosing based on the same validation is exploratory and not independent confirmation. No official test accesses, no changes to baseline.",
+  "split_sha256": "01f6070e836317b09ba5f8ef662dba748ec19f9b7f6e211e4a5215d35bc4409c",
+  "train_csv_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "unweighted_lightgbm_checkpoint_sha256": "426bc3288edcb9f82f8e7055f0d01446cd4c02e129f1c527900677978ae95aa3",
+  "weighted_lightgbm_checkpoint_sha256": "e9b5430eb5d45560fab711ca2ac154e416222e66eef71d771d801e2377c00c33"
+}
