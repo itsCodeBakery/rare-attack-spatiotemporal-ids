@@ -1,0 +1,82 @@
+{
+  "baseline_flat_features": 210,
+  "candidates": [
+    {
+      "early_stopping_rounds": 80,
+      "id": "stats_unweighted",
+      "learning_rate": 0.06,
+      "min_data_in_leaf": 60,
+      "num_boost_round": 700,
+      "num_leaves": 63,
+      "representation": "window_plus_stats",
+      "weight_power": 0
+    },
+    {
+      "early_stopping_rounds": 80,
+      "id": "stats_rare_sqrt",
+      "learning_rate": 0.06,
+      "max_class_weight": 12,
+      "min_data_in_leaf": 60,
+      "num_boost_round": 850,
+      "num_leaves": 63,
+      "representation": "window_plus_stats",
+      "weight_power": 0.5
+    },
+    {
+      "early_stopping_rounds": 80,
+      "id": "shuffled_rare_sqrt",
+      "learning_rate": 0.06,
+      "max_class_weight": 12,
+      "min_data_in_leaf": 60,
+      "num_boost_round": 850,
+      "num_leaves": 63,
+      "representation": "permuted_historical_context",
+      "weight_power": 0.5
+    }
+  ],
+  "control_experiment": "WINDOW-E2-001-S42",
+  "derived_statistic_count": 234,
+  "experiment_id": "WINDOW-E3-001-S42",
+  "final_selection": "No additional tuning beyond preregistered candidates. Validation is used for boosting early stopping and exploratory comparisons only.",
+  "mechanism_limit": "UNSW source order is not verified chronological; word 'lag' means row position in split-local serialization, not elapsed time.",
+  "metrics": [
+    "accuracy",
+    "macro_f1",
+    "weighted_f1",
+    "DoS_to_Exploits",
+    "dos_recall",
+    "analysis_recall",
+    "backdoor_recall"
+  ],
+  "numerical_feature_count": 39,
+  "official_test": "FORBIDDEN",
+  "official_test_note": "Never load official UNSW test in this experiment; no published superiority claim.",
+  "original_reference": "SCV-IDS-REPRO-001",
+  "private_backup": "Each complete candidate verified and archived in unpublished GitHub draft release, then public numeric tables synced before next model",
+  "raw_features": 42,
+  "reference_pred_sha256": "54f6aa6cb50c3c6a1533623e1c7b619f38dfa7ccbac8ce03cb9392e13e617612",
+  "reference_split_sha256": "01f6070e836317b09ba5f8ef662dba748ec19f9b7f6e211e4a5215d35bc4409c",
+  "required_controls": [
+    "lgbm_unweighted",
+    "lgbm_rare_sqrt",
+    "window_unweighted",
+    "window_rare_sqrt"
+  ],
+  "seed": 42,
+  "shuffled_context_policy": "Independently permute each historical lag1-lag4 whole record (all 42 features moved jointly) across original target windows, separately within train and validation; preserve target lag0 and class labels. This is a negative control, not causal temporal evidence.",
+  "shuffling_seed_training": 1701,
+  "shuffling_seed_validation": 2701,
+  "statistic_names": [
+    "five_mean",
+    "five_std",
+    "five_min",
+    "five_max",
+    "oldest_to_target_diff",
+    "previous_four_mean_to_target_diff"
+  ],
+  "total_statistical_features": 444,
+  "train_csv_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "train_target_rows": 140328,
+  "validation_target_rows": 35005,
+  "window_size": 5
+}
