@@ -1,0 +1,30 @@
+{
+  "lgbm_rare_sqrt": {
+    "Backdoor_to_Exploits": 42,
+    "DoS_to_Exploits": 431,
+    "accuracy": 0.8071418368804456,
+    "analysis_recall": 0.24532710280373832,
+    "backdoor_recall": 0.16285714285714287,
+    "balanced_accuracy": 0.6559305747297249,
+    "correct": 28254,
+    "count": 35005,
+    "dos_recall": 0.7875647668393783,
+    "macro_f1": 0.6366908581786823,
+    "model_family": "last-record-only_frozen_LightGBM",
+    "weighted_f1": 0.8173268163849339
+  },
+  "lgbm_unweighted": {
+    "Backdoor_to_Exploits": 258,
+    "DoS_to_Exploits": 2082,
+    "accuracy": 0.832595343522354,
+    "analysis_recall": 0.1542056074766355,
+    "backdoor_recall": 0.16285714285714287,
+    "balanced_accuracy": 0.5757599185613054,
+    "correct": 29145,
+    "count": 35005,
+    "dos_recall": 0.1442805898764448,
+    "macro_f1": 0.6024944231863185,
+    "model_family": "last-record-only_frozen_LightGBM",
+    "weighted_f1": 0.8169301170756996
+  }
+}
