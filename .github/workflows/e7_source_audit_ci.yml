@@ -1,0 +1,26 @@
+name: E7 source audit synthetic checks
+on:
+  push:
+    paths:
+      - 'research/E7_CICIDS2017/scripts/**'
+      - 'research/E7_CICIDS2017/tests/**'
+      - 'research/E7_CICIDS2017/configs/**'
+      - '.github/workflows/e7_source_audit_ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-audit-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install audit test dependencies
+        run: python -m pip install -q numpy pandas pytest
+      - name: Run synthetic source and GitHub archive regression tests
+        run: python -m pytest -q research/E7_CICIDS2017/tests/test_e7_g0_external_source_audit.py research/E7_CICIDS2017/tests/test_e7_g0_publish.py research/E7_CICIDS2017/tests/test_e7_g0_timestamp_registry.py research/E7_CICIDS2017/tests/test_e7_g0_publish_v2.py research/E7_CICIDS2017/tests/test_e7_g0_extended_audit.py
