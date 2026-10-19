@@ -1,9 +1,3 @@
-"""E7 versioned encoding-aware read-only audit, derived from original preserved module.
-
-Original previous findings and source code retained without modification.
-Version 2 adds explicit per-file source_encoding after strict byte validation;
-never uses replacement decoding or silently alters original CSV source bytes.
-"""
 """E7 full-source extended quality audit (no training or input modification).
 
 Scans original CSV in chunks. Only aggregate outputs, NEVER source flows/IP
