@@ -1,0 +1,114 @@
+{
+  "delta_e3_minus_e2_accuracy": 0.005999142979574268,
+  "delta_e3_minus_e2_macro_f1": 0.0057578779229245924,
+  "e2_internal_validation": {
+    "accuracy": 0.8390801314097986,
+    "ece_10_bins": 0.012604884095165395,
+    "macro_f1": 0.6417524955138199,
+    "multiclass_brier": 0.2089385814452689,
+    "n": 35005
+  },
+  "e3_internal_validation": {
+    "accuracy": 0.8450792743893729,
+    "ece_10_bins": 0.005650429065577289,
+    "macro_f1": 0.6475103734367444,
+    "multiclass_brier": 0.20337407833410287,
+    "n": 35005
+  },
+  "experiment_id": "E5-CONTEXT-DIAGNOSTIC-001",
+  "exploratory_block_bootstrap": {
+    "bootstrap_resamples": 200,
+    "paired_accuracy_difference_quantiles_025_50_975": [
+      0.003930482279621702,
+      0.005927723430168064,
+      0.007916011998285935
+    ],
+    "paired_macro_f1_difference_quantiles_025_50_975": [
+      -0.00030918586486941005,
+      0.005633221428592294,
+      0.01065374066229875
+    ],
+    "scope": "one original internal validation partition; used for earlier model stopping, descriptive only",
+    "window_block_length": 64
+  },
+  "frozen_private_e2_val_predictions_sha256": "ff780d4587244fb7ea768d8b1faf3d53420689cc9fb292bd6a10930baa4c9ecb",
+  "frozen_private_e3_model_sha256": "33909092282196027341bd44055e422d68af9f5497d9d1dd7a73212047c4798b",
+  "frozen_private_e3_val_predictions_sha256": "316a52835b6be03e651aa90af42ac78cdab4c2a153048d29ac2cef1f90730b66",
+  "gain_fraction_by_group": {
+    "current_record_lag0": 0.7256701924130783,
+    "engineered_window_statistics": 0.20740625514520267,
+    "historical_lag1": 0.016980394177865964,
+    "historical_lag2": 0.01695757884617044,
+    "historical_lag3": 0.017345405707789384,
+    "historical_lag4": 0.01564017370989329
+  },
+  "important_limitations": [
+    "Same training-derived validation used to choose early stopping; results are descriptive.",
+    "Permutation is a distribution-shift stress-test, not a causal feature attribution.",
+    "CSV row order does not establish temporal or per-flow continuity.",
+    "Source adjacent-label purity may reveal dataset sorting/label clustering artifacts.",
+    "Official test evidence not loaded and was already evaluated once in separate prior phase."
+  ],
+  "official_test_accessed": false,
+  "original_source_csv_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "position_ablation_mean_effects": {
+    "1": {
+      "accuracy_change_from_unmodified": -0.022815788220730344,
+      "macro_f1_change_from_unmodified": -0.01744210700317798
+    },
+    "2": {
+      "accuracy_change_from_unmodified": -0.021282673903727994,
+      "macro_f1_change_from_unmodified": -0.019966449743270182
+    },
+    "3": {
+      "accuracy_change_from_unmodified": -0.02201590249012046,
+      "macro_f1_change_from_unmodified": -0.020189431647550864
+    },
+    "4": {
+      "accuracy_change_from_unmodified": -0.02370137599390561,
+      "macro_f1_change_from_unmodified": -0.021482032681529373
+    }
+  },
+  "row_order_diagnostics": {
+    "all_original_training_rows": {
+      "independent_class_marginal_same_label_expectation": 0.20981226761403995,
+      "label_run_order_is_verified_time": false,
+      "max_label_run_length": 47911,
+      "median_label_run_length": 1.0,
+      "num_label_runs": 75614,
+      "observed_adjacent_same_label_rate": 0.5687635451123532,
+      "p90_label_run_length": 3.0,
+      "p99_label_run_length": 9.0,
+      "partition": "all_original_training_rows",
+      "source_records": 175341
+    },
+    "internal_train_split_order": {
+      "independent_class_marginal_same_label_expectation": 0.21025196269060945,
+      "label_run_order_is_verified_time": false,
+      "max_label_run_length": 38395,
+      "median_label_run_length": 1.0,
+      "num_label_runs": 60237,
+      "observed_adjacent_same_label_rate": 0.5707577085604749,
+      "p90_label_run_length": 3.0,
+      "p99_label_run_length": 10.0,
+      "partition": "internal_train_split_order",
+      "source_records": 140332
+    },
+    "internal_val_split_order": {
+      "independent_class_marginal_same_label_expectation": 0.20807182277374275,
+      "label_run_order_is_verified_time": false,
+      "max_label_run_length": 9516,
+      "median_label_run_length": 1.0,
+      "num_label_runs": 14565,
+      "observed_adjacent_same_label_rate": 0.5839808043875686,
+      "p90_label_run_length": 3.0,
+      "p99_label_run_length": 10.0,
+      "partition": "internal_val_split_order",
+      "source_records": 35009
+    }
+  },
+  "source_crosslabel_feature_group_count": 1772,
+  "source_feature_group_overlap_across_frozen_split": 0,
+  "trained_new_models": 0,
+  "verified_validation_targets": 35005
+}

@@ -1,0 +1,9 @@
+partition,history_position,target_windows,min_original_source_index_gap,median_original_source_index_gap,p90_original_source_index_gap,maximum_original_source_index_gap,fully_contiguous_original_source_positions_fraction
+internal_train,1,140328,1,1.0,2.0,12,0.7879183056838265
+internal_train,2,140328,2,2.0,3.0,13,0.6093937061741064
+internal_train,3,140328,3,4.0,5.0,15,0.4622527221937176
+internal_train,4,140328,4,5.0,6.0,16,0.3444501453736959
+internal_val,1,35005,1,4.0,9.0,59,0.1499214397943151
+internal_val,2,35005,2,9.0,17.0,74,0.02928153120982717
+internal_val,3,35005,3,14.0,24.0,92,0.00779888587344665
+internal_val,4,35005,4,19.0,30.0,106,0.0029138694472218255

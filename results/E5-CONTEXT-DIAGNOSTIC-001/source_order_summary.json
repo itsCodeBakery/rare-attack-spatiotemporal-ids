@@ -1,0 +1,46 @@
+{
+  "distinct_source_feature_groups": 101040,
+  "duplicate_feature_groups": 9748,
+  "index_semantics": "Original UNSW training CSV row indices, not timestamps",
+  "partition_diagnostics": {
+    "all_original_training_rows": {
+      "independent_class_marginal_same_label_expectation": 0.20981226761403995,
+      "label_run_order_is_verified_time": false,
+      "max_label_run_length": 47911,
+      "median_label_run_length": 1.0,
+      "num_label_runs": 75614,
+      "observed_adjacent_same_label_rate": 0.5687635451123532,
+      "p90_label_run_length": 3.0,
+      "p99_label_run_length": 9.0,
+      "partition": "all_original_training_rows",
+      "source_records": 175341
+    },
+    "internal_train_split_order": {
+      "independent_class_marginal_same_label_expectation": 0.21025196269060945,
+      "label_run_order_is_verified_time": false,
+      "max_label_run_length": 38395,
+      "median_label_run_length": 1.0,
+      "num_label_runs": 60237,
+      "observed_adjacent_same_label_rate": 0.5707577085604749,
+      "p90_label_run_length": 3.0,
+      "p99_label_run_length": 10.0,
+      "partition": "internal_train_split_order",
+      "source_records": 140332
+    },
+    "internal_val_split_order": {
+      "independent_class_marginal_same_label_expectation": 0.20807182277374275,
+      "label_run_order_is_verified_time": false,
+      "max_label_run_length": 9516,
+      "median_label_run_length": 1.0,
+      "num_label_runs": 14565,
+      "observed_adjacent_same_label_rate": 0.5839808043875686,
+      "p90_label_run_length": 3.0,
+      "p99_label_run_length": 10.0,
+      "partition": "internal_val_split_order",
+      "source_records": 35009
+    }
+  },
+  "same_source_feature_group_crossing_frozen_split": false,
+  "source_feature_groups_with_conflicting_labels": 1772,
+  "windows_are_verified_real_time": false
+}

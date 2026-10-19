@@ -1,0 +1,103 @@
+{
+  "artifact_outputs": [
+    "source_order_summary.json",
+    "source_transitions.csv",
+    "window_purity.csv",
+    "position_gaps.csv",
+    "class_confusion.csv",
+    "classwise_errors.csv",
+    "top_misclassifications.csv",
+    "confidence_bins.csv",
+    "importance_by_group.csv",
+    "top_features.csv",
+    "position_ablation.csv",
+    "summary.json",
+    "provenance.json"
+  ],
+  "class_error_audit": [
+    "exact_confusion_10x10",
+    "classwise support precision recall f1",
+    "top_off_diagonal_confusions",
+    "high_confidence_errors",
+    "classwise_confidence_bins",
+    "multiclass_ece",
+    "brier_score",
+    "per_class_probability_separation"
+  ],
+  "classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "counterfactual": {
+    "historical_positions": [
+      4,
+      3,
+      2,
+      1
+    ],
+    "intervention": "Permute one historical full 42-feature record in internal validation windows, preserve newest row and labels, recompute all dependent numeric summaries; run the *same untouched E3 fitted booster*, not retraining.",
+    "note": "These are out-of-distribution perturbations of test-like internal validation, not causal treatment effects or verified temporal evidence.",
+    "repetitions": 3,
+    "seeds": [
+      9021,
+      9022,
+      9023
+    ]
+  },
+  "diagnostic_model": "Read-only E3 LightGBM stats_rare_sqrt (seed42). Internal validation was used for early stopping; output is an exploratory diagnostic, not an unbiased test.",
+  "experiment_id": "E5-CONTEXT-DIAGNOSTIC-001",
+  "feature_count": 444,
+  "frozen_e2_model_sha256": "6229344aa9745629f9e82805ed908937e8e19a568946b3596392632d4e5ee091",
+  "frozen_e2_predictions_sha256": "ff780d4587244fb7ea768d8b1faf3d53420689cc9fb292bd6a10930baa4c9ecb",
+  "frozen_e3_model_sha256": "33909092282196027341bd44055e422d68af9f5497d9d1dd7a73212047c4798b",
+  "frozen_e3_predictions_sha256": "316a52835b6be03e651aa90af42ac78cdab4c2a153048d29ac2cef1f90730b66",
+  "frozen_original_val_preds_sha256": "54f6aa6cb50c3c6a1533623e1c7b619f38dfa7ccbac8ce03cb9392e13e617612",
+  "frozen_split_sha256": "01f6070e836317b09ba5f8ef662dba748ec19f9b7f6e211e4a5215d35bc4409c",
+  "gating": "No new architecture or original official-test retesting. Report diagnostics even if effects are artifacts.",
+  "input_policy": "Original official TRAINING CSV only plus frozen SCV split and private E2/E3 INTERNAL validation checkpoint/predictions. Never open official test or official test predictions.",
+  "internal_train_source_rows": 140332,
+  "internal_train_windows": 140328,
+  "internal_val_source_rows": 35009,
+  "internal_val_windows": 35005,
+  "model_feature_importance": [
+    "split_counts",
+    "total_gain",
+    "grouped_lag0_to_lag4_vs_stats",
+    "top40_features_by_gain"
+  ],
+  "official_test": "FORBIDDEN",
+  "publish_policy": "Only aggregated counts, metrics, confusion, importances, metadata. Never export row-level features, IDs, class probabilities, fitted booster or model weights publicly.",
+  "purpose": "Explain five-row context gains and rare-class failure before proposing a new methodology; no model fitting or official test.",
+  "seed": 42,
+  "source_order_audit": {
+    "distributions": [
+      "full_training_source_order",
+      "original_internal_train_order",
+      "original_internal_validation_order"
+    ],
+    "independent_baseline": "expected_same_label_adjacent = sum of squared within-partition class proportions",
+    "purity_window_size": 5,
+    "report_duplicate_group_overlap": true,
+    "report_historical_target_label_correlation": true,
+    "report_source_row_index_gaps": true,
+    "run_length_quantiles": [
+      0.5,
+      0.9,
+      0.99
+    ]
+  },
+  "stats_compare": [
+    "E2_5record_rare_weighted",
+    "E3_5record_plus_stats_rare_weighted"
+  ],
+  "train_csv_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "window_size": 5
+}
