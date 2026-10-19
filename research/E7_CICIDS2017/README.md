@@ -42,3 +42,11 @@ The folder may literally end in a trailing space. **Never guess or strip directo
 ## Publication rule
 
 We may begin manuscript drafting from existing frozen results. E7 novelty and external generalization remain **unproven until independently audited real experiments**. Do not conflate within-CIC training/testing with strict zero-shot UNSW→CIC transfer, or compare incompatible labels/splits as directly matched.
+
+## Current executable Kaggle notebook — #26
+
+**Notebook 26 (GitHub versioned):** [Eight-source CIC-IDS2017 full G0 audit with per-CSV verified public GitHub sync](notebooks/26_e7_cicids2017_eight_csv_g0_github_sync.ipynb).
+
+The user has verified that the eight CSVs are mounted in the actual directory whose last component is `TrafficLabelling ` (**trailing space**) and that the Timestamp header is ` Timestamp` (**leading space**), with example `7/7/2017 3:30`. Notebook 26 uses exactly this source-root discovery, verifies the assumed minute-resolution timestamp format on **each** CSV before a full scan, and runs the version-controlled synthetic audit + uploader security tests. It checks the existing Kaggle `pushRare` secret **before** long operations and uploads **each independently completed original source aggregate report** to `results/G0/`, verifying remote bytes before advancing. No model training, no UNSW official test access, no automatic threshold tuning. A failed G0 data-quality report is retained as a flagged failure, not a PASS.
+
+**Status:** prepared, code committed, notebook JSON and old results presence verified. **Kaggle real-data scan and remote live uploads have not yet been executed or confirmed.** After user runs Notebook 26, review source/day/label/time granularity and flow completion with a new Notebook 27, without changing the protocol retrospectively.
