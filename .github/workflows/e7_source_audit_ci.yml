@@ -24,3 +24,17 @@ jobs:
         run: python -m pip install -q numpy pandas pytest
       - name: Run synthetic source and GitHub archive regression tests
         run: python -m pytest -q research/E7_CICIDS2017/tests/test_e7_g0_external_source_audit.py research/E7_CICIDS2017/tests/test_e7_g0_publish.py research/E7_CICIDS2017/tests/test_e7_g0_timestamp_registry.py research/E7_CICIDS2017/tests/test_e7_g0_publish_v2.py research/E7_CICIDS2017/tests/test_e7_g0_extended_audit.py
+      - name: Parse and compile all overnight Notebook 27 Python cells
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('research/E7_CICIDS2017/notebooks/27_e7_overnight_full_audit_verified_github_sync.ipynb')
+          notebook=json.loads(p.read_text(encoding='utf-8'))
+          cells=[c for c in notebook['cells'] if c['cell_type']=='code']
+          assert len(cells)==4, 'Unexpected overnight code cell count'
+          for i,cell in enumerate(cells,1):
+              source=''.join(cell['source'])
+              compile(source,str(p)+f':cell-{i}','exec')
+          print('PASS: all',len(cells),'overnight cells have valid Python syntax')
+          PY
