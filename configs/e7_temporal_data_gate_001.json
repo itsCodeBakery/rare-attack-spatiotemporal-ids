@@ -1,0 +1,76 @@
+{
+  "experiment_id": "E7-TEMPORAL-VALIDITY-001",
+  "phase": "G0_SOURCE_PROVENANCE_ONLY",
+  "created_utc": "2026-10-19",
+  "status": "PRE_REGISTERED_NOT_EXECUTED",
+  "base_paper_doi": "10.1109/JIOT.2026.3695912",
+  "preceding_e6_audit": "docs/E6_ORDER_ROBUSTNESS_AUDIT.md",
+  "protocol": "docs/E7_TEMPORAL_VALIDITY_PROTOCOL.md",
+  "external_dataset": {
+    "name": "CIC-IDS2017",
+    "authority": "Canadian Institute for Cybersecurity, University of New Brunswick",
+    "source_url": "https://www.unb.ca/cic/datasets/ids-2017.html",
+    "required_archive": "GeneratedLabelledFlows.zip",
+    "not_acceptable_without_metadata": "MachineLearningCSV.zip",
+    "kaggle_input_path": null,
+    "sha256": null,
+    "source_verified": false
+  },
+  "requirements": {
+    "timestamp": true,
+    "flow_duration": true,
+    "source_ip": true,
+    "destination_ip": true,
+    "protocol": true,
+    "label": true,
+    "flow_end_time_semantics_verified": false
+  },
+  "chronology": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+  ],
+  "planned_splits": {
+    "train": [
+      "Monday",
+      "Tuesday",
+      "Wednesday"
+    ],
+    "validation": [
+      "Thursday"
+    ],
+    "locked_future_test": [
+      "Friday"
+    ],
+    "status": "PROPOSED_PENDING_SOURCE_AUDIT"
+  },
+  "history": {
+    "max_prior_flows": 4,
+    "decision_time": "flow_completion",
+    "strict_prior_condition": "history_t_end < target_t_end",
+    "candidate_recency_seconds": [
+      60,
+      300,
+      900
+    ],
+    "recency_selection": "train_validation_only",
+    "group_key": "unordered_host_ip_pair_plus_protocol"
+  },
+  "control_ids": [
+    "C0_target_only",
+    "C1_global_prior_4",
+    "C2_hostpair_protocol_prior_4",
+    "C3_same_history_order_permuted",
+    "C4_unrelated_labelblind_context"
+  ],
+  "safeguards": {
+    "old_unsw_official_test": "DO_NOT_ACCESS",
+    "e7_final_test": "DO_NOT_ACCESS_UNTIL_MODEL_FROZEN",
+    "no_training_during_g0": true,
+    "no_outcome_claims": true,
+    "no_raw_rows_committed": true
+  },
+  "next_gate": "Obtain Kaggle path to provider-labelled-flow archive; implement only dataset provenance/schema/time-integrity audit, emit PASS/FAIL; do not train."
+}
