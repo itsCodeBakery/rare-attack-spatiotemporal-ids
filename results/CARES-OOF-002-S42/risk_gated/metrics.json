@@ -1,0 +1,16 @@
+{
+  "accuracy": 0.8071418368804456,
+  "analysis_TP": 105,
+  "backdoor_TP": 57,
+  "balanced_accuracy": 0.6559305747297249,
+  "changed_from_rare_parent": 0,
+  "correct": 28254,
+  "dos_TP": 1976,
+  "gate_accepted_validation_records": 0,
+  "macro_f1": 0.6366908581786823,
+  "n": 35005,
+  "official_test_used": false,
+  "predictions_sha256": "09e9448d99bb40fd67366de749956b4798f8e814121d8e0bd809be11d7da7dff",
+  "variant": "risk_gated",
+  "weighted_f1": 0.8173268163849339
+}

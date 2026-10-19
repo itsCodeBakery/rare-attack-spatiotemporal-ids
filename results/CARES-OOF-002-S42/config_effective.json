@@ -1,0 +1,51 @@
+{
+  "best_baseline": "lgbm_rare_sqrt",
+  "candidate_alpha": [
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "candidate_gate_threshold": [
+    0,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "caution": "Published novel methodological superiority NOT established until literature review and independent official test.",
+  "description": "Cross-fitted multiclass residual calibration and training-only risk gate; real proposed methodology, no official-test use",
+  "experiment_id": "CARES-OOF-002-S42",
+  "fold_learning_rate": 0.07,
+  "fold_min_data_in_leaf": 40,
+  "fold_num_leaves": 31,
+  "fold_rounds": 220,
+  "fold_seed": 42,
+  "fold_thread_count": 4,
+  "folds": 3,
+  "frozen_rare_predictions_sha256": "4c8cd22a09bf0cd2b188aa400e45210b92d316237088885d4f4f0c95f3d181bb",
+  "frozen_standard_predictions_sha256": "67c81ac6df24acca846bc7871117db66ca8691722fdfb4cb6af4b3b9a7533782",
+  "margin_quantiles": [
+    0.1,
+    0.25,
+    0.5,
+    0.75
+  ],
+  "max_allowed_meta_gate_accuracy_loss": 0.003,
+  "meta_fit_fraction": 0.75,
+  "meta_max_iter": 600,
+  "meta_regularization_C": 0.15,
+  "meta_train_temperature": 1,
+  "min_meta_gate_macro_f1_gain": 0.001,
+  "official_test": "FORBIDDEN",
+  "reference_experiment": "CTRL-TAB-001-S42",
+  "reference_validation_examples": 35005,
+  "research_goal": "Joint accuracy and macro-F1 gains with Backdoor/Analysis classwise recall protection",
+  "seed": 42,
+  "source_warning": "Model and gate decisions are selected solely on an isolated heldout subset of TRAINING-FOLD OOF scores; reported fixed validation is development evidence only. OOF meta-train and tuning partition do not overlap.",
+  "variants": [
+    "frozen_base",
+    "simple_average",
+    "meta_full",
+    "risk_gated"
+  ]
+}
