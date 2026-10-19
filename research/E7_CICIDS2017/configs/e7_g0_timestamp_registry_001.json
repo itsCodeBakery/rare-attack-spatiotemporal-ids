@@ -1,0 +1,56 @@
+{
+  "study_id": "E7-EXT-VALIDITY-001-G0",
+  "version": "2026-10-19-format-01",
+  "status": "REGISTERED_FROM_USER_READ_ONLY_20_ROW_SAMPLES_FULL_SCAN_NOT_PERFORMED",
+  "dataset_root": "/kaggle/input/datasets/dsshayan/dscicids",
+  "actual_csv_parent_basename": "TrafficLabelling ",
+  "required_csv_count": 8,
+  "locale": "day/month/year",
+  "timestamp_header_original": " Timestamp",
+  "dataset_provenance": "USER_UPLOADED_PUBLISHER_STYLE_CICIDS2017_CSVS_NOT_YET_CRYPTOGRAPHICALLY_AUTHENTICATED",
+  "filename_registry": {
+    "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": {
+      "expected_weekday": "Friday",
+      "timestamp_format": "%d/%m/%Y %H:%M"
+    },
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": {
+      "expected_weekday": "Friday",
+      "timestamp_format": "%d/%m/%Y %H:%M"
+    },
+    "Friday-WorkingHours-Morning.pcap_ISCX.csv": {
+      "expected_weekday": "Friday",
+      "timestamp_format": "%d/%m/%Y %H:%M"
+    },
+    "Monday-WorkingHours.pcap_ISCX.csv": {
+      "expected_weekday": "Monday",
+      "timestamp_format": "%d/%m/%Y %H:%M:%S"
+    },
+    "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": {
+      "expected_weekday": "Thursday",
+      "timestamp_format": "%d/%m/%Y %H:%M"
+    },
+    "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": {
+      "expected_weekday": "Thursday",
+      "timestamp_format": "%d/%m/%Y %H:%M"
+    },
+    "Tuesday-WorkingHours.pcap_ISCX.csv": {
+      "expected_weekday": "Tuesday",
+      "timestamp_format": "%d/%m/%Y %H:%M"
+    },
+    "Wednesday-workingHours.pcap_ISCX.csv": {
+      "expected_weekday": "Wednesday",
+      "timestamp_format": "%d/%m/%Y %H:%M"
+    }
+  },
+  "sample_note": "Monday shows seconds (03/07/2017 08:55:58); other 7 inspected source files show minute strings. All matched filename weekdays in Notebook 26A, based on 20 timestamp strings/file; do not assume other rows match until full G0.",
+  "guards": [
+    "EXACT_MATCH_ALL_8_CSV_BASENAMES",
+    "VERIFY_ALL_PARSED_TIMESTAMPS_CHUNKWISE",
+    "VERIFY_ALL_CSV_DATE_WEEKDAYS",
+    "DO_NOT_REWRITE_TIMESTAMP_VALUES",
+    "NO_MODEL_TRAINING",
+    "NO_UNSW_OFFICIAL_TEST_ACCESS",
+    "ARCHIVE_ONLY_SAFE_AGGREGATES_PUBLICLY",
+    "SOURCE_CSV_BYTES_SHA256_REQUIRED"
+  ]
+}
