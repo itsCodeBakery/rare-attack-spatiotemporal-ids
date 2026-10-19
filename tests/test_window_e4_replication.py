@@ -40,10 +40,7 @@ def test_e4_protocol_no_official_test_and_exact_seed42():
     assert c["original_seed42_intact_probabilities_sha256"]==e3["private_predictions_sha256"]
     assert c["engineered_total_columns"]==444
     assert c["frozen_original_val_targets"]==35005
-    assert [x["id"] for x in c["candidate_families"]]==[
-        "stats_rare_sqrt","block_shuffled_stats_rare_sqrt" if False else "block_shuffled_stats_rare_sqrt",
-        "independent_shuffled_stats_rare_sqrt" if False else "independent_shuffled_stats_rare_sqrt"
-    ] or set(x["id"] for x in c["candidate_families"])=={
+    assert set(x["id"] for x in c["candidate_families"])=={
         "stats_rare_sqrt","block_shuffled_rare_sqrt","independent_shuffled_rare_sqrt"}
     for name in ("scripts/run_window_e4.py","scripts/archive_window_e4.py"):
         ast.parse(Path(name).read_text())
