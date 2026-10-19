@@ -16,9 +16,14 @@ import numpy as np
 import pandas as pd
 from tqdm.auto import tqdm
 
-from run_window_e2 import (build_data, train_model, metrics, parent_scores,
-                           store, digest)
-from archive_window_e2 import validate as validate_e2
+if __package__:
+    from scripts.run_window_e2 import (build_data, train_model, metrics, parent_scores,
+                                       store, digest)
+    from scripts.archive_window_e2 import validate as validate_e2
+else:
+    from run_window_e2 import (build_data, train_model, metrics, parent_scores,
+                               store, digest)
+    from archive_window_e2 import validate as validate_e2
 
 CONTROLS=("window_unweighted","window_rare_sqrt")
 FEATURE_STATS=("five_mean","five_std","five_min","five_max",
@@ -42,9 +47,8 @@ def append_stats(frame,raw_cols):
     if stats.shape[1]!=len(raw_cols)*6:
         raise ValueError("Wrong context statistic count")
     enhanced=pd.concat((frame,stats),axis=1)
-    if not np.isfinite(stats.to_numpy(dtype=np.float64)[
-            np.isfinite(stats.to_numpy(dtype=np.float64))]).all():
-        raise ValueError("Nonnumeric E3 statistics")
+    if np.isinf(stats.to_numpy(dtype=np.float64)).any():
+        raise ValueError("Infinite E3 statistics")
     return enhanced, list(stats.columns)
 
 def shuffled_history(frame,columns,seed):
