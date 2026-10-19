@@ -1,0 +1,11 @@
+{
+  "accuracy": 0.863217860266252,
+  "experiment_id": "WINDOW-OFFICIAL-001-S42",
+  "macro_f1": 0.5813968530100336,
+  "model_checkpoint_sha256": "8d68c55d74f4ac09f5472ae860fd05b508f6ea4f5c3902d9c92c81286b97c353",
+  "num_test_windows": 82328,
+  "official_prediction_sha256": "387e13a1dbb4dbc8fc6fa73402629dd5806e94e5b0e3ef5f56e1f6ee3d4a4b8c",
+  "official_test_evaluated_once": true,
+  "recovered_from_existing_original_predictions_without_second_test": true,
+  "test_csv_sha256": "734fe6642edf758f7c94d7d9149426b49d202fe8e7bf0bef47392489c3c0a559"
+}
