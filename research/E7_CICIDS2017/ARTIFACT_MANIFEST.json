@@ -1,0 +1,44 @@
+{
+  "study_id": "E7-EXT-VALIDITY-001",
+  "public_repo": "itsCodeBakery/rare-attack-spatiotemporal-ids",
+  "folder": "research/E7_CICIDS2017",
+  "created_on": "2026-10-19",
+  "state": "SOURCE_CSVS_DISCOVERED_G0_PENDING",
+  "canonical_paths": {
+    "method": "docs/E7_EXTERNAL_VALIDATION_PREREGISTRATION.md",
+    "novelty": "docs/E7_NOVELTY_PRIOR_ART_AUDIT_2026.md",
+    "runbook": "docs/E7_G0_QUICKSTART.md",
+    "resume": "docs/E7_RESUME_HANDOFF.md",
+    "source_audit": "scripts/e7_g0_external_source_audit.py",
+    "tests": "tests/test_e7_g0_external_source_audit.py",
+    "kaggle_notebook": "notebooks/25_e7_external_g0_provenance_audit.ipynb",
+    "audit_output": "results/G0/"
+  },
+  "root_original_source_blobs": {
+    "docs/E7_NOVELTY_PRIOR_ART_AUDIT_2026.md": "9daf1a58ae3eda50b16f6b08b5140d8873c70db6",
+    "docs/E7_EXTERNAL_VALIDATION_PREREGISTRATION.md": "5cc6baaceac4169b36b1ec58881051c8b9845d1f",
+    "docs/E7_G0_QUICKSTART.md": "6ec7178e51005d9dbb1a05d6794b8d9ce7d8a204",
+    "docs/E7_RESUME_HANDOFF.md": "1cf9d4df615e2a228e58064f2ed3cf34bdcecd44",
+    "scripts/e7_g0_external_source_audit.py": "67edf100fa438addeadefba17a8b9295fb733d54",
+    "tests/test_e7_g0_external_source_audit.py": "bf028eb5bdf6d4968403c608c79299c20c5709de",
+    "notebooks/25_e7_external_g0_provenance_audit.ipynb": "af5422b413b36ce552f78ad6ff863f2255f1850d"
+  },
+  "external_dataset": {
+    "kaggle_location_base": "/kaggle/input/datasets/dsshayan/dscicids/",
+    "verified_files_count": null,
+    "verified_hashes": null,
+    "publisher_originality_verified": false,
+    "timestamp_verified": false
+  },
+  "prior_outcomes_frozen": {
+    "UNSW_official_test": "results/WINDOW-OFFICIAL-001-S42/official_metrics.json",
+    "M1_seed42": "results/M1-CONTEXT-RISK-001/seed_42/final_public_summary.json",
+    "M1_private_archive_sha256": "00c440f79a3f88e71dc831281fd10776a06af4e57569f62d0b25a8c27910ab88"
+  },
+  "scientific_claims": {
+    "external_accuracy_measured": false,
+    "method_novelty_proven": false,
+    "temporal_order_certified": false,
+    "UNSW_official_test_reused": false
+  }
+}
