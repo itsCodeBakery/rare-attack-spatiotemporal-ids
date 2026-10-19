@@ -1,0 +1,18 @@
+{
+  "accuracy": 0.8071418368804456,
+  "analysis_recall": 0.24532710280373832,
+  "analysis_tp": 105,
+  "backdoor_recall": 0.16285714285714287,
+  "backdoor_tp": 57,
+  "balanced_accuracy": 0.6559305747297249,
+  "changed_from_rare": 0,
+  "correct": 28254,
+  "dos_recall": 0.7875647668393783,
+  "dos_tp": 1976,
+  "macro_f1": 0.6366908581786823,
+  "n": 35005,
+  "official_test_used": false,
+  "private_predictions_sha256": "954ccb7b4ce17ca2cf4bf9118049c3ad5e6f818cd703c867c980298f69c81913",
+  "variant": "risk_pair_gated",
+  "weighted_f1": 0.8173268163849339
+}
