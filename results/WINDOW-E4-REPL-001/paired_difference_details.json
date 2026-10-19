@@ -1,0 +1,80 @@
+[
+  {
+    "control": "block_shuffled_rare_sqrt",
+    "metric": "accuracy",
+    "paired_intact_minus_control_mean": 0.04005713469504357,
+    "paired_intact_minus_control_sd": 0.0030511879727833234,
+    "seed_differences": {
+      "42": 0.04299385802028277,
+      "43": 0.042508213112412596,
+      "44": 0.04082273960862737,
+      "45": 0.035737751749750024,
+      "46": 0.0382231109841451
+    }
+  },
+  {
+    "control": "block_shuffled_rare_sqrt",
+    "metric": "macro_f1",
+    "paired_intact_minus_control_mean": 0.026178951216039303,
+    "paired_intact_minus_control_sd": 0.0048508818723967135,
+    "seed_differences": {
+      "42": 0.028852014332236497,
+      "43": 0.02201632737980741,
+      "44": 0.033039555266038745,
+      "45": 0.021473581168430123,
+      "46": 0.025513277933683742
+    }
+  },
+  {
+    "control": "block_shuffled_rare_sqrt",
+    "metric": "dos_recall",
+    "paired_intact_minus_control_mean": -0.10872857712235953,
+    "paired_intact_minus_control_sd": 0.03163688672577699,
+    "seed_differences": {
+      "42": -0.14109206855320855,
+      "43": -0.13591072140294935,
+      "44": -0.11478676763650852,
+      "45": -0.07214029493822238,
+      "46": -0.07971303308090882
+    }
+  },
+  {
+    "control": "independent_shuffled_rare_sqrt",
+    "metric": "accuracy",
+    "paired_intact_minus_control_mean": 0.040428510212826764,
+    "paired_intact_minus_control_sd": 0.0036533493974918578,
+    "seed_differences": {
+      "42": 0.043136694757891725,
+      "43": 0.04193686616197689,
+      "44": 0.042136837594629384,
+      "45": 0.034052278245964906,
+      "46": 0.040879874303670904
+    }
+  },
+  {
+    "control": "independent_shuffled_rare_sqrt",
+    "metric": "macro_f1",
+    "paired_intact_minus_control_mean": 0.029824819888100373,
+    "paired_intact_minus_control_sd": 0.003758170960586631,
+    "seed_differences": {
+      "42": 0.031401297507595016,
+      "43": 0.02457005066363771,
+      "44": 0.03424703549760577,
+      "45": 0.031264599069009136,
+      "46": 0.027641116702654234
+    }
+  },
+  {
+    "control": "independent_shuffled_rare_sqrt",
+    "metric": "dos_recall",
+    "paired_intact_minus_control_mean": -0.10059784774810683,
+    "paired_intact_minus_control_sd": 0.04012227064244008,
+    "seed_differences": {
+      "42": -0.13351933041052222,
+      "43": -0.10960542048624944,
+      "44": -0.10880829015544036,
+      "45": -0.031088082901554404,
+      "46": -0.11996811478676772
+    }
+  }
+]
