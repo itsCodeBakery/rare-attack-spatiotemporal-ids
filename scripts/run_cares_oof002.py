@@ -19,7 +19,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score,f1_score,balanced_accuracy_score,confusion_matrix,precision_recall_fscore_support
 from sklearn.preprocessing import StandardScaler
 import joblib
-from run_ctrl003_tabular_fast import prepare
+if __package__:
+    from scripts.run_ctrl003_tabular_fast import prepare
+else:
+    from run_ctrl003_tabular_fast import prepare
 
 def hash_file(p):
     h=hashlib.sha256()
