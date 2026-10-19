@@ -67,7 +67,9 @@ def test_archive_freeze_precedes_any_test_read_and_safe_output():
     code=path.read_text()
     assert code.index("archive_pretest(out,os.environ.get") < code.index("test_frame=pd.read_csv(test_file")
     assert code.index("model.save_model(str(model_file)") < code.index("test_frame=pd.read_csv(test_file")
-    assert 'out.joinpath("official_evaluation_complete.json").exists()' in code
+    assert '"official_evaluation_complete.json",' in code
+    assert '"official_test_predictions_PRIVATE.npz",' in code
+    assert "DO NOT RETRAIN/RE-EVALUATE" in code
     assert '"official_test_used":True' in code
     assert "num_boost_round=cfg[\"final_train_iterations\"]" in code
     archive=Path("scripts/archive_official_001.py").read_text()
