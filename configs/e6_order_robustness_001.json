@@ -1,0 +1,114 @@
+{
+  "experiment_id": "E6-ORDER-ROBUSTNESS-001",
+  "stage": "TRAIN_DERIVED_ALTERNATIVE_SPLIT_ONLY",
+  "official_test": "FORBIDDEN",
+  "single_data_source": "UNSW_NB15_training-set.csv",
+  "training_csv_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "feature_manifest_repo_path": "results/WINDOW-E3-001-S42/feature_manifest.json",
+  "class_order": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "split_seed": 2026,
+  "model_seed": 42,
+  "n_splits": 5,
+  "no_hyperparameter_selection_from_e6_validation": true,
+  "fixed_num_boost_round": 58,
+  "frozen_model_hyperparameters": {
+    "objective": "multiclass",
+    "num_class": 10,
+    "metric": "None",
+    "learning_rate": 0.06,
+    "num_leaves": 63,
+    "min_data_in_leaf": 60,
+    "feature_fraction": 0.85,
+    "bagging_fraction": 0.85,
+    "bagging_freq": 1,
+    "lambda_l2": 5,
+    "deterministic": true,
+    "force_col_wise": true,
+    "verbosity": -1
+  },
+  "class_weight_power": 0.5,
+  "max_class_weight": 12,
+  "window_size": 5,
+  "target_position": 4,
+  "flat_raw_feature_count": 210,
+  "stats_feature_count": 234,
+  "total_feature_count": 444,
+  "label_independent_historical_block_shuffle_seed_train": 6302,
+  "label_independent_historical_block_shuffle_seed_validation": 7302,
+  "nonoverlap_window_target_local_indices": "4,9,14,... within each split-local source; zero-based windows 0,5,10,...",
+  "primary_conditions": [
+    {
+      "id": "target_full",
+      "representation": "newest_record_only",
+      "fit_subset": "full_overlapping_windows",
+      "validation_subset": "all"
+    },
+    {
+      "id": "intact_full",
+      "representation": "five_record_plus_stats",
+      "fit_subset": "full_overlapping_windows",
+      "validation_subset": "all"
+    },
+    {
+      "id": "shuffled_full",
+      "representation": "coherent_history_block_shuffled_and_stats_recomputed",
+      "fit_subset": "full_overlapping_windows",
+      "validation_subset": "all"
+    },
+    {
+      "id": "target_nonoverlap",
+      "representation": "newest_record_only",
+      "fit_subset": "nonoverlapping_windows",
+      "validation_subset": "nonoverlap"
+    },
+    {
+      "id": "intact_nonoverlap",
+      "representation": "five_record_plus_stats",
+      "fit_subset": "nonoverlapping_windows",
+      "validation_subset": "nonoverlap"
+    }
+  ],
+  "predeclared_comparisons": {
+    "all_validation": [
+      "intact_full - target_full",
+      "intact_full - shuffled_full"
+    ],
+    "nonoverlap_validation": [
+      "intact_full - target_full",
+      "intact_full - shuffled_full",
+      "intact_nonoverlap - target_nonoverlap"
+    ],
+    "training_sampling_effect": [
+      "intact_nonoverlap vs intact_full on SAME nonoverlap validation subset, but distinct training sample sizes; descriptive"
+    ]
+  },
+  "evaluate_full_trained_on_nonoverlap": true,
+  "evaluation_metrics": [
+    "accuracy",
+    "macro_f1",
+    "weighted_f1",
+    "precision_macro",
+    "recall_macro",
+    "per_class_recall",
+    "DoS_to_Exploits",
+    "Analysis_to_DoS",
+    "Backdoor_to_DoS"
+  ],
+  "report": "Report subgroup scores for five-record windows with all same class versus mixed-class history, plus original CSV source index gap >=10 for the oldest record. These are after-the-fact label-only audits, not input features.",
+  "sample_size_caution": "Non-overlapping windows reduce sample overlap, not network-flow/session dependence or label/order confounding.",
+  "temporal_caution": "UNSW 42-feature CSV does not independently demonstrate chronological or same-flow ordering; no claim of actual time modeling.",
+  "split_caution": "Five-fold StratifiedGroupKFold groups by identical 42-feature row tuples; source order still reflects original CSV and classes may be clustered. A new split is not an external validation dataset.",
+  "expected_artifacts": "Per-model private fitted boosters/probabilities in unpublished draft Releases. Public commits only configs, hashes, aggregate confusion/per-class metrics and paired comparisons. No official test material.",
+  "go_no_go": "Treat contextual claim as fragile if intact/full advantage vanishes under shuffled control or on nonoverlapping validation. If improvement persists, require timestamped flow/session external dataset for temporal interpretation."
+}
