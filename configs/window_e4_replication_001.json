@@ -1,0 +1,80 @@
+{
+  "experiment_id": "WINDOW-E4-REPL-001",
+  "version": "1.0",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "protocol": "Preregistered five-seed replication of E3 intact 444-feature rare-weighted LightGBM with two matched-feature-count negative controls. One seed42 E3 fit reused exactly without retraining.",
+  "original_reference": "SCV-IDS-REPRO-001",
+  "input_data": "Only original UNSW_NB15_training-set.csv",
+  "official_test": "FORBIDDEN",
+  "train_csv_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "reference_split_sha256": "01f6070e836317b09ba5f8ef662dba748ec19f9b7f6e211e4a5215d35bc4409c",
+  "reference_pred_sha256": "54f6aa6cb50c3c6a1533623e1c7b619f38dfa7ccbac8ce03cb9392e13e617612",
+  "frozen_original_train_targets": 140328,
+  "frozen_original_val_targets": 35005,
+  "raw_window_columns": 210,
+  "engineered_total_columns": 444,
+  "categories_in_raw_window": 15,
+  "original_seed42_intact_model_sha256": "33909092282196027341bd44055e422d68af9f5497d9d1dd7a73212047c4798b",
+  "original_seed42_intact_probabilities_sha256": "316a52835b6be03e651aa90af42ac78cdab4c2a153048d29ac2cef1f90730b66",
+  "candidate_families": [
+    {
+      "id": "intact_stats_rare_sqrt",
+      "representation": "intact",
+      "seeds_to_train": [
+        43,
+        44,
+        45,
+        46
+      ],
+      "reuse_seed42": "WINDOW-E3-001-S42/stats_rare_sqrt"
+    },
+    {
+      "id": "block_shuffled_stats_rare_sqrt",
+      "representation": "block_shuffled",
+      "seeds_to_train": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "id": "independent_shuffled_stats_rare_sqrt",
+      "representation": "independent_shuffled",
+      "seeds_to_train": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    }
+  ],
+  "lightgbm": {
+    "weight_power": 0.5,
+    "max_class_weight": 12,
+    "learning_rate": 0.06,
+    "num_leaves": 63,
+    "min_data_in_leaf": 60,
+    "num_boost_round": 850,
+    "early_stopping_rounds": 80
+  },
+  "stat_features_per_numeric_column": 6,
+  "base_numeric_columns": 39,
+  "block_shuffle": "Jointly permute lag1–lag4 records as one coherent 4-record block across target windows; within each partition only, retaining internal historical record relationships and all 42 feature associations. Each original lag0 row and true target label stay untouched.",
+  "independent_shuffle": "Independently permute each lag1–lag4 whole 42-feature record across target windows; separately within training and validation; target lag0 unchanged.",
+  "permutation_train_seed_formula": "10000 + 97*model_seed + (0 for block, 100000 for independent)",
+  "permutation_val_seed_formula": "20000 + 97*model_seed + (0 for block, 100000 for independent)",
+  "evaluation": "Classical 10-class multiclass accuracy, macro-F1, weighted-F1, DoS/Analysis/Backdoor recall; same original 35,005 internal validation targets; method early stops on this validation and is not an unbiased test.",
+  "reproducibility": "Archives uploaded to unpublished GitHub draft release immediately after each fully completed candidate. Source code, configurations, true confusion and aggregate results committed publicly without per-example predictions.",
+  "critical_limitation": "These are five algorithm seeds on exactly one frozen data split; they do not represent five independent held-out datasets, and the row order is not independently verified as temporal.",
+  "launch": "Kaggle CPU with Internet ON, dsshayan/unsw-nb15, pushRare secret authorized. Single notebook Save Version → Save & Run All.",
+  "decision_rule": "Interpret paired-seed mean/SD together with classwise and shuffled controls. Stronger evidence requires a new independent data split and locked official-test evaluation; no claims from current validation."
+}
