@@ -11,7 +11,7 @@ def test_protocol_and_notebook_syntax():
     for file in ("scripts/run_cares_pareto003.py","scripts/archive_cares_pareto003.py"):
         ast.parse(Path(file).read_text())
     nb=json.loads(Path("notebooks/15_cares_pareto003_class_conditional_routing.ipynb").read_text())
-    body="".join(c["source"] for c in nb["cells"] if c["cell_type"]=="code")
+    body="\n".join("".join(c["source"]) for c in nb["cells"] if c["cell_type"]=="code")
     ast.parse(body)
     assert "archive_cares_pareto003.py" in body
     assert "train_OOF_probabilities_PRIVATE.npz" in body
