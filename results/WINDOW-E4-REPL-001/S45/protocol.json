@@ -1,0 +1,11 @@
+{
+  "conditions": [
+    "stats_rare_sqrt",
+    "block_shuffled_rare_sqrt",
+    "independent_shuffled_rare_sqrt"
+  ],
+  "experiment_id": "WINDOW-E4-REPL-001",
+  "frozen_target_count": 35005,
+  "official_test_used": false,
+  "seed": 45
+}
