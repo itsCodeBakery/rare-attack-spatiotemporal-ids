@@ -46,7 +46,7 @@ def map_labels(frame):
 
 def make_raw(partition,raw_cols,levels=None):
     out=build_split_windows(partition,raw_cols,CATS,5)
-    names=[f"lag{lag}__{cat}" for lag in range(4,-1,-1) for cat in CATS]
+    names=[f"lag{lag}__{cat}" for lag in range(4,-1,-1) for cat in CATS if cat in raw_cols]
     vocabulary={}
     for name in names:
         if levels is None:
