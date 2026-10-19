@@ -1,0 +1,42 @@
+{
+  "experiment_id": "WINDOW-E2-001-S42",
+  "seed": 42,
+  "official_test": "FORBIDDEN",
+  "data_source": "UNSW-NB15 official TRAINING partition only; 82,332 official TEST never opened",
+  "base_split": "SCV-IDS-REPRO-001",
+  "train_csv_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "reference_split_sha256": "01f6070e836317b09ba5f8ef662dba748ec19f9b7f6e211e4a5215d35bc4409c",
+  "reference_pred_sha256": "54f6aa6cb50c3c6a1533623e1c7b619f38dfa7ccbac8ce03cb9392e13e617612",
+  "validation_target_rows": 35005,
+  "train_target_rows": 140328,
+  "window_size": 5,
+  "raw_features": 42,
+  "expected_flat_features": 210,
+  "feature_spec": "All five rows in each split-local, CSV-ordered SCV window, named lag4 oldest to lag0 target; native categorical proto/service/state for all lags; no attack label/id feature",
+  "warning": "CSV row ordering has NOT been verified as temporal continuity. Lag refers only to serialized window position, not real chronology.",
+  "candidates": [
+    {
+      "id": "window_unweighted",
+      "weight_power": 0,
+      "learning_rate": 0.06,
+      "num_leaves": 63,
+      "min_data_in_leaf": 60,
+      "num_boost_round": 700,
+      "early_stopping_rounds": 80
+    },
+    {
+      "id": "window_rare_sqrt",
+      "weight_power": 0.5,
+      "max_class_weight": 12,
+      "learning_rate": 0.06,
+      "num_leaves": 63,
+      "min_data_in_leaf": 60,
+      "num_boost_round": 850,
+      "early_stopping_rounds": 80
+    }
+  ],
+  "comparison": "Frozen last-record LightGBM unweighted and rare-sqrt already trained on exactly same 35,005 validation window targets",
+  "objective": "Does exposing all 5 split-local records (instead of only final one) improve joint accuracy and macro-F1? Exploratory internal validation only, no held-out official superiority claim",
+  "checkpoint": "Every 100 iterations local temporary save. Every completed candidate automatically private archived + public aggregate sync before the next candidate.",
+  "data_leakage_guard": "categorical vocab fit exclusively on original training split; group-disjoint frozen partitions, no use of official test"
+}
