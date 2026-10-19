@@ -141,7 +141,8 @@ def build_data(cfg,base_cfg,ref):
         "class_names":names,
         "window_order":"split-local CSV row order, not verified temporal",
         "only_designated_training_csv_accessed":True}
-    assert X.iloc[0][f"lag0__{cols[0]}"]==X.iloc[0][f"lag0__{cols[0]}"] or True
+    if (X.columns[0]!=f"lag4__{cols[0]}" or X.columns[-1]!=f"lag0__{cols[-1]}"):
+        raise ValueError("Oldest-to-target flat window feature ordering changed")
     return X,y,V,yv,names,categorical,lineage
 
 def metrics(y,p,classes):
