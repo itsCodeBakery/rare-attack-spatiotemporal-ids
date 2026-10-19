@@ -24,7 +24,7 @@
   "original_seed42_intact_probabilities_sha256": "316a52835b6be03e651aa90af42ac78cdab4c2a153048d29ac2cef1f90730b66",
   "candidate_families": [
     {
-      "id": "intact_stats_rare_sqrt",
+      "id": "stats_rare_sqrt",
       "representation": "intact",
       "seeds_to_train": [
         43,
@@ -35,7 +35,7 @@
       "reuse_seed42": "WINDOW-E3-001-S42/stats_rare_sqrt"
     },
     {
-      "id": "block_shuffled_stats_rare_sqrt",
+      "id": "block_shuffled_rare_sqrt",
       "representation": "block_shuffled",
       "seeds_to_train": [
         42,
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "independent_shuffled_stats_rare_sqrt",
+      "id": "independent_shuffled_rare_sqrt",
       "representation": "independent_shuffled",
       "seeds_to_train": [
         42,
