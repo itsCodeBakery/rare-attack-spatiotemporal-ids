@@ -139,8 +139,15 @@ def run(args):
     cfg=json.loads(Path(args.config).read_text())
     if cfg["status"]!="PRE_REGISTERED_BEFORE_OPENING_TEST" or not cfg["frozen_before_official_test"]:
         raise ValueError("Frozen methodological configuration not preregistered")
-    if out.joinpath("official_evaluation_complete.json").exists():
-        raise RuntimeError("Official test was already evaluated; do not repeat it")
+    if any((out/name).exists() for name in (
+            "official_evaluation_complete.json",
+            "official_metrics.json",
+            "official_test_predictions_PRIVATE.npz",
+            "PRETEST_FROZEN_CHECKPOINT.json")):
+        raise RuntimeError(
+            "Original frozen model and/or official test evidence already exists. "
+            "DO NOT RETRAIN/RE-EVALUATE. Run scripts/recover_official_001.py "
+            "on the original Kaggle outputs instead.")
     if cfg["no_additional_training_variants"] is not True:
         raise ValueError("This phase permits one preselected model only")
     train_file=csv_path(args.input,cfg["original_training_csv"])
@@ -275,7 +282,7 @@ def run(args):
         "our_model_metrics":report,
         "paper_aggregate_metrics":cfg["paper_comparator"],
         "numeric_accuracy_difference_pp":100*(report["accuracy"]-cfg["paper_comparator"]["accuracy"]),
-        "numeric_macro_f1_difference_pp":100*(report["macro_f1"]-cfg["paper_comparator"]["macro_f1"]),
+        "numeric_macro_f1_difference_pp":100*(report["macro_f1"]-cfg["paper_comparator"]["macro_f1_reported"]),
         "comparison_status":"official split and windowing comparable; differing pipeline/training details and paper metric aggregation must be disclosed",
         "paper_aggregate_f1_not_assumed_weighted":True,
         "method_preselected":True,"official_test_evaluated_once":True,
