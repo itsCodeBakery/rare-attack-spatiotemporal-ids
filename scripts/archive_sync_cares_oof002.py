@@ -71,7 +71,7 @@ def inspect(root):
         raise FileNotFoundError("Meta model binary missing")
     if any(not p.is_file() or p.is_symlink() for p in public):
         raise FileNotFoundError("Public aggregate file missing/symlinked")
-    if any(p.name.endswith("PRIVATE.npz") or p.suffix in (".txt",".joblib") for p in public):
+    if any(p.name.endswith("PRIVATE.npz") or p.suffix in (".cbm",".joblib") or p.name in ("model.txt","trained_model.txt") for p in public):
         raise ValueError("Private model/flow information in public GitHub selection")
     return public
 
