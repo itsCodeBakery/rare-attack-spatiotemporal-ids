@@ -1,0 +1,178 @@
+{
+  "complete_controls": {
+    "C0_TARGET": {
+      "accuracy": 0.8100943578959019,
+      "benign_fpr": 0.12898665959890454,
+      "brier": 0.23282463063442685,
+      "macro_f1": 0.6414911919969203,
+      "n": 36139,
+      "rare_recalls": {
+        "Analysis": 0.20095693779904306,
+        "Backdoor": 0.18110236220472442,
+        "DoS": 0.7927927927927928,
+        "Worms": 0.4857142857142857
+      },
+      "support": [
+        418,
+        381,
+        2553,
+        6805,
+        3661,
+        8485,
+        11319,
+        2231,
+        251,
+        35
+      ],
+      "weighted_f1": 0.8201330296232994
+    },
+    "C1_CONTEXT": {
+      "accuracy": 0.8447660422258502,
+      "benign_fpr": 0.0677621698029861,
+      "brier": 0.2038533281852751,
+      "macro_f1": 0.65015440018464,
+      "n": 36139,
+      "rare_recalls": {
+        "Analysis": 0.23205741626794257,
+        "Backdoor": 0.15748031496062992,
+        "DoS": 0.5609087348217783,
+        "Worms": 0.45714285714285713
+      },
+      "support": [
+        418,
+        381,
+        2553,
+        6805,
+        3661,
+        8485,
+        11319,
+        2231,
+        251,
+        35
+      ],
+      "weighted_f1": 0.8499791391414057
+    },
+    "C2_BLEND": {
+      "accuracy": 0.8415285425717369,
+      "benign_fpr": 0.08348794063079779,
+      "brier": 0.20942177819152838,
+      "macro_f1": 0.6561844994914883,
+      "n": 36139,
+      "rare_recalls": {
+        "Analysis": 0.24162679425837322,
+        "Backdoor": 0.16535433070866143,
+        "DoS": 0.6435566000783393,
+        "Worms": 0.42857142857142855
+      },
+      "support": [
+        418,
+        381,
+        2553,
+        6805,
+        3661,
+        8485,
+        11319,
+        2231,
+        251,
+        35
+      ],
+      "weighted_f1": 0.8485021498828383
+    },
+    "C3_GATE": {
+      "accuracy": 0.8428014056836105,
+      "benign_fpr": 0.07686191359660743,
+      "brier": 0.20464633220691286,
+      "macro_f1": 0.6606691700305787,
+      "n": 36139,
+      "rare_recalls": {
+        "Analysis": 0.23684210526315788,
+        "Backdoor": 0.17585301837270342,
+        "DoS": 0.6854680767724246,
+        "Worms": 0.45714285714285713
+      },
+      "support": [
+        418,
+        381,
+        2553,
+        6805,
+        3661,
+        8485,
+        11319,
+        2231,
+        251,
+        35
+      ],
+      "weighted_f1": 0.8499992578805701
+    },
+    "C4_RISK": {
+      "accuracy": 0.8100943578959019,
+      "benign_fpr": 0.12898665959890454,
+      "brier": 0.23282463063442685,
+      "macro_f1": 0.6414911919969203,
+      "n": 36139,
+      "rare_recalls": {
+        "Analysis": 0.20095693779904306,
+        "Backdoor": 0.18110236220472442,
+        "DoS": 0.7927927927927928,
+        "Worms": 0.4857142857142857
+      },
+      "support": [
+        418,
+        381,
+        2553,
+        6805,
+        3661,
+        8485,
+        11319,
+        2231,
+        251,
+        35
+      ],
+      "weighted_f1": 0.8201330296232994
+    },
+    "C5_NOCONTEXT": {
+      "accuracy": 0.8100943578959019,
+      "benign_fpr": 0.12898665959890454,
+      "brier": 0.23282463063442685,
+      "macro_f1": 0.6414911919969203,
+      "n": 36139,
+      "rare_recalls": {
+        "Analysis": 0.20095693779904306,
+        "Backdoor": 0.18110236220472442,
+        "DoS": 0.7927927927927928,
+        "Worms": 0.4857142857142857
+      },
+      "support": [
+        418,
+        381,
+        2553,
+        6805,
+        3661,
+        8485,
+        11319,
+        2231,
+        251,
+        35
+      ],
+      "weighted_f1": 0.8201330296232994
+    }
+  },
+  "dataset_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "evaluation_scope": "new TRAIN-derived outer group-disjoint fold0; NOT official test",
+  "experiment_id": "M1-CONTEXT-RISK-001",
+  "gate_calibration_status": "INFEASIBLE",
+  "no_context_calibration_status": "INFEASIBLE",
+  "official_test_accessed": false,
+  "oof_target_count": 139182,
+  "original_official_test_result_unchanged": true,
+  "outer_target_count": 36139,
+  "primary_delta_macro_f1_vs_context": -0.008663208187719706,
+  "primary_delta_macro_f1_vs_target": 0.0,
+  "private_predictions_sha256": "ba54297af650eec171c0f85a0dca65aa90921d0bb101349df630d5dd4fa4f5da",
+  "scientific_novelty": "NOT_PROVEN",
+  "seed": 42,
+  "selected_alpha": 0.0,
+  "split_hash": "ff03670590263a482205c18e40cdacc316c607b1aefadbd92f6e402cc008afae",
+  "status": "COMPLETED_PENDING_INDEPENDENT_RESULT_AUDIT",
+  "verified_temporal_order": false
+}

@@ -1,0 +1,18 @@
+{
+  "completed_stages": [
+    "inner_0",
+    "inner_1",
+    "inner_2",
+    "inner_3",
+    "outer_frozen"
+  ],
+  "experiment_id": "M1-CONTEXT-RISK-001",
+  "final_evaluation_done": true,
+  "official_test_accessed": false,
+  "original_official_test_result_unchanged": true,
+  "primary_delta_macro_f1_vs_context": -0.008663208187719706,
+  "primary_delta_macro_f1_vs_target": 0.0,
+  "private_draft_archive_sha256": "00c440f79a3f88e71dc831281fd10776a06af4e57569f62d0b25a8c27910ab88",
+  "seed": 42,
+  "status": "COMPLETED_PENDING_INDEPENDENT_RESULT_AUDIT"
+}

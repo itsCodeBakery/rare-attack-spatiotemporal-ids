@@ -1,0 +1,10 @@
+{
+  "heldout_raw_rows": 36143,
+  "outer_fold": 0,
+  "outer_source_hash": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "outer_split_sha256": "ff03670590263a482205c18e40cdacc316c607b1aefadbd92f6e402cc008afae",
+  "seed": 42,
+  "source_group_intersection": 0,
+  "test_dataset_accessed": false,
+  "train_raw_rows": 139198
+}

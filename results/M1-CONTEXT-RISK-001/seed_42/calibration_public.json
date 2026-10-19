@@ -1,0 +1,121 @@
+{
+  "M1": {
+    "alpha": 0.0,
+    "grid": [
+      {
+        "accuracy": 0.8180522565320665,
+        "alpha": 0.0,
+        "benign_fpr": 0.12893446277307175,
+        "feasible": false,
+        "macro_f1": 0.6499550879400902,
+        "recall_Analysis": 0.22997416020671835,
+        "recall_Backdoor": 0.1725067385444744,
+        "recall_DoS": 0.7152317880794702
+      },
+      {
+        "accuracy": 0.8333659354478133,
+        "alpha": 0.25,
+        "benign_fpr": 0.10976370931787782,
+        "feasible": false,
+        "macro_f1": 0.662361734631769,
+        "recall_Analysis": 0.22739018087855298,
+        "recall_Backdoor": 0.1778975741239892,
+        "recall_DoS": 0.7098509933774835
+      },
+      {
+        "accuracy": 0.8448232499650692,
+        "alpha": 0.5,
+        "benign_fpr": 0.08836379848417297,
+        "feasible": false,
+        "macro_f1": 0.6695348568779727,
+        "recall_Analysis": 0.23772609819121446,
+        "recall_Backdoor": 0.16981132075471697,
+        "recall_DoS": 0.6870860927152318
+      },
+      {
+        "accuracy": 0.849154673745983,
+        "alpha": 0.75,
+        "benign_fpr": 0.08024966562639324,
+        "feasible": false,
+        "macro_f1": 0.6718581069971895,
+        "recall_Analysis": 0.24031007751937986,
+        "recall_Backdoor": 0.16711590296495957,
+        "recall_DoS": 0.6568708609271523
+      },
+      {
+        "accuracy": 0.8513064133016627,
+        "alpha": 1.0,
+        "benign_fpr": 0.07588051716451183,
+        "feasible": false,
+        "macro_f1": 0.6723038532946826,
+        "recall_Analysis": 0.2532299741602067,
+        "recall_Backdoor": 0.15902964959568733,
+        "recall_DoS": 0.6390728476821192
+      }
+    ],
+    "selection": "target_only_fallback_NEGATIVE_RESULT",
+    "status": "INFEASIBLE"
+  },
+  "NO_CONTEXT": {
+    "alpha": 0.0,
+    "grid": [
+      {
+        "accuracy": 0.8180522565320665,
+        "alpha": 0.0,
+        "benign_fpr": 0.12893446277307175,
+        "feasible": false,
+        "macro_f1": 0.6499550879400902,
+        "recall_Analysis": 0.22997416020671835,
+        "recall_Backdoor": 0.1725067385444744,
+        "recall_DoS": 0.7152317880794702
+      },
+      {
+        "accuracy": 0.8323599273438591,
+        "alpha": 0.25,
+        "benign_fpr": 0.11065537226928224,
+        "feasible": false,
+        "macro_f1": 0.661269425987505,
+        "recall_Analysis": 0.22739018087855298,
+        "recall_Backdoor": 0.1778975741239892,
+        "recall_DoS": 0.7106788079470199
+      },
+      {
+        "accuracy": 0.8442923012435378,
+        "alpha": 0.5,
+        "benign_fpr": 0.08889879625501562,
+        "feasible": false,
+        "macro_f1": 0.670951625575632,
+        "recall_Analysis": 0.24031007751937986,
+        "recall_Backdoor": 0.16981132075471697,
+        "recall_DoS": 0.6916390728476821
+      },
+      {
+        "accuracy": 0.8482883889898002,
+        "alpha": 0.75,
+        "benign_fpr": 0.08087382969237633,
+        "feasible": false,
+        "macro_f1": 0.6723801554824316,
+        "recall_Analysis": 0.24031007751937986,
+        "recall_Backdoor": 0.16711590296495957,
+        "recall_DoS": 0.6593543046357616
+      },
+      {
+        "accuracy": 0.8504680732150343,
+        "alpha": 1.0,
+        "benign_fpr": 0.07632634864021404,
+        "feasible": false,
+        "macro_f1": 0.6706150336225241,
+        "recall_Analysis": 0.2454780361757106,
+        "recall_Backdoor": 0.15902964959568733,
+        "recall_DoS": 0.6432119205298014
+      }
+    ],
+    "selection": "target_only_fallback_NEGATIVE_RESULT",
+    "status": "INFEASIBLE"
+  },
+  "cal_n": 35785,
+  "calibration_uses_outer_heldout": false,
+  "gate_fit_n": 103397,
+  "group_intersection": 0,
+  "oof_target_count": 139182
+}
