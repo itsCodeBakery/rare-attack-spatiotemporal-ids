@@ -57,7 +57,7 @@
       "early_stopping_rounds": 80
     }
   ],
-  "shuffled_context_policy": "Independently permute each historical lag1-lag4 column across original target windows, separately within train and validation; preserve target lag0 and class labels, and lag-wise empirical marginals. This is a negative control, not causal temporal evidence.",
+  "shuffled_context_policy": "Independently permute each historical lag1-lag4 whole record (all 42 features moved jointly) across original target windows, separately within train and validation; preserve target lag0 and class labels. This is a negative control, not causal temporal evidence.",
   "shuffling_seed_training": 1701,
   "shuffling_seed_validation": 2701,
   "final_selection": "No additional tuning beyond preregistered candidates. Validation is used for boosting early stopping and exploratory comparisons only.",
