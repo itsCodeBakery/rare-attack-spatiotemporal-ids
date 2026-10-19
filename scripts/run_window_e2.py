@@ -190,8 +190,8 @@ def train_model(run,model_cfg,run_cfg,X,y,V,yv,classes,categories):
     scorefile=directory/"metrics.json"
     if scorefile.exists():
         saved=json.loads(scorefile.read_text())
-        if (directory/"model.txt").is_file() and
-            directory/"predictions_PRIVATE.npz").is_file() and
+        if ((directory/"model.txt").is_file() and
+            (directory/"predictions_PRIVATE.npz").is_file() and
             digest(directory/"model.txt")==saved["checkpoint_sha256"] and
             digest(directory/"predictions_PRIVATE.npz")==saved["private_predictions_sha256"]):
             print(f"REUSED HASH-VERIFIED COMPLETED E2 MODEL: {key}",flush=True)
