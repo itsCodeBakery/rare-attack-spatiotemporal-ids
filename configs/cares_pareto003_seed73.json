@@ -1,0 +1,15 @@
+{
+  "experiment_id": "CARES-PARETO-003-S42",
+  "seed": 73,
+  "official_test": "LOCKED",
+  "source_oof_sha256": "32f634645ac98d54d7bdf50513d6421d8efdd555230939e5f34e0482e1d5a36c",
+  "audit_fraction": 0.5,
+  "min_accuracy_gain": 0.00025,
+  "min_macro_f1_gain": 0.0005,
+  "dos_recall_tolerance": 0.02,
+  "analysis_recall_tolerance": 0.02,
+  "backdoor_recall_tolerance": 0.02,
+  "selection_method": "Select conditional class-pair shifts on train-only OOF calibration; independent train-only OOF audit must pass all constraints, otherwise deploy identity. No use of held-out SCV development-validation labels for routing.",
+  "limitations": "Some OOF 220-round models differ from the full 224/58-round frozen parents; model probability shift may cause training-only rules not to transfer. No official test accesses, no temporal claims.",
+  "reference": "CARES-OOF-002-S42 six completed out-of-fold models; CTRL-TAB-001-S42 frozen standard and rare parents"
+}
