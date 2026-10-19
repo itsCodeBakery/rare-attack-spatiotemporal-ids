@@ -1,0 +1,150 @@
+{
+  "experiment_id": "M1-CONTEXT-RISK-001",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "date": "2026-10-19",
+  "source": "UNSW_NB15_training-set.csv",
+  "training_csv_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "required_original_rows": 175341,
+  "feature_manifest": "results/WINDOW-E3-001-S42/feature_manifest.json",
+  "base_config": "configs/e6_order_robustness_001.json",
+  "method_protocol": "docs/M1_CONTEXT_RISK_METHOD_PROTOCOL.md",
+  "e6_validation_used_for_tuning": false,
+  "official_unsw_test": {
+    "access": "FORBIDDEN",
+    "previous_frozen_test_result_unchanged": true
+  },
+  "n_classes": 10,
+  "class_order": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "history": {
+    "window_size": 5,
+    "target_lag": 0,
+    "ordering": "source_CSV_order_IS_NOT_verified_time",
+    "history_across_partitions": "FORBIDDEN",
+    "features_current": 42,
+    "features_full": 444
+  },
+  "outer_evaluation": {
+    "scheme": "StratifiedGroupKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "seed": 2031,
+    "sealed_fold": 0,
+    "group_unit": "canonical_exact_42_feature_tuple",
+    "no_label_support_fallback": true
+  },
+  "inner_base_oof": {
+    "scheme": "StratifiedGroupKFold",
+    "n_splits": 4,
+    "shuffle": true,
+    "seed": 2032,
+    "windows_built_separately_per_fold": true,
+    "no_validation_early_stopping": true
+  },
+  "gate_vs_cap_partition": {
+    "scheme": "group_disjoint_stratified_split",
+    "gate_fit_fraction": 0.75,
+    "cap_cal_fraction": 0.25,
+    "seed": 2033,
+    "fixed_before_results": true
+  },
+  "learners": {
+    "type": "LightGBM",
+    "expert_names": [
+      "TARGET_42",
+      "CONTEXT_444"
+    ],
+    "num_boost_round": 58,
+    "shared_frozen_hyperparameters_from": "configs/e6_order_robustness_001.json",
+    "class_weight_power": 0.5,
+    "class_weight_cap": 12
+  },
+  "gating": {
+    "type": "linear_sigmoid",
+    "feature_names": [
+      "entropy_target",
+      "entropy_context",
+      "margin_target",
+      "margin_context",
+      "maxprob_target",
+      "maxprob_context",
+      "l1_probability_disagreement",
+      "argmax_disagreement",
+      "train_scaled_mean_numerical_drift",
+      "train_scaled_max_numerical_drift",
+      "categorical_history_mismatch_count"
+    ],
+    "label_features_allowed": false,
+    "gate_objective": "class_weighted_negative_log_mixture_likelihood_plus_L2",
+    "regularizer_lambda": 0.001,
+    "fit_on_expert_oof_only": true,
+    "probability_mix": "q=(1-alpha*g_theta)*p_target+(alpha*g_theta)*p_context"
+  },
+  "calibration": {
+    "candidate_alpha": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "objective": "maximize_ten_class_macro_f1_among_feasible",
+    "ties": "smaller_alpha",
+    "constraints": {
+      "min_accuracy_vs_context_delta": -0.01,
+      "max_benign_false_positive_increase_vs_target": 0.005,
+      "min_recall_delta_vs_target": {
+        "Analysis": -0.02,
+        "Backdoor": -0.02,
+        "DoS": -0.02
+      }
+    },
+    "failure": "INFEASIBLE_NEGATIVE_RESULT_NO_CONSTRAINT_RELAXATION"
+  },
+  "controls": [
+    "C0_TARGET",
+    "C1_CONTEXT",
+    "C2_BLEND",
+    "C3_GATE",
+    "C4_RISK",
+    "C5_NOCONTEXT"
+  ],
+  "comparisons": {
+    "primary": [
+      "C4_RISK_vs_C0_TARGET_macro_f1",
+      "C4_RISK_vs_C1_CONTEXT_macro_f1"
+    ],
+    "secondary": [
+      "all_classwise_recall",
+      "benign_fpr",
+      "accuracy",
+      "Brier",
+      "ECE",
+      "runtime",
+      "order_perturbation"
+    ]
+  },
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "report_evaluation_scope": "new_train_derived_outer_heldout_fold_only",
+  "categorical_encodings_fit_on_training_only": true,
+  "no_raw_rows_or_private_probabilities_public": true,
+  "novelty_claim": "UNVERIFIED_PENDING_LITERATURE_REVIEW_AND_ABLATIONS",
+  "temporal_claim": "PROHIBITED_UNTIL_TIMESTAMP_VERIFIED",
+  "phase_next": "IMPLEMENT_SYNTHETIC_TESTS_AND_IMPLEMENTATION_NOT_TRAINING"
+}
