@@ -1,0 +1,48 @@
+{
+  "alternative_train_dev_split_sha256": "3d8dd8f5c79814250039b05e2c7fe76f1e2dd1aa2b964266b690d96376e05d9d",
+  "nonoverlap_training_windows": 28037,
+  "nonoverlap_validation_windows": 7031,
+  "official_test_opened": false,
+  "only_original_training_csv_opened": true,
+  "same_source_duplicate_feature_group_across_split": false,
+  "selected_fold": 3,
+  "source_train_csv_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "split_seed": 2026,
+  "train_classes": {
+    "Analysis": 1606,
+    "Backdoor": 1394,
+    "DoS": 9833,
+    "Exploits": 26789,
+    "Fuzzers": 14543,
+    "Generic": 32260,
+    "Normal": 44747,
+    "Reconnaissance": 7993,
+    "Shellcode": 912,
+    "Worms": 105
+  },
+  "train_source_rows": 140186,
+  "train_windows": 140182,
+  "val_classes": {
+    "Analysis": 394,
+    "Backdoor": 352,
+    "DoS": 2431,
+    "Exploits": 6604,
+    "Fuzzers": 3641,
+    "Generic": 7740,
+    "Normal": 11245,
+    "Reconnaissance": 2498,
+    "Shellcode": 221,
+    "Worms": 25
+  },
+  "val_source_rows": 35155,
+  "val_windows": 35151,
+  "validation_strata_counts": {
+    "all": 35151,
+    "class_pure_history": 12608,
+    "mixed_class_history": 22543,
+    "nonoverlap": 7031,
+    "source_oldest_gap_ge_10": 32063,
+    "source_oldest_gap_lt_10": 3088
+  },
+  "verified_source_is_temporal": false
+}
