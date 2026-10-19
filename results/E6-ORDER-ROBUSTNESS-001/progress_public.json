@@ -1,0 +1,11 @@
+{
+  "completed": [
+    "target_full",
+    "intact_full",
+    "shuffled_full",
+    "target_nonoverlap",
+    "intact_nonoverlap"
+  ],
+  "experiment_id": "E6-ORDER-ROBUSTNESS-001",
+  "official_test_opened": false
+}

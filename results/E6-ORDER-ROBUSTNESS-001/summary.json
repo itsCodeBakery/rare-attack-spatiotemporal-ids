@@ -1,0 +1,165 @@
+{
+  "all_validation": {
+    "intact_full": {
+      "accuracy": 0.8481408779266593,
+      "macro_f1": 0.6455048169992587
+    },
+    "intact_nonoverlap": {
+      "accuracy": 0.8386105658444994,
+      "macro_f1": 0.6217567974597896
+    },
+    "shuffled_full": {
+      "accuracy": 0.8093937583568035,
+      "macro_f1": 0.6279418744025094
+    },
+    "target_full": {
+      "accuracy": 0.8143153822081876,
+      "macro_f1": 0.6581463300735978
+    },
+    "target_nonoverlap": {
+      "accuracy": 0.8009444966003813,
+      "macro_f1": 0.616966912226386
+    }
+  },
+  "alternate_group_disjoint_split_sha256": "3d8dd8f5c79814250039b05e2c7fe76f1e2dd1aa2b964266b690d96376e05d9d",
+  "conclusion_limitations": [
+    "Label-dependent class clustering is present in original source CSV.",
+    "Split-local five-row record position is not verified time or network flow.",
+    "Block shuffle disturbs natural feature distributions; not a causal proof.",
+    "Nonoverlap within evaluation partitions reduces shared-source-row overlap but not flow or domain dependence.",
+    "One alternative train-derived split does not constitute external validation.",
+    "Official test already used in earlier frozen phase and NOT reopened here."
+  ],
+  "experiment_id": "E6-ORDER-ROBUSTNESS-001",
+  "fitted_new_models": 5,
+  "nonoverlap_validation": {
+    "intact_full": {
+      "Analysis_to_DoS": 58,
+      "Backdoor_to_DoS": 30,
+      "DoS_to_Exploits": 187,
+      "accuracy": 0.8481012658227848,
+      "analysis_recall": 0.20652173913043478,
+      "backdoor_recall": 0.1875,
+      "correct": 5963,
+      "dos_recall": 0.5612244897959183,
+      "macro_f1": 0.6624511111118764,
+      "n": 7031,
+      "precision_macro": 0.6847750893316599,
+      "recall_macro": 0.669361136797335,
+      "weighted_f1": 0.852972511761846
+    },
+    "intact_nonoverlap": {
+      "Analysis_to_DoS": 48,
+      "Backdoor_to_DoS": 21,
+      "DoS_to_Exploits": 242,
+      "accuracy": 0.8380031290001422,
+      "analysis_recall": 0.18478260869565216,
+      "backdoor_recall": 0.171875,
+      "correct": 5892,
+      "dos_recall": 0.42857142857142855,
+      "macro_f1": 0.6232966263528096,
+      "n": 7031,
+      "precision_macro": 0.7120605818407821,
+      "recall_macro": 0.6085061177177191,
+      "weighted_f1": 0.8399272518832694
+    },
+    "shuffled_full": {
+      "Analysis_to_DoS": 44,
+      "Backdoor_to_DoS": 36,
+      "DoS_to_Exploits": 153,
+      "accuracy": 0.808277627648983,
+      "analysis_recall": 0.16304347826086957,
+      "backdoor_recall": 0.125,
+      "correct": 5683,
+      "dos_recall": 0.6306122448979592,
+      "macro_f1": 0.63040236758328,
+      "n": 7031,
+      "precision_macro": 0.641671987377249,
+      "recall_macro": 0.649311546276673,
+      "weighted_f1": 0.8166186533189042
+    },
+    "target_full": {
+      "Analysis_to_DoS": 61,
+      "Backdoor_to_DoS": 41,
+      "DoS_to_Exploits": 109,
+      "accuracy": 0.8125444460247475,
+      "analysis_recall": 0.18478260869565216,
+      "backdoor_recall": 0.21875,
+      "correct": 5713,
+      "dos_recall": 0.7285714285714285,
+      "macro_f1": 0.6783807123804781,
+      "n": 7031,
+      "precision_macro": 0.6906830582034947,
+      "recall_macro": 0.7127903565910512,
+      "weighted_f1": 0.8231389121095827
+    },
+    "target_nonoverlap": {
+      "Analysis_to_DoS": 46,
+      "Backdoor_to_DoS": 27,
+      "DoS_to_Exploits": 162,
+      "accuracy": 0.7988906272223012,
+      "analysis_recall": 0.1956521739130435,
+      "backdoor_recall": 0.265625,
+      "correct": 5617,
+      "dos_recall": 0.536734693877551,
+      "macro_f1": 0.6375518393131955,
+      "n": 7031,
+      "precision_macro": 0.6312134301439424,
+      "recall_macro": 0.6606620262506507,
+      "weighted_f1": 0.8102883981512553
+    }
+  },
+  "official_test_opened": false,
+  "paired_control_differences": [
+    {
+      "accuracy_delta": 0.03382549571847171,
+      "candidate": "intact_full",
+      "control": "target_full",
+      "macro_f1_delta": -0.012641513074339139,
+      "n": 35151,
+      "subset": "all"
+    },
+    {
+      "accuracy_delta": 0.03874711956985577,
+      "candidate": "intact_full",
+      "control": "shuffled_full",
+      "macro_f1_delta": 0.017562942596749287,
+      "n": 35151,
+      "subset": "all"
+    },
+    {
+      "accuracy_delta": 0.035556819798037265,
+      "candidate": "intact_full",
+      "control": "target_full",
+      "macro_f1_delta": -0.015929601268601767,
+      "n": 7031,
+      "subset": "nonoverlap"
+    },
+    {
+      "accuracy_delta": 0.039823638173801745,
+      "candidate": "intact_full",
+      "control": "shuffled_full",
+      "macro_f1_delta": 0.032048743528596324,
+      "n": 7031,
+      "subset": "nonoverlap"
+    },
+    {
+      "accuracy_delta": 0.03911250177784098,
+      "candidate": "intact_nonoverlap",
+      "control": "target_nonoverlap",
+      "macro_f1_delta": -0.014255212960385899,
+      "n": 7031,
+      "subset": "nonoverlap"
+    },
+    {
+      "accuracy_delta": -0.0100981368226426,
+      "candidate": "intact_nonoverlap",
+      "control": "intact_full",
+      "macro_f1_delta": -0.0391544847590668,
+      "n": 7031,
+      "subset": "nonoverlap"
+    }
+  ],
+  "source_training_sha256": "bec7dd5ec88dc2a0ccc7a07879d338395ed7421750f675fd0339e07dfe0648fa",
+  "test_was_not_reused": true
+}

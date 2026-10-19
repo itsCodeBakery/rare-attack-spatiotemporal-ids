@@ -1,0 +1,7 @@
+candidate,control,subset,accuracy_delta,macro_f1_delta,n
+intact_full,target_full,all,0.03382549571847171,-0.012641513074339139,35151
+intact_full,shuffled_full,all,0.03874711956985577,0.017562942596749287,35151
+intact_full,target_full,nonoverlap,0.035556819798037265,-0.015929601268601767,7031
+intact_full,shuffled_full,nonoverlap,0.039823638173801745,0.032048743528596324,7031
+intact_nonoverlap,target_nonoverlap,nonoverlap,0.03911250177784098,-0.014255212960385899,7031
+intact_nonoverlap,intact_full,nonoverlap,-0.0100981368226426,-0.0391544847590668,7031
