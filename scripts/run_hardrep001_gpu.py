@@ -13,6 +13,7 @@ from sklearn.preprocessing import OneHotEncoder,StandardScaler
 from sklearn.impute import SimpleImputer
 from sklearn.metrics import accuracy_score,f1_score,confusion_matrix,precision_recall_fscore_support
 import joblib
+from tqdm.auto import tqdm
 from run_ctrl003_tabular_fast import prepare
 
 def digest(path):
@@ -136,9 +137,9 @@ def run(args):
  natural_weights=torch.from_numpy(weights).to(device)
  history=[];best=-1;best_epoch=0;stale=0;started=time.monotonic()
  checkpoint=out/"best_model_PRIVATE.pt"
- for epoch in range(1,cfg["epochs"]+1):
+ for epoch in tqdm(range(1,cfg["epochs"]+1),desc="HARDREP training epochs",unit="epoch",dynamic_ncols=True):
   model.train();running=0;seen=0
-  for bx,by in loader:
+  for bx,by in tqdm(loader,desc=f"Epoch {epoch:02d} batches",unit="batch",leave=False,dynamic_ncols=True):
    bx=bx.to(device,non_blocking=True);by=by.to(device,non_blocking=True)
    optim.zero_grad(set_to_none=True)
    logits,z=model(bx)
@@ -171,6 +172,7 @@ def run(args):
   pd.DataFrame(history).to_csv(out/"training_history.csv",index=False)
   if stale>=cfg["patience"]:
    print("EARLY STOP PATIENCE",stale,flush=True);break
+ print("TRAINING COMPLETE; loading best checkpoint and computing final evaluation",flush=True)
  state=torch.load(checkpoint,map_location=device,weights_only=False)
  model.load_state_dict(state["model"])
  probs=probabilities(model,val,device)
