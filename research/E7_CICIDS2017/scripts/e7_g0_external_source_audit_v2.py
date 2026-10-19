@@ -1,9 +1,3 @@
-"""E7 versioned encoding-aware read-only audit, derived from original preserved module.
-
-Original previous findings and source code retained without modification.
-Version 2 adds explicit per-file source_encoding after strict byte validation;
-never uses replacement decoding or silently alters original CSV source bytes.
-"""
 """E7 G0: read-only external IDS source provenance/schema/time audit.
 
 Not an experiment. Cannot certify event chronology, flow causality, label truth,
