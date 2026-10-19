@@ -170,9 +170,10 @@ def run(args):
                   flush=True)
         for family in FAMILIES:
             if family=="stats_rare_sqrt" and seed==42:continue
+            restored=False
             if args.auto_archive:
                 from archive_window_e4 import restore_prior_candidate
-                restore_prior_candidate(root,seed,family,os.environ.get("GITHUB_TOKEN"))
+                restored=restore_prior_candidate(root,seed,family,os.environ.get("GITHUB_TOKEN"))
             if family=="stats_rare_sqrt":
                 tr,va=intact_x,intact_v
             else:
@@ -189,7 +190,7 @@ def run(args):
             score=train_model(folder,modelcfg,{"seed":seed},
                 tr,y,va,yv,classes,categories)
             records.append(collect(folder,family,seed))
-            if args.auto_archive:
+            if args.auto_archive and not restored:
                 from archive_window_e4 import archive_and_sync
                 archive_and_sync(root,seed,family,os.environ.get("GITHUB_TOKEN"))
             print(f"E4 SAVED + ARCHIVED: {family} seed={seed}",flush=True)
