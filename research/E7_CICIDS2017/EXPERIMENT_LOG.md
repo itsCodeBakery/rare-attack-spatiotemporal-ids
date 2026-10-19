@@ -13,3 +13,5 @@ Every new stage must have its own run ID, exact source file hash, Git commit, sp
 **Next run ID:** `E7-EXT-VALIDITY-001-G0` (source/schema audit only). Do not use `E7-EXT-VALIDITY-001-G1` for training until G0 checks and split preregistration are signed off.
 
 **Backups:** Before long training, verify pushRare, auto-upload private model/prediction archives to unpublished draft GitHub releases after **each** expensive model/seed, commit public progress/results and verify remote checksums. Do not assume auto-backup exists merely because an uploader script is present.
+
+| 2026-10-19 | E7 Notebook 26 prepared | [Eight-CSV G0 Kaggle notebook](notebooks/26_e7_cicids2017_eight_csv_g0_github_sync.ipynb); [per-file GitHub publisher](scripts/e7_g0_publish.py); [six uploader synthetic tests](tests/test_e7_g0_publish.py) passed locally; original 8-file directory and leading-space time header confirmed by user's Kaggle inspection | READY_FOR_USER_G0_RUN | Execute Notebook 26 only; full-source hashes, endpoint schema and chronology/parse anomalies, append-only GitHub public records; never train or modify prior model artifacts |
