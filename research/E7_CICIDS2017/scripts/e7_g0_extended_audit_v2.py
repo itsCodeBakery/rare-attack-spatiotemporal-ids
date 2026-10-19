@@ -64,7 +64,7 @@ def audit_file(path, *, timestamp_format, expected_weekday, chunk_size=35000, so
     duplicates=0
     contradictions=0
     no_identifiers=('flowid','sourceip','destinationip','sourceport','destinationport')
-    for chunk in pd.read_csv(path,encoding='utf-8-sig',dtype='string',
+    for chunk in pd.read_csv(path,dtype='string',
                              chunksize=chunk_size,on_bad_lines='error',low_memory=False,encoding=source_encoding):
         if chunk.empty: continue
         if numeric_cols is None:
