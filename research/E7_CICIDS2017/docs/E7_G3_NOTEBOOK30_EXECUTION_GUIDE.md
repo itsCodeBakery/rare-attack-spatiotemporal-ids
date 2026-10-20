@@ -28,4 +28,4 @@ The user must not delete old G0/G1/G2, frozen UNSW official or M1 artifacts; the
 
 ### Run status and scientific caveat
 
-GitHub Actions validates 52 synthetic tests (including an **actual tiny LightGBM fit with model-ZIP restoration**) and the notebook's four code cells. **This does not prove live Kaggle API permissions or real model scores**. All labels are provisional original CIC-IDS2017 labels; day-specific attack families and capture settings are confounded, and no chronological related-flow input is used. G3 is not directly comparable to the base SCV-IDS random-split CIC result. No UNSW-NB15 official test is accessed.
+GitHub Actions validates 54 synthetic tests (including an **actual tiny LightGBM fit with model-ZIP restoration**) and the notebook's four code cells. **This does not prove live Kaggle API permissions or real model scores**. All labels are provisional original CIC-IDS2017 labels; day-specific attack families and capture settings are confounded, and no chronological related-flow input is used. G3 is not directly comparable to the base SCV-IDS random-split CIC result. No UNSW-NB15 official test is accessed.
