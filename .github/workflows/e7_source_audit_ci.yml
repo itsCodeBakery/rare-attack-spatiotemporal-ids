@@ -39,7 +39,7 @@ jobs:
               p=Path('research/E7_CICIDS2017/notebooks')/filename
               notebook=json.loads(p.read_text(encoding='utf-8'))
               cells=[c for c in notebook['cells'] if c['cell_type']=='code']
-              assert len(cells)==4, 'Unexpected overnight code cell count'
+              assert len(cells)==(3 if filename.startswith('28_') else 4), 'Unexpected notebook code cell count'
               for i,cell in enumerate(cells,1):
                   source=''.join(cell['source'])
                   compile(source,str(p)+f':cell-{i}','exec')
