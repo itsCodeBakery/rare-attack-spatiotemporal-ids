@@ -58,12 +58,13 @@ def test_unpublished_release_creation_and_preflight(monkeypatch):
         if method=='GET' and '/releases/tags/' in url:
             from urllib.error import HTTPError
             raise HTTPError(url,404,'Not Found',None,None)
+        if method=='GET' and url.endswith('/releases?per_page=100'):return []
         if method=='POST':assert payload['draft'] is True;return draft()
         if method=='GET' and '/assets?' in url:return []
         raise AssertionError(method)
     monkeypatch.setattr(mod,'api',fake)
     assert mod.draft_release('FAKE')['draft'] is True
-    assert calls==['GET','POST','GET']
+    assert calls==['GET','GET','POST','GET']
 
 def test_backup_probe_preflight_saved_and_verified(monkeypatch,tmp_path):
     uploaded={}
