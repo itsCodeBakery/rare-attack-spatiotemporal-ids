@@ -44,6 +44,13 @@ def draft_release(token):
         if e.code!=404:raise
         r=None
     if r is None:
+        # Draft tags can be omitted by the release-by-tag API: check private list.
+        listings=api('GET',ROOT+'/releases?per_page=100',token)
+        matches=[item for item in listings if item.get('tag_name')==TAG]
+        if len(matches)>1:
+            raise RuntimeError('Multiple draft releases use locked G3 tag; stop')
+        if matches:r=matches[0]
+    if r is None:
         r=api('POST',ROOT+'/releases',token,{
             'tag_name':TAG,'target_commitish':'main',
             'name':'PRIVATE E7 G3 open-world original-source model checkpoints',
@@ -227,3 +234,40 @@ def publish_metrics(record,*,token,output_folder):
         if sec:time.sleep(sec)
         if check_content(url,token,content,blob,commit):return 'PUBLIC_UPLOADED_VERIFIED'
     raise RuntimeError('Public metrics PUT accepted but not yet verified; no repeat PUT')
+
+
+def publish_summary(report,*,token,output_folder):
+    """Create-only safe fold/seed-level score aggregates, not raw predictions."""
+    required={'schema','experiment','protocol_blob_sha','model_count',
+              'fold_count','seed_count','fold_summary','limitations'}
+    if set(report)!=required or report['schema']!='E7_G3_SEED_SUMMARY_001':
+        raise ValueError('Unexpected model score summary schema')
+    assert report['model_count']==20 and report['fold_count']==4 and report['seed_count']==5
+    assert set(report['fold_summary'])=={'OPENWORLD_DAY_FOLD_'+str(i) for i in range(1,5)}
+    assert re.fullmatch('[a-f0-9]{64}',report['protocol_blob_sha'])
+    for fold,values in report['fold_summary'].items():
+        assert set(values)=={'test_day','n_seeds','b0_macro_f1_mean',
+          'b1_macro_f1_mean','b1_macro_f1_std','b2_macro_f1_mean',
+          'b2_macro_f1_std','b2_attack_recall_mean','b2_fpr_mean'}
+        assert values['n_seeds']==5
+    content=(json.dumps(report,sort_keys=True,indent=2,ensure_ascii=False)+'\n').encode()
+    folder=Path(output_folder);folder.mkdir(parents=True,exist_ok=True)
+    filename='G3_FOUR_FOLD_FIVE_SEED_SUMMARY.json'
+    path=folder/filename
+    if path.exists():
+        if path.read_bytes()!=content:raise RuntimeError('Original summary differs')
+    else:path.write_bytes(content)
+    address=ROOT+'/contents/'+quote(PUBLIC_PREFIX+'/'+filename,safe='/')
+    if check_content(address,token,content):return 'SUMMARY_ALREADY_VERIFIED'
+    try:
+        out=api('PUT',address,token,{'message':'results(e7-g3): frozen four-fold five-seed baseline summary',
+          'branch':'main','content':base64.b64encode(content).decode('ascii')})
+    except HTTPError as err:
+        if err.code not in (409,422):raise
+        if check_content(address,token,content):return 'SUMMARY_VERIFIED_CONCURRENT'
+        raise
+    blob=out['content']['sha'];commit=out['commit']['sha']
+    for sec in (0,1,2,3,5,8,13):
+        if sec:time.sleep(sec)
+        if check_content(address,token,content,blob,commit):return 'SUMMARY_UPLOADED_VERIFIED'
+    raise RuntimeError('Summary PUT may have succeeded. Do not resend before verification')
