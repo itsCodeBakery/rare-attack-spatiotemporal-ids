@@ -1,0 +1,71 @@
+{
+  "calendar_weekday_consistency": true,
+  "causal_order_proven": false,
+  "daily_row_counts": {
+    "2017-07-05": 692703
+  },
+  "first_missing_row_1based": null,
+  "label_by_day_hour_counts": {
+    "2017-07-05 01:00 | BENIGN": 48902,
+    "2017-07-05 02:00 | BENIGN": 63863,
+    "2017-07-05 02:00 | DoS slowloris": 5,
+    "2017-07-05 03:00 | BENIGN": 66131,
+    "2017-07-05 03:00 | Heartbleed": 11,
+    "2017-07-05 04:00 | BENIGN": 44878,
+    "2017-07-05 05:00 | BENIGN": 3547,
+    "2017-07-05 08:00 | BENIGN": 14107,
+    "2017-07-05 09:00 | BENIGN": 51103,
+    "2017-07-05 09:00 | DoS slowloris": 3201,
+    "2017-07-05 10:00 | BENIGN": 72456,
+    "2017-07-05 10:00 | DoS Hulk": 221331,
+    "2017-07-05 10:00 | DoS Slowhttptest": 5499,
+    "2017-07-05 10:00 | DoS slowloris": 2590,
+    "2017-07-05 11:00 | BENIGN": 51051,
+    "2017-07-05 11:00 | DoS GoldenEye": 10293,
+    "2017-07-05 11:00 | DoS Hulk": 9742,
+    "2017-07-05 12:00 | BENIGN": 23993
+  },
+  "labels": {
+    "BENIGN": 440031,
+    "DoS GoldenEye": 10293,
+    "DoS Hulk": 231073,
+    "DoS Slowhttptest": 5499,
+    "DoS slowloris": 5796,
+    "Heartbleed": 11
+  },
+  "last_missing_row_1based": null,
+  "longest_missing_label_run_in_csv_row_order": 0,
+  "missing_label_rows": 0,
+  "missing_label_runs_in_csv_row_order": 0,
+  "missing_labels_by_day_hour": {},
+  "original_source_sha256": "ed538e85b84181e8897dedb3d37d365982f44b27eccd67c477581a8b65f3d170",
+  "review_flags": [
+    "Original source labels not independently validated",
+    "Source CSV row adjacency and filename-day agreement do not prove causal temporal history",
+    "Afternoon clock convention may be ambiguous even if parsed timestamps have 0 errors",
+    "Missing labels MUST NOT be converted to BENIGN, discarded silently or imputed",
+    "Any study on corrected CICIDS2017 requires separate provenance/schema/label audit"
+  ],
+  "rows": 692703,
+  "schema": "E7_G1_LABEL_CLOCK_DIAGNOSTIC_001",
+  "source_adjacent_ties": 355545,
+  "source_adjacent_time_reversals": 163908,
+  "source_file": "Wednesday-workingHours.pcap_ISCX.csv",
+  "source_positive_max_gap_seconds": 43140.0,
+  "source_text_encoding": "utf-8-sig",
+  "timestamp_hour_histogram": {
+    "01": 48902,
+    "02": 63868,
+    "03": 66142,
+    "04": 44878,
+    "05": 3547,
+    "08": 14107,
+    "09": 54304,
+    "10": 301876,
+    "11": 71086,
+    "12": 23993
+  },
+  "timestamp_parse_failures": 0,
+  "training_authorized": false,
+  "trusted_original_labels": false
+}
