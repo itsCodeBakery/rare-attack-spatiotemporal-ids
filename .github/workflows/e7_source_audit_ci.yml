@@ -35,11 +35,12 @@ jobs:
               '27c_e7_overnight_resume_corrected_preflight.ipynb',
               '27d_e7_resume_label_sentinel_audit.ipynb',
               '28_e7_g1_label_clock_source_diagnostic.ipynb',
+              '29_e7_g2_source_integrity_clock_forensics.ipynb',
           ):
               p=Path('research/E7_CICIDS2017/notebooks')/filename
               notebook=json.loads(p.read_text(encoding='utf-8'))
               cells=[c for c in notebook['cells'] if c['cell_type']=='code']
-              assert len(cells)==(3 if filename.startswith('28_') else 4), 'Unexpected notebook code cell count'
+              assert len(cells)==(3 if filename.startswith(('28_','29_')) else 4), 'Unexpected notebook code cell count'
               for i,cell in enumerate(cells,1):
                   source=''.join(cell['source'])
                   compile(source,str(p)+f':cell-{i}','exec')
