@@ -108,3 +108,30 @@ def test_unseen_day_fold_constraints():
     by['Monday']['y']=np.array([1],dtype=np.uint8)
     with pytest.raises(AssertionError):
         m.get_fold(by,f)
+
+
+def test_real_synthetic_lightgbm_training_and_private_zip_roundtrip():
+    """Actual tiny CPU LightGBM fit, not merely syntax/mock coverage."""
+    import importlib.util
+    from pathlib import Path
+    path=Path(__file__).resolve().parents[1]/'scripts/e7_g3_archive.py'
+    spec=importlib.util.spec_from_file_location('g3_roundtrip_archive',path)
+    archive=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(archive)
+    rng=np.random.default_rng(42)
+    X=rng.normal(size=(650,71)).astype('float32')
+    y=(X[:,0]+0.7*X[:,1]>0).astype(np.uint8)
+    features=['feature_'+str(i) for i in range(X.shape[1])]
+    booster=m.train_seed(X,y,features,seed=42)
+    pred=booster.predict(X,num_threads=4)
+    assert np.isfinite(pred).all()
+    selected=m.choose_threshold(y,pred)
+    meta={'schema':'E7_G3_PRIVATE_MODEL_001','feature_names':features,
+          'seed':42,'fold':'OPENWORLD_DAY_FOLD_1',
+          'protocol_blob_sha':'a'*64,'features_sha256':'b'*64}
+    zipped=archive.pack_model(booster,meta)
+    restored,saved=archive.unpack_model(zipped,meta)
+    restored_pred=restored.predict(X,num_threads=4)
+    np.testing.assert_allclose(pred,restored_pred,atol=1e-12,rtol=1e-12)
+    assert selected['threshold']>=0 and selected['threshold']<=1
+    assert m.evaluate(y,pred,selected['threshold'])['rows']==len(y)
