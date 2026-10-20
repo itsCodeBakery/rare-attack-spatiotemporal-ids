@@ -74,8 +74,16 @@ def get_private_asset(asset,token):
     address=ROOT+'/releases/assets/'+str(asset['id'])
     raw=http('GET',address,token,headers={'Accept':'application/octet-stream'},parse_json=False)
     # Fail closed if GitHub API returns metadata JSON instead of asset binary.
-    if raw.startswith(b'{') and b'browser_download_url' in raw[:1024]:
-        raise RuntimeError('GitHub returned asset metadata, not verified private model bytes')
+    if raw.startswith(b'{') and b'browser_download_url' in raw[:4096]:
+        meta=json.loads(raw)
+        destination=meta.get('browser_download_url','')
+        # Only follow the exact authenticated, owner-scoped release download URL.
+        if not destination.startswith('https://github.com/'+REPO+'/releases/download/'):
+            raise RuntimeError('Unexpected private draft download domain or repository')
+        raw=http('GET',destination,token,
+                 headers={'Accept':'application/octet-stream'},parse_json=False)
+        if raw.startswith(b'{'):
+            raise RuntimeError('GitHub private draft download returned metadata, not ZIP bytes')
     if not raw.startswith(b'PK\x03\x04'):
         raise RuntimeError('Draft release download did not return model ZIP bytes')
     if len(raw)>MODEL_LIMIT:
