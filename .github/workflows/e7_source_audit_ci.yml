@@ -23,7 +23,7 @@ jobs:
       - name: Install audit test dependencies
         run: python -m pip install -q numpy pandas pytest
       - name: Run synthetic source and GitHub archive regression tests
-        run: python -m pytest -q research/E7_CICIDS2017/tests/test_e7_g0_external_source_audit.py research/E7_CICIDS2017/tests/test_e7_g0_publish.py research/E7_CICIDS2017/tests/test_e7_g0_timestamp_registry.py research/E7_CICIDS2017/tests/test_e7_g0_publish_v2.py research/E7_CICIDS2017/tests/test_e7_g0_extended_audit.py research/E7_CICIDS2017/tests/test_e7_csv_encoding_gate.py
+        run: python -m pytest -q research/E7_CICIDS2017/tests/test_e7_g0_external_source_audit.py research/E7_CICIDS2017/tests/test_e7_g0_publish.py research/E7_CICIDS2017/tests/test_e7_g0_timestamp_registry.py research/E7_CICIDS2017/tests/test_e7_g0_publish_v2.py research/E7_CICIDS2017/tests/test_e7_g0_extended_audit.py research/E7_CICIDS2017/tests/test_e7_csv_encoding_gate.py research/E7_CICIDS2017/tests/test_e7_g1_label_clock_diagnostic.py
       - name: Parse and compile all overnight Notebook 27 and 27B and 27C Python cells
         run: |
           python - <<'PY'
@@ -34,6 +34,7 @@ jobs:
               '27b_e7_overnight_resume_strict_encoding_and_github_sync.ipynb',
               '27c_e7_overnight_resume_corrected_preflight.ipynb',
               '27d_e7_resume_label_sentinel_audit.ipynb',
+              '28_e7_g1_label_clock_source_diagnostic.ipynb',
           ):
               p=Path('research/E7_CICIDS2017/notebooks')/filename
               notebook=json.loads(p.read_text(encoding='utf-8'))
