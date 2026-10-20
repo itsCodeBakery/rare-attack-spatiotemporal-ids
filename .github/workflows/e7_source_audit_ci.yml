@@ -5,6 +5,7 @@ on:
       - 'research/E7_CICIDS2017/scripts/**'
       - 'research/E7_CICIDS2017/tests/**'
       - 'research/E7_CICIDS2017/configs/**'
+      - 'research/E7_CICIDS2017/notebooks/30_e7_g3_openworld_dayholdout_b012_lightgbm.ipynb'
       - '.github/workflows/e7_source_audit_ci.yml'
   workflow_dispatch:
 
@@ -46,4 +47,26 @@ jobs:
                   source=''.join(cell['source'])
                   compile(source,str(p)+f':cell-{i}','exec')
               print('PASS:',filename,'all',len(cells),'Python cells compile')
+          PY
+
+      - name: Verify Notebook 30 pinned blob hashes against committed research source
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          base=Path('research/E7_CICIDS2017')
+          notebook=json.loads((base/'notebooks/30_e7_g3_openworld_dayholdout_b012_lightgbm.ipynb').read_text())
+          source=''.join(next(c['source'] for c in notebook['cells'] if c['cell_type']=='code' and any('BLOBS={' in v for v in c['source'])))
+          assert 'COMMIT="855baa3f8dc426cc838ae48c8df5b4c7da85f203"' in source
+          paths={
+           'scripts/e7_g3_openworld_baseline.py':'f882154ff9757abe66a7fe588039eb26c9758170',
+           'scripts/e7_g3_archive.py':'348e54e8ad719f544ab51608d364b504e8d26744',
+           'configs/G3_OPENWORLD_DAYHOLDOUT_PROTOCOL_001.json':'5ca597207bd8379860a3007b6cb7952efdde9b4f',
+           'configs/G3_B012_HYPERPARAMETER_LOCK_001.json':'abd380bdbcab38ea3b33c1637457ffca44ef253e'}
+          for name,expected in paths.items():
+              raw=(base/name).read_bytes()
+              actual=hashlib.sha1(b'blob '+str(len(raw)).encode()+bytes([0])+raw).hexdigest()
+              assert actual==expected,(name,actual,expected)
+              assert expected in source
+          print('PASS: Notebook 30 exact pinned code and frozen protocol SHA values match GitHub')
           PY
