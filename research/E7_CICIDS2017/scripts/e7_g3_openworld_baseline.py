@@ -96,7 +96,7 @@ def read_source(path,spec,expected_features=None,chunk_size=25000):
         active=chunk.loc[~label_missing]
         y_text=raw_label.loc[~label_missing]
         totals.update({str(k):int(v) for k,v in y_text.value_counts().items()})
-        x=active[feature_names].apply(pd.to_numeric,errors='coerce').to_numpy(dtype=np.float64)
+        x=active[feature_names].apply(pd.to_numeric,errors='coerce').to_numpy(dtype=np.float64,na_value=np.nan)
         x[~np.isfinite(x)]=np.nan
         x=np.where(np.abs(x)>np.finfo(np.float32).max,np.nan,x).astype(np.float32)
         arrays.append(x)
