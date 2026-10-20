@@ -102,3 +102,18 @@ def test_existing_public_results_cannot_be_replaced(monkeypatch,tmp_path):
         'content':base64.b64encode(b'different metric file').decode('ascii')})
     with pytest.raises(RuntimeError,match='Different public metrics'):
         mod.publish_metrics(raw_report(),token='FAKE',output_folder=tmp_path)
+
+
+def test_draft_asset_metadata_fallback_is_owner_scoped(monkeypatch):
+    model=zipbytes()
+    expected='https://github.com/'+mod.REPO+'/releases/download/private-tag/test.zip'
+    reads=[]
+    def fake(method,url,token,data=None,headers=None,parse_json=True):
+        reads.append(url)
+        if '/releases/assets/' in url:
+            return json.dumps({'browser_download_url':expected}).encode()
+        if url==expected:return model
+        raise AssertionError('Unexpected private URL')
+    monkeypatch.setattr(mod,'http',fake)
+    result=mod.get_private_asset({'id':43,'size':len(model)},'FAKE')
+    assert result==model and reads[-1]==expected
