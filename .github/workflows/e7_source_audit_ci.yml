@@ -24,7 +24,7 @@ jobs:
         run: python -m pip install -q numpy pandas pytest
       - name: Run synthetic source and GitHub archive regression tests
         run: python -m pytest -q research/E7_CICIDS2017/tests/test_e7_g0_external_source_audit.py research/E7_CICIDS2017/tests/test_e7_g0_publish.py research/E7_CICIDS2017/tests/test_e7_g0_timestamp_registry.py research/E7_CICIDS2017/tests/test_e7_g0_publish_v2.py research/E7_CICIDS2017/tests/test_e7_g0_extended_audit.py research/E7_CICIDS2017/tests/test_e7_csv_encoding_gate.py
-      - name: Parse and compile all overnight Notebook 27 and 27B Python cells
+      - name: Parse and compile all overnight Notebook 27 and 27B and 27C Python cells
         run: |
           python - <<'PY'
           import json
@@ -32,6 +32,7 @@ jobs:
           for filename in (
               '27_e7_overnight_full_audit_verified_github_sync.ipynb',
               '27b_e7_overnight_resume_strict_encoding_and_github_sync.ipynb',
+              '27c_e7_overnight_resume_corrected_preflight.ipynb',
           ):
               p=Path('research/E7_CICIDS2017/notebooks')/filename
               notebook=json.loads(p.read_text(encoding='utf-8'))
