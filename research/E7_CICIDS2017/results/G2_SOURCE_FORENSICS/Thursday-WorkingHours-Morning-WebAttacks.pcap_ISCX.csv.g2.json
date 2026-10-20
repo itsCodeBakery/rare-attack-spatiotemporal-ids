@@ -1,0 +1,37 @@
+{
+  "all_fields_empty_runs_in_csv_order": 1,
+  "counts": {
+    "all_fields_empty": 288602,
+    "label_present_and_fields_all_empty": 0,
+    "labeled_without_timestamp": 0,
+    "missing_label_and_all_fields_empty": 288602,
+    "missing_label_and_missing_timestamp": 288602,
+    "missing_label_but_other_fields_present": 0,
+    "no_label": 288602,
+    "no_timestamp": 288602
+  },
+  "first_all_fields_empty_row_1based": 170367,
+  "first_labeled_without_timestamp_row_1based": null,
+  "first_missing_label_row_1based": 170367,
+  "interpretation": "Aggregate structural audit only. A blank block may mean padding or damaged CSV; no source-causation claim.",
+  "last_all_fields_empty_row_1based": 458968,
+  "last_missing_label_row_1based": 458968,
+  "longest_all_fields_empty_run": 288602,
+  "longest_missing_label_run": 288602,
+  "missing_label_runs_in_csv_order": 1,
+  "nonempty_fields_per_source_row_histogram": {
+    "0": 288602,
+    "84": 20,
+    "85": 170346
+  },
+  "rows": 458968,
+  "schema": "E7_G2_MISSINGNESS_FORENSICS_001",
+  "source_encoding": "cp1252",
+  "source_file": "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+  "source_header_columns": 85,
+  "source_modified": false,
+  "source_sha256": "e3deaff483d18b53b100a441dff9b8919416df8876b4edcc0f0d1e4bf48397d0",
+  "trailing_all_fields_empty_rows": 288602,
+  "trailing_missing_label_rows": 288602,
+  "training_authorized": false
+}
