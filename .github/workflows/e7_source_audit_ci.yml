@@ -33,6 +33,7 @@ jobs:
               '27_e7_overnight_full_audit_verified_github_sync.ipynb',
               '27b_e7_overnight_resume_strict_encoding_and_github_sync.ipynb',
               '27c_e7_overnight_resume_corrected_preflight.ipynb',
+              '27d_e7_resume_label_sentinel_audit.ipynb',
           ):
               p=Path('research/E7_CICIDS2017/notebooks')/filename
               notebook=json.loads(p.read_text(encoding='utf-8'))
