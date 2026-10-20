@@ -23,7 +23,7 @@ jobs:
       - name: Install audit test dependencies
         run: python -m pip install -q numpy pandas pytest
       - name: Run synthetic source and GitHub archive regression tests
-        run: python -m pytest -q research/E7_CICIDS2017/tests/test_e7_g0_external_source_audit.py research/E7_CICIDS2017/tests/test_e7_g0_publish.py research/E7_CICIDS2017/tests/test_e7_g0_timestamp_registry.py research/E7_CICIDS2017/tests/test_e7_g0_publish_v2.py research/E7_CICIDS2017/tests/test_e7_g0_extended_audit.py research/E7_CICIDS2017/tests/test_e7_csv_encoding_gate.py research/E7_CICIDS2017/tests/test_e7_g1_label_clock_diagnostic.py
+        run: python -m pytest -q research/E7_CICIDS2017/tests/test_e7_g0_external_source_audit.py research/E7_CICIDS2017/tests/test_e7_g0_publish.py research/E7_CICIDS2017/tests/test_e7_g0_timestamp_registry.py research/E7_CICIDS2017/tests/test_e7_g0_publish_v2.py research/E7_CICIDS2017/tests/test_e7_g0_extended_audit.py research/E7_CICIDS2017/tests/test_e7_csv_encoding_gate.py research/E7_CICIDS2017/tests/test_e7_g1_label_clock_diagnostic.py research/E7_CICIDS2017/tests/test_e7_g2_source_clock_forensics.py research/E7_CICIDS2017/tests/test_e7_g2_publish.py
       - name: Parse and compile all overnight Notebook 27 and 27B and 27C Python cells
         run: |
           python - <<'PY'
