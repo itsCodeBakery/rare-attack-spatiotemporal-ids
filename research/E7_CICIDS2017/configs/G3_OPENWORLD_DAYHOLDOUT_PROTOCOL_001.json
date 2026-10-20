@@ -1,0 +1,309 @@
+{
+  "protocol_id": "E7-G3-OPENWORLD-DAYHOLDOUT-001",
+  "locked_on": "2026-10-20",
+  "status": "PREREGISTERED_NO_G3_MODELS_TRAINED",
+  "basis": "G0 original-source SHA256 metadata, completed G2 forensic structural checks; source labels remain provisional",
+  "source_archive": "dsshayan/dscicids/TrafficLabelling [literal trailing space]",
+  "dataset_name": "CIC-IDS2017 original TrafficLabelling CSV",
+  "source_rows_total": 3119345,
+  "original_fully_empty_rows": 288602,
+  "derived_nonempty_rows_total": 2830743,
+  "dataset_handling": "Derived-only exclusion of entire fully-empty rows in Thursday Morning WebAttacks; original source files and G0-G2 reports remain immutable. No nonblank unlabeled records observed. Strict CP1252 decode for WebAttacks.",
+  "source_files": [
+    {
+      "source_file": "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+      "source_file_sha256": "1f779b4f0d78f9225554c4de53b5a2c07912b60dcd136ee4c5c1d0d2496b7cc4",
+      "source_day": "Friday",
+      "original_rows": 225745,
+      "fully_empty_rows_verified_by_g2": 0,
+      "derived_nonempty_rows": 225745,
+      "encoding": "utf-8-sig",
+      "original_labels": {
+        "BENIGN": 97718,
+        "DDoS": 128027
+      }
+    },
+    {
+      "source_file": "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+      "source_file_sha256": "7e2ddaa80a5849ba629463296b6128436c161b4a32e8034bb5beae06b0c45e08",
+      "source_day": "Friday",
+      "original_rows": 286467,
+      "fully_empty_rows_verified_by_g2": 0,
+      "derived_nonempty_rows": 286467,
+      "encoding": "utf-8-sig",
+      "original_labels": {
+        "BENIGN": 127537,
+        "PortScan": 158930
+      }
+    },
+    {
+      "source_file": "Friday-WorkingHours-Morning.pcap_ISCX.csv",
+      "source_file_sha256": "c061cd98f39d8054aeaed6244a5129a20b3985983d0d022b860ae8aa07fe8d21",
+      "source_day": "Friday",
+      "original_rows": 191033,
+      "fully_empty_rows_verified_by_g2": 0,
+      "derived_nonempty_rows": 191033,
+      "encoding": "utf-8-sig",
+      "original_labels": {
+        "BENIGN": 189067,
+        "Bot": 1966
+      }
+    },
+    {
+      "source_file": "Monday-WorkingHours.pcap_ISCX.csv",
+      "source_file_sha256": "96f26aea87d513073769b48ce204c2921791149e1c6225f7db65a3fed7973820",
+      "source_day": "Monday",
+      "original_rows": 529918,
+      "fully_empty_rows_verified_by_g2": 0,
+      "derived_nonempty_rows": 529918,
+      "encoding": "utf-8-sig",
+      "original_labels": {
+        "BENIGN": 529918
+      }
+    },
+    {
+      "source_file": "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
+      "source_file_sha256": "d74238e054023c8bd4d8056650463cadb25c100fb0e26ebd4272c07b5c022c4b",
+      "source_day": "Thursday",
+      "original_rows": 288602,
+      "fully_empty_rows_verified_by_g2": 0,
+      "derived_nonempty_rows": 288602,
+      "encoding": "utf-8-sig",
+      "original_labels": {
+        "BENIGN": 288566,
+        "Infiltration": 36
+      }
+    },
+    {
+      "source_file": "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+      "source_file_sha256": "e3deaff483d18b53b100a441dff9b8919416df8876b4edcc0f0d1e4bf48397d0",
+      "source_day": "Thursday",
+      "original_rows": 458968,
+      "fully_empty_rows_verified_by_g2": 288602,
+      "derived_nonempty_rows": 170366,
+      "encoding": "cp1252",
+      "original_labels": {
+        "BENIGN": 168186,
+        "Web Attack – Brute Force": 1507,
+        "Web Attack – Sql Injection": 21,
+        "Web Attack – XSS": 652
+      }
+    },
+    {
+      "source_file": "Tuesday-WorkingHours.pcap_ISCX.csv",
+      "source_file_sha256": "ae9c88e10c41a8eb1ff454ae98bc513454925097d0b0b57180f94e79de445815",
+      "source_day": "Tuesday",
+      "original_rows": 445909,
+      "fully_empty_rows_verified_by_g2": 0,
+      "derived_nonempty_rows": 445909,
+      "encoding": "utf-8-sig",
+      "original_labels": {
+        "BENIGN": 432074,
+        "FTP-Patator": 7938,
+        "SSH-Patator": 5897
+      }
+    },
+    {
+      "source_file": "Wednesday-workingHours.pcap_ISCX.csv",
+      "source_file_sha256": "ed538e85b84181e8897dedb3d37d365982f44b27eccd67c477581a8b65f3d170",
+      "source_day": "Wednesday",
+      "original_rows": 692703,
+      "fully_empty_rows_verified_by_g2": 0,
+      "derived_nonempty_rows": 692703,
+      "encoding": "utf-8-sig",
+      "original_labels": {
+        "BENIGN": 440031,
+        "DoS GoldenEye": 10293,
+        "DoS Hulk": 231073,
+        "DoS Slowhttptest": 5499,
+        "DoS slowloris": 5796,
+        "Heartbleed": 11
+      }
+    }
+  ],
+  "day_class_support": {
+    "Monday": {
+      "rows": 529918,
+      "attack_labels": [],
+      "benign_rows": 529918
+    },
+    "Tuesday": {
+      "rows": 445909,
+      "attack_labels": [
+        "FTP-Patator",
+        "SSH-Patator"
+      ],
+      "benign_rows": 432074
+    },
+    "Wednesday": {
+      "rows": 692703,
+      "attack_labels": [
+        "DoS GoldenEye",
+        "DoS Hulk",
+        "DoS Slowhttptest",
+        "DoS slowloris",
+        "Heartbleed"
+      ],
+      "benign_rows": 440031
+    },
+    "Thursday": {
+      "rows": 458968,
+      "attack_labels": [
+        "Infiltration",
+        "Web Attack – Brute Force",
+        "Web Attack – Sql Injection",
+        "Web Attack – XSS"
+      ],
+      "benign_rows": 456752
+    },
+    "Friday": {
+      "rows": 703245,
+      "attack_labels": [
+        "Bot",
+        "DDoS",
+        "PortScan"
+      ],
+      "benign_rows": 414322
+    }
+  },
+  "folds": [
+    {
+      "fold": "OPENWORLD_DAY_FOLD_1",
+      "test_day": "Tuesday",
+      "validation_day": "Wednesday",
+      "train_days": [
+        "Monday",
+        "Thursday",
+        "Friday"
+      ],
+      "known_train_classes": [
+        "Bot",
+        "DDoS",
+        "Infiltration",
+        "PortScan",
+        "Web Attack – Brute Force",
+        "Web Attack – Sql Injection",
+        "Web Attack – XSS"
+      ],
+      "unseen_test_classes": [
+        "FTP-Patator",
+        "SSH-Patator"
+      ]
+    },
+    {
+      "fold": "OPENWORLD_DAY_FOLD_2",
+      "test_day": "Wednesday",
+      "validation_day": "Thursday",
+      "train_days": [
+        "Monday",
+        "Tuesday",
+        "Friday"
+      ],
+      "known_train_classes": [
+        "Bot",
+        "DDoS",
+        "FTP-Patator",
+        "PortScan",
+        "SSH-Patator"
+      ],
+      "unseen_test_classes": [
+        "DoS GoldenEye",
+        "DoS Hulk",
+        "DoS Slowhttptest",
+        "DoS slowloris",
+        "Heartbleed"
+      ]
+    },
+    {
+      "fold": "OPENWORLD_DAY_FOLD_3",
+      "test_day": "Thursday",
+      "validation_day": "Friday",
+      "train_days": [
+        "Monday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "known_train_classes": [
+        "DoS GoldenEye",
+        "DoS Hulk",
+        "DoS Slowhttptest",
+        "DoS slowloris",
+        "FTP-Patator",
+        "Heartbleed",
+        "SSH-Patator"
+      ],
+      "unseen_test_classes": [
+        "Infiltration",
+        "Web Attack – Brute Force",
+        "Web Attack – Sql Injection",
+        "Web Attack – XSS"
+      ]
+    },
+    {
+      "fold": "OPENWORLD_DAY_FOLD_4",
+      "test_day": "Friday",
+      "validation_day": "Tuesday",
+      "train_days": [
+        "Monday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "known_train_classes": [
+        "DoS GoldenEye",
+        "DoS Hulk",
+        "DoS Slowhttptest",
+        "DoS slowloris",
+        "Heartbleed",
+        "Infiltration",
+        "Web Attack – Brute Force",
+        "Web Attack – Sql Injection",
+        "Web Attack – XSS"
+      ],
+      "unseen_test_classes": [
+        "Bot",
+        "DDoS",
+        "PortScan"
+      ]
+    }
+  ],
+  "strict_controls": {
+    "source_day_disjoint": true,
+    "novel_test_attack_families_disjoint_from_train": true,
+    "validation_attack_families_disjoint_from_test": true,
+    "source_timestamp_not_used_for_ordering": true,
+    "raw_csv_never_modified": true,
+    "original_unsw_official_test_not_used": true,
+    "training_label_provenance_status": "UNVERIFIED_ORIGINAL_CICIDS2017_LABELS",
+    "fitted_scalers_imputers_feature_selectors_restricted_to_train": true,
+    "all_decisions_frozen_before_test": true,
+    "algorithm_comparison_scope": "same G3 splits only; published SCV-IDS CIC random 80:20 result NOT directly comparable"
+  },
+  "baseline_models": [
+    "train-only fit LightGBM flow-feature binary classifier with fixed hyperparameters",
+    "train-only feature preprocessing LightGBM optional missing value handling",
+    "postfit validation-day threshold determination and selective abstention"
+  ],
+  "reporting": [
+    "per fold binary AUROC / AP / balanced accuracy / macro-F1 / FPR / TPR",
+    "per unseen attack family recall with raw support and uncertainty flags",
+    "validation-derived operating threshold; test risk-coverage and abstention",
+    "three-to-five run seeds and mean/std; no test-directed tuning",
+    "training/validation/test day support and source names",
+    "feature-exclusion and leakage negative controls"
+  ],
+  "prohibited": [
+    "train on original blank WebAttacks tail",
+    "use row neighbors as temporal history",
+    "fitted imputation/scaling before partition",
+    "use source day, flow identifiers, raw IP or timestamps as predictive features",
+    "classify missing labels as BENIGN",
+    "train/test mix rows of one source-day",
+    "claim random-split SCV baseline comparability",
+    "reuse frozen official UNSW-NB15 test"
+  ],
+  "notes": [
+    "All non-BENIGN original class labels are confined to one source-day within this dataset, so held-out test attacks are unseen *by name* in train. A day holdout does not prove real-world zero-shot transfer because capture configurations and labels are confounded with day.",
+    "The original source labels have not been verified with corrected CICIDS2017; initial G3 model results exploratory. Report this limitation and later use independently corrected captures.",
+    "Heartbleed (11) and Infiltration (36) require explicit low-support caveats."
+  ]
+}
