@@ -135,3 +135,21 @@ def test_real_synthetic_lightgbm_training_and_private_zip_roundtrip():
     np.testing.assert_allclose(pred,restored_pred,atol=1e-12,rtol=1e-12)
     assert selected['threshold']>=0 and selected['threshold']<=1
     assert m.evaluate(y,pred,selected['threshold'])['rows']==len(y)
+
+
+def test_nonfinite_and_nullable_original_numeric_features_are_safe(tmp_path):
+    p,source=synthetic_source(tmp_path)
+    table=pd.read_csv(p,encoding='cp1252',dtype='string')
+    table.loc[0,' Numeric Feature 8']='Infinity'
+    table.loc[1,' Numeric Feature 8']=pd.NA
+    table.loc[1,' Numeric Feature 9']='-Infinity'
+    table.to_csv(p,index=False,encoding='cp1252')
+    source['source_file_sha256']=m.fingerprint(p)
+    before=p.read_bytes()
+    X,y,labels,features,info=m.read_source(p,source,chunk_size=1)
+    idx=features.index(' Numeric Feature 8')
+    assert np.isnan(X[:,idx]).all()
+    assert np.isnan(X[1,features.index(' Numeric Feature 9')])
+    assert not np.isinf(X).any()
+    assert X.dtype==np.float32
+    assert p.read_bytes()==before
