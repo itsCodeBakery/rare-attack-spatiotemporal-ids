@@ -1,3 +1,5 @@
+> **Latest validated workflow — 20 Oct 2026:** G0 and G1 are complete across all eight original CIC-IDS2017 CSV files. **Next and only required Kaggle run:** [Notebook 29: G2 source-integrity and clock forensics](notebooks/29_e7_g2_source_integrity_clock_forensics.ipynb). The notebook's syntactic validity and synthetic safety checks passed [GitHub Actions](https://github.com/itsCodeBakery/rare-attack-spatiotemporal-ids/actions/runs/39403758615). **Actual G2 source execution has not occurred; no E7 IDS model fitting or external model accuracy is claimed.** The source has a 288,602-row contiguous WebAttacks missing-label tail and major clock-order reversals requiring investigation. See [G2 preregistration](docs/E7_G2_SOURCE_FORENSICS_PREREG_2026_10_20.md). Earlier notebooks are preserved as historical steps and not the new run target.
+
 # E7 — CIC-IDS2017 external validation & methodological novelty
 
 **Project:** Rare-Attack Spatiotemporal IDS · isolated E7 workstream  
