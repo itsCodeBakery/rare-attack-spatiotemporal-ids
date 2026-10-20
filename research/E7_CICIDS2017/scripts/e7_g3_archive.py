@@ -106,7 +106,7 @@ def unpack_model(raw,required):
 
 def archive_model(raw,*,token,release,asset_name,receipt_dir):
     assert release.get('draft') is True
-    if not re.fullmatch(r'G3_FOLD_[1-4]_SEED_4[2-6]_PRIVATE\.zip',asset_name):
+    if asset_name!='G3_BACKUP_PREFLIGHT_PRIVATE.zip' and not re.fullmatch(r'G3_FOLD_[1-4]_SEED_4[2-6]_PRIVATE\.zip',asset_name):
         raise ValueError('Unexpected private G3 model asset filename')
     assert len(raw)<MODEL_LIMIT and raw.startswith(b'PK\x03\x04')
     folder=Path(receipt_dir);folder.mkdir(parents=True,exist_ok=True)
@@ -144,6 +144,17 @@ def archive_model(raw,*,token,release,asset_name,receipt_dir):
                   'bytes':len(raw),'asset_id':a['id'],'verified':True},sort_keys=True)+'\n')
                 return 'PRIVATE_UPLOADED_VERIFIED'
     raise RuntimeError('Private draft model PUT accepted but not byte-verified; halt before test')
+
+def preflight_private_backups(token,release,receipt_dir):
+    """Test draft asset upload AND authenticated binary read-back before dataset loading."""
+    buf=io.BytesIO()
+    with zipfile.ZipFile(buf,'w',compression=zipfile.ZIP_DEFLATED) as z:
+        z.writestr('G3-backup-preflight.txt',
+                   'This probe contains no source data, model, token or traffic identifiers.')
+    result=archive_model(buf.getvalue(),token=token,release=release,
+                         asset_name='G3_BACKUP_PREFLIGHT_PRIVATE.zip',
+                         receipt_dir=receipt_dir)
+    return result
 
 def safe_metrics(record):
     allowed={'schema','experiment','protocol_blob_sha','fold','seed','train_days',
