@@ -1,0 +1,41 @@
+{
+  "adjacent_12_to_1_hour_reversals": 4245,
+  "adjacent_forward_steps": 227478,
+  "adjacent_other_reversals": 204602,
+  "adjacent_reversal_magnitude_buckets": {
+    "reversal_more_than_1hour": 92154,
+    "reversal_within_1hour": 78190,
+    "reversal_within_60sec": 38503
+  },
+  "adjacent_reversals_total": 208847,
+  "adjacent_tied_timestamps": 93592,
+  "causal_order_verified": false,
+  "clock_correction_applied": false,
+  "declared_time_format": "%d/%m/%Y %H:%M:%S",
+  "expected_weekday": "Monday",
+  "interpretation": "12-to-1 reversals suggest AM/PM ambiguity, not proof of afternoon; other reversals exclude monotonic source-row time.",
+  "parse_failures": 0,
+  "parsed_weekday_distribution": {
+    "Monday": 529918
+  },
+  "raw_hour_distribution": {
+    "01": 57600,
+    "02": 48567,
+    "03": 48916,
+    "04": 65875,
+    "05": 1841,
+    "08": 809,
+    "09": 74418,
+    "10": 85079,
+    "11": 88872,
+    "12": 57941
+  },
+  "rows": 529918,
+  "schema": "E7_G2_TIMESTAMP_ORDER_FORENSICS_001",
+  "source_encoding": "utf-8-sig",
+  "source_file": "Monday-WorkingHours.pcap_ISCX.csv",
+  "source_modified": false,
+  "source_sha256": "96f26aea87d513073769b48ce204c2921791149e1c6225f7db65a3fed7973820",
+  "training_authorized": false,
+  "weekday_consistent": true
+}
