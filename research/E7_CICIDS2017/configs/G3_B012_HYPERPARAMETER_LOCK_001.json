@@ -1,0 +1,88 @@
+{
+  "experiment_id": "E7-G3-OPENWORLD-DAYHOLDOUT-001",
+  "version": "G3-B0-B1-B2-001",
+  "locked_before_real_training": true,
+  "source_protocol": "configs/G3_OPENWORLD_DAYHOLDOUT_PROTOCOL_001.json",
+  "source_labels": "original CIC-IDS2017 provisional",
+  "model": "LightGBM",
+  "objective": "binary",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "fold_count": 4,
+  "models_total": 20,
+  "boost_rounds": 180,
+  "hyperparameters": {
+    "objective": "binary",
+    "metric": "binary_logloss",
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "min_data_in_leaf": 120,
+    "feature_fraction": 1,
+    "bagging_fraction": 0.85,
+    "bagging_freq": 1,
+    "max_bin": 255,
+    "num_threads": 4,
+    "verbosity": -1,
+    "deterministic": true,
+    "force_col_wise": true
+  },
+  "feature_policy": {
+    "raw_id_exclusion": [
+      "Flow ID",
+      "Source IP",
+      "Source Port",
+      "Destination IP",
+      "Destination Port",
+      "Timestamp",
+      "Label",
+      "day",
+      "filename",
+      "row index"
+    ],
+    "include": "only numeric flow statistics including Protocol",
+    "nonfinite_to_nan": true,
+    "source_derived_only_remove": "fully empty original source records",
+    "never_fit_scaler_on_val_or_test": true
+  },
+  "b0": {
+    "description": "constant training class prevalence as attack probability",
+    "threshold": 0.5
+  },
+  "b1": {
+    "description": "180-round LightGBM attack probability",
+    "threshold": 0.5
+  },
+  "b2": {
+    "description": "same LightGBM model, validation-only cost threshold",
+    "threshold_grid": {
+      "minimum": 0,
+      "maximum": 1,
+      "count": 201,
+      "inclusive": true
+    },
+    "validation_cost": {
+      "false_negative": 5,
+      "false_positive": 1
+    },
+    "tie_break": "largest threshold with min validation cost"
+  },
+  "checkpoint_policy": {
+    "private_model_release": "draft unpublished GitHub release, model/text metadata ZIP assets",
+    "public": "safe per-fold/seed aggregate metrics only",
+    "preflight": "test private asset upload and binary readback before source load",
+    "recovery": "require exact source hashes, features, locked protocol and code then restore model",
+    "halt": "stop successive training if private model upload/verification fails"
+  },
+  "limits": {
+    "no_SCVIDS_random_split_comparability": true,
+    "no_UNSW_official_retest": true,
+    "no_spatiotemporal_causality_claim": true,
+    "no_test_based_retuning": true,
+    "no_accepted_provenance_label_claim": true
+  }
+}
