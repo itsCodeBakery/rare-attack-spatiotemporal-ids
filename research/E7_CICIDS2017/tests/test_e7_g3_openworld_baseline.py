@@ -43,7 +43,7 @@ def test_derived_only_blank_row_exclusion_and_source_immutable(tmp_path):
     assert info['blank_rows_omitted']==1
     assert all(m.normalize(f) not in m.BANNED for f in features)
     assert ' Flow ID' not in features and ' Source IP' not in features
-    assert m.select_features(pd.read_csv(file,nrows=1).columns)==features
+    assert m.select_features(pd.read_csv(file,nrows=1,encoding='cp1252').columns)==features
 
 def test_nonempty_missing_label_halts(tmp_path):
     file,source=synthetic_source(tmp_path)
