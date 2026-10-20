@@ -1,0 +1,49 @@
+{
+  "calendar_weekday_consistency": true,
+  "causal_order_proven": false,
+  "daily_row_counts": {
+    "2017-07-07": 286467
+  },
+  "first_missing_row_1based": null,
+  "label_by_day_hour_counts": {
+    "2017-07-07 01:00 | BENIGN": 42852,
+    "2017-07-07 01:00 | PortScan": 185,
+    "2017-07-07 02:00 | BENIGN": 52911,
+    "2017-07-07 02:00 | PortScan": 138680,
+    "2017-07-07 03:00 | BENIGN": 31774,
+    "2017-07-07 03:00 | PortScan": 20065
+  },
+  "labels": {
+    "BENIGN": 127537,
+    "PortScan": 158930
+  },
+  "last_missing_row_1based": null,
+  "longest_missing_label_run_in_csv_row_order": 0,
+  "missing_label_rows": 0,
+  "missing_label_runs_in_csv_row_order": 0,
+  "missing_labels_by_day_hour": {},
+  "original_source_sha256": "7e2ddaa80a5849ba629463296b6128436c161b4a32e8034bb5beae06b0c45e08",
+  "review_flags": [
+    "Original source labels not independently validated",
+    "Source CSV row adjacency and filename-day agreement do not prove causal temporal history",
+    "Afternoon clock convention may be ambiguous even if parsed timestamps have 0 errors",
+    "Missing labels MUST NOT be converted to BENIGN, discarded silently or imputed",
+    "Any study on corrected CICIDS2017 requires separate provenance/schema/label audit",
+    "CLOCK_AMPM_SOURCE_AMBIGUITY"
+  ],
+  "rows": 286467,
+  "schema": "E7_G1_LABEL_CLOCK_DIAGNOSTIC_001",
+  "source_adjacent_ties": 286317,
+  "source_adjacent_time_reversals": 0,
+  "source_file": "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+  "source_positive_max_gap_seconds": 60.0,
+  "source_text_encoding": "utf-8-sig",
+  "timestamp_hour_histogram": {
+    "01": 43037,
+    "02": 191591,
+    "03": 51839
+  },
+  "timestamp_parse_failures": 0,
+  "training_authorized": false,
+  "trusted_original_labels": false
+}
