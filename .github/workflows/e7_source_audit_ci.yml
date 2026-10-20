@@ -36,6 +36,7 @@ jobs:
               '27d_e7_resume_label_sentinel_audit.ipynb',
               '28_e7_g1_label_clock_source_diagnostic.ipynb',
               '29_e7_g2_source_integrity_clock_forensics.ipynb',
+              '30_e7_g3_openworld_dayholdout_b012_lightgbm.ipynb',
           ):
               p=Path('research/E7_CICIDS2017/notebooks')/filename
               notebook=json.loads(p.read_text(encoding='utf-8'))
