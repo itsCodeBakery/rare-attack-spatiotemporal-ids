@@ -1,0 +1,206 @@
+{
+  "b0": {
+    "accuracy": 0.6352376126565065,
+    "attack_support": 252672,
+    "auroc": 0.5,
+    "average_precision": 0.36476238734349353,
+    "balanced_accuracy": 0.5,
+    "benign_support": 440031,
+    "binary_f1": 0.0,
+    "cost_5fn_1fp": 1263360,
+    "fn": 252672,
+    "fp": 0,
+    "fpr": 0.0,
+    "macro_f1": 0.3884680781189582,
+    "precision_attack": 0.0,
+    "recall_attack": 0.0,
+    "rows": 692703,
+    "threshold": 0.5,
+    "tn": 440031,
+    "tp": 0,
+    "unseen_family_recall": {
+      "DoS GoldenEye": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 10293
+      },
+      "DoS Hulk": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 231073
+      },
+      "DoS Slowhttptest": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 5499
+      },
+      "DoS slowloris": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 5796
+      },
+      "Heartbleed": {
+        "low_support": true,
+        "recall": 0.0,
+        "support": 11
+      }
+    }
+  },
+  "b1": {
+    "accuracy": 0.6390935220433577,
+    "attack_support": 252672,
+    "auroc": 0.9500769823005406,
+    "average_precision": 0.9011989146333349,
+    "balanced_accuracy": 0.505539120992971,
+    "benign_support": 440031,
+    "binary_f1": 0.02322373947527789,
+    "cost_5fn_1fp": 1248801,
+    "fn": 249700,
+    "fp": 301,
+    "fpr": 0.0006840427151723401,
+    "macro_f1": 0.4009391683340491,
+    "precision_attack": 0.9080354414909869,
+    "recall_attack": 0.011762284701114489,
+    "rows": 692703,
+    "threshold": 0.5,
+    "tn": 439730,
+    "tp": 2972,
+    "unseen_family_recall": {
+      "DoS GoldenEye": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 10293
+      },
+      "DoS Hulk": {
+        "low_support": false,
+        "recall": 0.01215633154890446,
+        "support": 231073
+      },
+      "DoS Slowhttptest": {
+        "low_support": false,
+        "recall": 0.029096199308965266,
+        "support": 5499
+      },
+      "DoS slowloris": {
+        "low_support": false,
+        "recall": 0.0005175983436853002,
+        "support": 5796
+      },
+      "Heartbleed": {
+        "low_support": true,
+        "recall": 0.0,
+        "support": 11
+      }
+    }
+  },
+  "b2": {
+    "accuracy": 0.6352376126565065,
+    "attack_support": 252672,
+    "auroc": 0.9500769823005406,
+    "average_precision": 0.9011989146333349,
+    "balanced_accuracy": 0.5,
+    "benign_support": 440031,
+    "binary_f1": 0.0,
+    "cost_5fn_1fp": 1263360,
+    "fn": 252672,
+    "fp": 0,
+    "fpr": 0.0,
+    "macro_f1": 0.3884680781189582,
+    "precision_attack": 0.0,
+    "recall_attack": 0.0,
+    "rows": 692703,
+    "threshold": 1.0,
+    "tn": 440031,
+    "tp": 0,
+    "unseen_family_recall": {
+      "DoS GoldenEye": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 10293
+      },
+      "DoS Hulk": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 231073
+      },
+      "DoS Slowhttptest": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 5499
+      },
+      "DoS slowloris": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 5796
+      },
+      "Heartbleed": {
+        "low_support": true,
+        "recall": 0.0,
+        "support": 11
+      }
+    }
+  },
+  "experiment": "E7-G3-OPENWORLD-DAYHOLDOUT-001",
+  "features_sha256": "ded371ba559c78b8d8f3decdf57b48d81960468f1515b013a1a88310d4c8b9ad",
+  "fold": "OPENWORLD_DAY_FOLD_2",
+  "hyperparameters": {
+    "bagging_fraction": 0.85,
+    "bagging_freq": 1,
+    "deterministic": true,
+    "feature_fraction": 1.0,
+    "force_col_wise": true,
+    "learning_rate": 0.05,
+    "max_bin": 255,
+    "metric": "binary_logloss",
+    "min_data_in_leaf": 120,
+    "num_boost_round": 180,
+    "num_leaves": 31,
+    "num_threads": 4,
+    "objective": "binary",
+    "verbosity": -1
+  },
+  "limitations": [
+    "Original CICIDS2017 labels not independently corrected or publisher-authenticated",
+    "Heldout capture-day attacks are unseen by name, confounded with capture-day shift",
+    "Static flow features only; no verified temporal causality or source row context",
+    "Do not compare numerically with original SCV-IDS CIC random-split result",
+    "Frozen UNSW official test was never opened or rerun",
+    "Small attack support (Heartbleed/Infiltration/SQL Injection) limits inferences"
+  ],
+  "model_asset_sha256": "741dfbd21556742607bf119482bee02189a7b6ac57439f2a86fd9559c5e4b075",
+  "original_label_provenance": "UNVERIFIED_ORIGINAL_CICIDS2017_LABELS",
+  "private_backup_verified": true,
+  "protocol_blob_sha": "5ca597207bd8379860a3007b6cb7952efdde9b4f",
+  "schema": "E7_G3_PUBLIC_METRICS_001",
+  "seed": 44,
+  "source_hashes": {
+    "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": "1f779b4f0d78f9225554c4de53b5a2c07912b60dcd136ee4c5c1d0d2496b7cc4",
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": "7e2ddaa80a5849ba629463296b6128436c161b4a32e8034bb5beae06b0c45e08",
+    "Friday-WorkingHours-Morning.pcap_ISCX.csv": "c061cd98f39d8054aeaed6244a5129a20b3985983d0d022b860ae8aa07fe8d21",
+    "Monday-WorkingHours.pcap_ISCX.csv": "96f26aea87d513073769b48ce204c2921791149e1c6225f7db65a3fed7973820",
+    "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": "d74238e054023c8bd4d8056650463cadb25c100fb0e26ebd4272c07b5c022c4b",
+    "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": "e3deaff483d18b53b100a441dff9b8919416df8876b4edcc0f0d1e4bf48397d0",
+    "Tuesday-WorkingHours.pcap_ISCX.csv": "ae9c88e10c41a8eb1ff454ae98bc513454925097d0b0b57180f94e79de445815",
+    "Wednesday-workingHours.pcap_ISCX.csv": "ed538e85b84181e8897dedb3d37d365982f44b27eccd67c477581a8b65f3d170"
+  },
+  "test_day": "Wednesday",
+  "test_rows": 692703,
+  "train_attack_rate": 0.1803126965371348,
+  "train_days": [
+    "Monday",
+    "Tuesday",
+    "Friday"
+  ],
+  "training_rows": 1679072,
+  "validation_day": "Thursday",
+  "validation_rows": 458968,
+  "validation_selection": {
+    "fn_cost": 5,
+    "fp_cost": 1,
+    "grid_points": 201,
+    "threshold": 1.0,
+    "tie_break": "largest_threshold",
+    "validation_cost": 11080,
+    "validation_rows": 458968
+  }
+}
