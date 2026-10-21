@@ -1,0 +1,191 @@
+{
+  "b0": {
+    "accuracy": 0.9951717766815987,
+    "attack_support": 2216,
+    "auroc": 0.5,
+    "average_precision": 0.004828223318401283,
+    "balanced_accuracy": 0.5,
+    "benign_support": 456752,
+    "binary_f1": 0.0,
+    "cost_5fn_1fp": 11080,
+    "fn": 2216,
+    "fp": 0,
+    "fpr": 0.0,
+    "macro_f1": 0.4987900231511816,
+    "precision_attack": 0.0,
+    "recall_attack": 0.0,
+    "rows": 458968,
+    "threshold": 0.5,
+    "tn": 456752,
+    "tp": 0,
+    "unseen_family_recall": {
+      "Infiltration": {
+        "low_support": true,
+        "recall": 0.0,
+        "support": 36
+      },
+      "Web Attack – Brute Force": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 1507
+      },
+      "Web Attack – Sql Injection": {
+        "low_support": true,
+        "recall": 0.0,
+        "support": 21
+      },
+      "Web Attack – XSS": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 652
+      }
+    }
+  },
+  "b1": {
+    "accuracy": 0.9967623015112165,
+    "attack_support": 2216,
+    "auroc": 0.982640512091245,
+    "average_precision": 0.6972812544054113,
+    "balanced_accuracy": 0.7123130529310141,
+    "benign_support": 456752,
+    "binary_f1": 0.5590504451038576,
+    "cost_5fn_1fp": 6582,
+    "fn": 1274,
+    "fp": 212,
+    "fpr": 0.0004641468455529478,
+    "macro_f1": 0.77871281535551,
+    "precision_attack": 0.8162911611785095,
+    "recall_attack": 0.4250902527075812,
+    "rows": 458968,
+    "threshold": 0.5,
+    "tn": 456540,
+    "tp": 942,
+    "unseen_family_recall": {
+      "Infiltration": {
+        "low_support": true,
+        "recall": 0.0,
+        "support": 36
+      },
+      "Web Attack – Brute Force": {
+        "low_support": false,
+        "recall": 0.40809555408095555,
+        "support": 1507
+      },
+      "Web Attack – Sql Injection": {
+        "low_support": true,
+        "recall": 0.09523809523809523,
+        "support": 21
+      },
+      "Web Attack – XSS": {
+        "low_support": false,
+        "recall": 0.49846625766871167,
+        "support": 652
+      }
+    }
+  },
+  "b2": {
+    "accuracy": 0.004828223318401283,
+    "attack_support": 2216,
+    "auroc": 0.982640512091245,
+    "average_precision": 0.6972812544054113,
+    "balanced_accuracy": 0.5,
+    "benign_support": 456752,
+    "binary_f1": 0.009610047182903137,
+    "cost_5fn_1fp": 456752,
+    "fn": 0,
+    "fp": 456752,
+    "fpr": 1.0,
+    "macro_f1": 0.0048050235914515686,
+    "precision_attack": 0.004828223318401283,
+    "recall_attack": 1.0,
+    "rows": 458968,
+    "threshold": 0.0,
+    "tn": 0,
+    "tp": 2216,
+    "unseen_family_recall": {
+      "Infiltration": {
+        "low_support": true,
+        "recall": 1.0,
+        "support": 36
+      },
+      "Web Attack – Brute Force": {
+        "low_support": false,
+        "recall": 1.0,
+        "support": 1507
+      },
+      "Web Attack – Sql Injection": {
+        "low_support": true,
+        "recall": 1.0,
+        "support": 21
+      },
+      "Web Attack – XSS": {
+        "low_support": false,
+        "recall": 1.0,
+        "support": 652
+      }
+    }
+  },
+  "experiment": "E7-G3-OPENWORLD-DAYHOLDOUT-001",
+  "features_sha256": "ded371ba559c78b8d8f3decdf57b48d81960468f1515b013a1a88310d4c8b9ad",
+  "fold": "OPENWORLD_DAY_FOLD_3",
+  "hyperparameters": {
+    "bagging_fraction": 0.85,
+    "bagging_freq": 1,
+    "deterministic": true,
+    "feature_fraction": 1.0,
+    "force_col_wise": true,
+    "learning_rate": 0.05,
+    "max_bin": 255,
+    "metric": "binary_logloss",
+    "min_data_in_leaf": 120,
+    "num_boost_round": 180,
+    "num_leaves": 31,
+    "num_threads": 4,
+    "objective": "binary",
+    "verbosity": -1
+  },
+  "limitations": [
+    "Original CICIDS2017 labels not independently corrected or publisher-authenticated",
+    "Heldout capture-day attacks are unseen by name, confounded with capture-day shift",
+    "Static flow features only; no verified temporal causality or source row context",
+    "Do not compare numerically with original SCV-IDS CIC random-split result",
+    "Frozen UNSW official test was never opened or rerun",
+    "Small attack support (Heartbleed/Infiltration/SQL Injection) limits inferences"
+  ],
+  "model_asset_sha256": "6d9253a509dbb8516204d856ae026455b50c7acc7f2f214e1339b927fa21557c",
+  "original_label_provenance": "UNVERIFIED_ORIGINAL_CICIDS2017_LABELS",
+  "private_backup_verified": true,
+  "protocol_blob_sha": "5ca597207bd8379860a3007b6cb7952efdde9b4f",
+  "schema": "E7_G3_PUBLIC_METRICS_001",
+  "seed": 45,
+  "source_hashes": {
+    "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": "1f779b4f0d78f9225554c4de53b5a2c07912b60dcd136ee4c5c1d0d2496b7cc4",
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": "7e2ddaa80a5849ba629463296b6128436c161b4a32e8034bb5beae06b0c45e08",
+    "Friday-WorkingHours-Morning.pcap_ISCX.csv": "c061cd98f39d8054aeaed6244a5129a20b3985983d0d022b860ae8aa07fe8d21",
+    "Monday-WorkingHours.pcap_ISCX.csv": "96f26aea87d513073769b48ce204c2921791149e1c6225f7db65a3fed7973820",
+    "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": "d74238e054023c8bd4d8056650463cadb25c100fb0e26ebd4272c07b5c022c4b",
+    "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": "e3deaff483d18b53b100a441dff9b8919416df8876b4edcc0f0d1e4bf48397d0",
+    "Tuesday-WorkingHours.pcap_ISCX.csv": "ae9c88e10c41a8eb1ff454ae98bc513454925097d0b0b57180f94e79de445815",
+    "Wednesday-workingHours.pcap_ISCX.csv": "ed538e85b84181e8897dedb3d37d365982f44b27eccd67c477581a8b65f3d170"
+  },
+  "test_day": "Thursday",
+  "test_rows": 458968,
+  "train_attack_rate": 0.1597256267492943,
+  "train_days": [
+    "Monday",
+    "Tuesday",
+    "Wednesday"
+  ],
+  "training_rows": 1668530,
+  "validation_day": "Friday",
+  "validation_rows": 703245,
+  "validation_selection": {
+    "fn_cost": 5,
+    "fp_cost": 1,
+    "grid_points": 201,
+    "threshold": 0.0,
+    "tie_break": "largest_threshold",
+    "validation_cost": 414322,
+    "validation_rows": 703245
+  }
+}
