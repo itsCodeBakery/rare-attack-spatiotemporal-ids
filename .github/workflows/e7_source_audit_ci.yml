@@ -100,3 +100,32 @@ jobs:
               assert blob in py
           print('PASS: Notebook 30B pinned content and private checkpoint recovery paths')
           PY
+
+      - name: Verify Notebook 30C pinned original notebook and deterministic V3 source
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          base=Path('research/E7_CICIDS2017')
+          target=json.loads((base/'notebooks/30c_e7_g3_resume.ipynb').read_text())
+          codes=[c for c in target['cells'] if c['cell_type']=='code']
+          assert len(codes)==4
+          source=''.join(codes[0]['source'])
+          assert 'PIN="eacb821f8b428432f04e8418df5d75b4437bd73f"' in source
+          assert 'NB_BLOB="8947e6980d7f7ce09a3a1de9f52aceaeb98c7884"' in source
+          assert 'V3_BLOB="033fbc2f7957f54bdaf7b6ad9ad6da6b26d8f619"' in source
+          assert 'E7_G3_PINNED_SOURCE_30C_001' in source
+          assert 'archive=importlib.util.module_from_spec(spec)' in source
+          assert 'run_verified_cell(0)' in source
+          assert 'bytes([0])' in source
+          for i in (1,2,3):
+              assert ''.join(codes[i]['source']).strip()==f'run_verified_cell({i})'
+          for file,sha in (
+              ('notebooks/30b_e7_g3_recovery.ipynb','8947e6980d7f7ce09a3a1de9f52aceaeb98c7884'),
+              ('scripts/e7_g3_archive_v3.py','033fbc2f7957f54bdaf7b6ad9ad6da6b26d8f619'),
+          ):
+              raw=(base/file).read_bytes()
+              actual=hashlib.sha1(b'blob '+str(len(raw)).encode()+bytes([0])+raw).hexdigest()
+              assert actual==sha,(file,actual)
+          print('PASS: source-authenticated Notebook 30C recovery entrypoint')
+          PY
