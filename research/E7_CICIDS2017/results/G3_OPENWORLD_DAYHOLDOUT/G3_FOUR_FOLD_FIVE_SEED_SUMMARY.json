@@ -1,0 +1,60 @@
+{
+  "experiment": "E7-G3-OPENWORLD-DAYHOLDOUT-001",
+  "fold_count": 4,
+  "fold_summary": {
+    "OPENWORLD_DAY_FOLD_1": {
+      "b0_macro_f1_mean": 0.4921211458536213,
+      "b1_macro_f1_mean": 0.49217051699177317,
+      "b1_macro_f1_std": 5.543677490591898e-06,
+      "b2_attack_recall_mean": 1.0,
+      "b2_fpr_mean": 1.0,
+      "b2_macro_f1_mean": 0.03009283427298671,
+      "b2_macro_f1_std": 3.878959614448864e-18,
+      "n_seeds": 5,
+      "test_day": "Tuesday"
+    },
+    "OPENWORLD_DAY_FOLD_2": {
+      "b0_macro_f1_mean": 0.3884680781189582,
+      "b1_macro_f1_mean": 0.4009510556182577,
+      "b1_macro_f1_std": 0.0004070652011432051,
+      "b2_attack_recall_mean": 0.0,
+      "b2_fpr_mean": 0.0,
+      "b2_macro_f1_mean": 0.3884680781189582,
+      "b2_macro_f1_std": 0.0,
+      "n_seeds": 5,
+      "test_day": "Wednesday"
+    },
+    "OPENWORLD_DAY_FOLD_3": {
+      "b0_macro_f1_mean": 0.4987900231511816,
+      "b1_macro_f1_mean": 0.6598362724830455,
+      "b1_macro_f1_std": 0.14633939055788373,
+      "b2_attack_recall_mean": 1.0,
+      "b2_fpr_mean": 1.0,
+      "b2_macro_f1_mean": 0.0048050235914515686,
+      "b2_macro_f1_std": 0.0,
+      "n_seeds": 5,
+      "test_day": "Thursday"
+    },
+    "OPENWORLD_DAY_FOLD_4": {
+      "b0_macro_f1_mean": 0.37073571427932284,
+      "b1_macro_f1_mean": 0.3811502007700474,
+      "b1_macro_f1_std": 0.020301768162001292,
+      "b2_attack_recall_mean": 0.0,
+      "b2_fpr_mean": 0.0,
+      "b2_macro_f1_mean": 0.37073571427932284,
+      "b2_macro_f1_std": 0.0,
+      "n_seeds": 5,
+      "test_day": "Friday"
+    }
+  },
+  "limitations": [
+    "Original CICIDS2017 labels provisional; corrected-source sensitivity pending",
+    "Day-specific attack families and capture settings confounded; not independent real-world zero-shot proof",
+    "No verified related-flow chronology or spatiotemporal input",
+    "Not directly comparable with the base SCV-IDS CIC random split or frozen UNSW test"
+  ],
+  "model_count": 20,
+  "protocol_blob_sha": "5ca597207bd8379860a3007b6cb7952efdde9b4f",
+  "schema": "E7_G3_SEED_SUMMARY_001",
+  "seed_count": 5
+}
