@@ -7,6 +7,7 @@ on:
       - 'research/E7_CICIDS2017/configs/**'
       - 'research/E7_CICIDS2017/notebooks/30_e7_g3_openworld_dayholdout_b012_lightgbm.ipynb'
       - 'research/E7_CICIDS2017/notebooks/30b_e7_g3_recovery.ipynb'
+      - 'research/E7_CICIDS2017/notebooks/30c_e7_g3_resume.ipynb'
       - '.github/workflows/e7_source_audit_ci.yml'
   workflow_dispatch:
 
@@ -25,7 +26,7 @@ jobs:
       - name: Install audit test dependencies
         run: python -m pip install -q numpy pandas pytest scikit-learn lightgbm
       - name: Run synthetic source and GitHub archive regression tests
-        run: python -m pytest -q research/E7_CICIDS2017/tests/test_e7_g0_external_source_audit.py research/E7_CICIDS2017/tests/test_e7_g0_publish.py research/E7_CICIDS2017/tests/test_e7_g0_timestamp_registry.py research/E7_CICIDS2017/tests/test_e7_g0_publish_v2.py research/E7_CICIDS2017/tests/test_e7_g0_extended_audit.py research/E7_CICIDS2017/tests/test_e7_csv_encoding_gate.py research/E7_CICIDS2017/tests/test_e7_g1_label_clock_diagnostic.py research/E7_CICIDS2017/tests/test_e7_g2_source_clock_forensics.py research/E7_CICIDS2017/tests/test_e7_g2_publish.py research/E7_CICIDS2017/tests/test_e7_g3_openworld_baseline.py research/E7_CICIDS2017/tests/test_e7_g3_archive.py research/E7_CICIDS2017/tests/test_e7_g3_archive_v2.py
+        run: python -m pytest -q research/E7_CICIDS2017/tests/test_e7_g0_external_source_audit.py research/E7_CICIDS2017/tests/test_e7_g0_publish.py research/E7_CICIDS2017/tests/test_e7_g0_timestamp_registry.py research/E7_CICIDS2017/tests/test_e7_g0_publish_v2.py research/E7_CICIDS2017/tests/test_e7_g0_extended_audit.py research/E7_CICIDS2017/tests/test_e7_csv_encoding_gate.py research/E7_CICIDS2017/tests/test_e7_g1_label_clock_diagnostic.py research/E7_CICIDS2017/tests/test_e7_g2_source_clock_forensics.py research/E7_CICIDS2017/tests/test_e7_g2_publish.py research/E7_CICIDS2017/tests/test_e7_g3_openworld_baseline.py research/E7_CICIDS2017/tests/test_e7_g3_archive.py research/E7_CICIDS2017/tests/test_e7_g3_archive_v2.py research/E7_CICIDS2017/tests/test_e7_g3_preflight_v3.py
       - name: Parse and compile all overnight Notebook 27 and 27B and 27C Python cells
         run: |
           python - <<'PY'
@@ -40,6 +41,7 @@ jobs:
               '29_e7_g2_source_integrity_clock_forensics.ipynb',
               '30_e7_g3_openworld_dayholdout_b012_lightgbm.ipynb',
               '30b_e7_g3_recovery.ipynb',
+              '30c_e7_g3_resume.ipynb',
           ):
               p=Path('research/E7_CICIDS2017/notebooks')/filename
               notebook=json.loads(p.read_text(encoding='utf-8'))
