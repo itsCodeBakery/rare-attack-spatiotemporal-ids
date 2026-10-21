@@ -72,3 +72,29 @@ jobs:
               assert expected in source
           print('PASS: Notebook 30 exact pinned code and frozen protocol SHA values match GitHub')
           PY
+
+      - name: Verify Notebook 30B corrected publisher pin and original model checkpoint directory
+        run: |
+          python - <<'PY'
+          import ast, hashlib, json, re
+          from pathlib import Path
+          base=Path('research/E7_CICIDS2017')
+          nb=json.loads((base/'notebooks/30b_e7_g3_recovery.ipynb').read_text())
+          py=''.join(next(c['source'] for c in nb['cells'] if c['cell_type']=='code'))
+          assert 'COMMIT="bb63819d32330b8102f9a4ce4f136da67d598f46"' in py
+          assert '/kaggle/working/E7_G3_DAYHOLDOUT_001' in py
+          assert '/kaggle/working/E7_G3_PINNED_SOURCE_30B_001' in py
+          assert 'archive=import_from("g3_backup",SNAPSHOT/"scripts/e7_g3_archive_v2.py")' in py
+          assert 'SNAPSHOT/"scripts/e7_g3_archive.py"' not in py
+          expected={
+             'scripts/e7_g3_openworld_baseline.py':'f882154ff9757abe66a7fe588039eb26c9758170',
+             'scripts/e7_g3_archive_v2.py':'bcb23aebf91a85fa833d937c45c6656ceceb0d5f',
+             'configs/G3_OPENWORLD_DAYHOLDOUT_PROTOCOL_001.json':'5ca597207bd8379860a3007b6cb7952efdde9b4f',
+             'configs/G3_B012_HYPERPARAMETER_LOCK_001.json':'abd380bdbcab38ea3b33c1637457ffca44ef253e'}
+          for file,blob in expected.items():
+              data=(base/file).read_bytes()
+              actual=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+              assert actual==blob, (file,actual)
+              assert blob in py
+          print('PASS: Notebook 30B pinned content and private checkpoint recovery paths')
+          PY
