@@ -1,0 +1,73 @@
+{
+  "experiment": "E7-G4-RISK-ABSTENTION-001",
+  "fold_results": {
+    "OPENWORLD_DAY_FOLD_1": {
+      "g3_b1_macro_f1_mean": 0.49217051699177317,
+      "m1_attack_recall_mean": 0.3551861221539574,
+      "m1_fpr_mean": 0.004833431310377389,
+      "m1_macro_f1_mean": 0.722963687679769,
+      "m1_validation_feasible_seeds": 5,
+      "m2_coverage_mean": 0.015703652538970957,
+      "m2_selective_error_mean_on_nonempty_decisions": 0.3269739168020163,
+      "m2_test_attack_alert_recall_mean": 0.3551861221539574,
+      "m2_test_benign_fpr_mean": 0.004833431310377389,
+      "m2_validation_feasible_seeds": 5,
+      "n_seeds": 5,
+      "test_day": "Tuesday"
+    },
+    "OPENWORLD_DAY_FOLD_2": {
+      "g3_b1_macro_f1_mean": 0.4009510556182577,
+      "m1_attack_recall_mean": 0.0,
+      "m1_fpr_mean": 0.0,
+      "m1_macro_f1_mean": 0.3884680781189582,
+      "m1_validation_feasible_seeds": 5,
+      "m2_coverage_mean": 0.0,
+      "m2_selective_error_mean_on_nonempty_decisions": null,
+      "m2_test_attack_alert_recall_mean": 0.0,
+      "m2_test_benign_fpr_mean": 0.0,
+      "m2_validation_feasible_seeds": 5,
+      "n_seeds": 5,
+      "test_day": "Wednesday"
+    },
+    "OPENWORLD_DAY_FOLD_3": {
+      "g3_b1_macro_f1_mean": 0.6598362724830455,
+      "m1_attack_recall_mean": 0.8974729241877256,
+      "m1_fpr_mean": 0.003908466739061899,
+      "m1_macro_f1_mean": 0.8319678465367912,
+      "m1_validation_feasible_seeds": 5,
+      "m2_coverage_mean": 0.008222795489010127,
+      "m2_selective_error_mean_on_nonempty_decisions": 0.4688857890625968,
+      "m2_test_attack_alert_recall_mean": 0.8974729241877256,
+      "m2_test_benign_fpr_mean": 0.003908466739061899,
+      "m2_validation_feasible_seeds": 5,
+      "n_seeds": 5,
+      "test_day": "Thursday"
+    },
+    "OPENWORLD_DAY_FOLD_4": {
+      "g3_b1_macro_f1_mean": 0.3811502007700474,
+      "m1_attack_recall_mean": 0.28136493114082295,
+      "m1_fpr_mean": 0.006245384024985398,
+      "m1_macro_f1_mean": 0.6163827377277891,
+      "m1_validation_feasible_seeds": 5,
+      "m2_coverage_mean": 0.11927621241530335,
+      "m2_selective_error_mean_on_nonempty_decisions": 0.029775729395735744,
+      "m2_test_attack_alert_recall_mean": 0.28136493114082295,
+      "m2_test_benign_fpr_mean": 0.006245384024985398,
+      "m2_validation_feasible_seeds": 5,
+      "n_seeds": 5,
+      "test_day": "Friday"
+    }
+  },
+  "g4_protocol_git_blob": "e3099b9e792543f283a97172d44a1a53726a2dbd",
+  "limitations": [
+    "Already inspected G3 test days, therefore G4 scores cannot support confirmatory superiority claims",
+    "Validation-calibrated false-positive and missed-attack bounds do not transfer automatically across capture days",
+    "Source labels are original uncorrected CIC-IDS2017; independent corrected-data confirmation required",
+    "Abstention coverage and error are reported together; never omit rejected flows silently"
+  ],
+  "n_folds": 4,
+  "n_reports": 20,
+  "n_seeds": 5,
+  "schema": "E7_G4_SUMMARY_001",
+  "scientific_status": "RETROSPECTIVE_EXPLORATORY_REUSED_G3_TEST"
+}
