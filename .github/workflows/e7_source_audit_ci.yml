@@ -152,6 +152,6 @@ jobs:
               actual=hashlib.sha1(b'blob '+str(len(b)).encode()+bytes([0])+b).hexdigest()
               assert actual==sha,(path,actual)
               assert sha in code
-          assert 'PRIVATE G3 MODEL BACKUPS VERIFIED AVAILABLE: 20/20' in ''.join(c for c in nb['cells'][4]['source'])
+          assert 'PRIVATE G3 MODEL BACKUPS VERIFIED AVAILABLE: 20/20' in ''.join(nb['cells'][3]['source'])
           print('PASS: Notebook 31 frozen G4 source and six pinned originals verified')
           PY
