@@ -1,0 +1,74 @@
+{
+  "protocol_id": "E7-G4-RISK-ABSTENTION-001",
+  "created": "2026-10-22",
+  "status": "LOCKED_BEFORE_G4_CALIBRATION",
+  "parent_protocol_blob": "5ca597207bd8379860a3007b6cb7952efdde9b4f",
+  "parent_experiment": "E7-G3-OPENWORLD-DAYHOLDOUT-001",
+  "parent_results": "results/G3_OPENWORLD_DAYHOLDOUT",
+  "parent_model_release_tag": "e7-g3-openworld-dayholdout-001-private-models",
+  "methods": {
+    "M0": "G3 B1 fixed threshold 0.5 descriptive reference; do not refit",
+    "M1": "Validation-only, day-specific FPR-constrained alarm threshold on 201 pre-fixed grid + reject-all sentinel; maximize validation attack TPR subject to DKW upper bound of benign alarm rate <=0.01; ties take largest threshold",
+    "M2": "Validation-only abstention band: alarm if p>=M1 high threshold; benign if p<=low chosen as largest grid threshold below high with DKW upper bound of attack falsely classified benign <=0.05; abstain otherwise"
+  },
+  "constraints": {
+    "validation_alarm_fpr_bound": 0.01,
+    "validation_missed_attack_bound": 0.05,
+    "delta_for_each_one_sided_DKW": 0.05,
+    "probability_grid": [
+      0,
+      1,
+      201
+    ],
+    "alarm_none_sentinel": 1.000001,
+    "benign_none_sentinel": -0.000001,
+    "selection_data": "validation day only",
+    "iid_claim": "NO distribution-free transfer guarantee: day shifts and flow dependencies violate independent exchangeability assumptions",
+    "minimum_report_coverage": 0.5,
+    "if_below_min_coverage": "report constraint fail; never silently remove rejected samples",
+    "feature_training": "NO G4 MODEL TRAINING; restore 20 private frozen G3 model checkpoints",
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "folds": 4
+  },
+  "evaluation": {
+    "data_origin": "uncorrected original CIC-IDS2017",
+    "reuse_of_previously_inspected_G3_test_days": true,
+    "novel_method_confirmatory_claim_allowed": false,
+    "tests": "EXPLORATORY RETROSPECTIVE ONLY",
+    "future_confirmation": "independent corrected CIC-IDS2017 and/or external unseen source captured and locked before tuning",
+    "report_fields": [
+      "validation calibration selection and conservative bounds",
+      "test coverage",
+      "test abstention",
+      "test selective error on decided predictions",
+      "test unconditional false alarm and missed attack proportions",
+      "per-family support and defer rate",
+      "G3 B1 fixed-baseline metrics for context",
+      "FPR-limit violation and low-coverage flags"
+    ],
+    "never_public": [
+      "raw flows",
+      "IP or port values",
+      "flow IDs",
+      "row-wise predictions",
+      "raw model bytes",
+      "private release urls",
+      "tokens"
+    ]
+  },
+  "source_policy": {
+    "original_csv_sha256_lock": true,
+    "no_temporal_sequence_input": true,
+    "source_file_day_partition_unchanged": true,
+    "fully_empty_source_tail_skipped_only": true,
+    "original_model_backup_read_only": true,
+    "UNSW_official_test_never_opened": true
+  },
+  "next_run": "Notebook 31; no model training; restore each G3 model, calibrate on its validation day, report G4 on its existing G3 test day with exploratory label."
+}
