@@ -1,0 +1,161 @@
+{
+  "experiment": "E7-G4-RISK-ABSTENTION-001",
+  "features_sha256": "ded371ba559c78b8d8f3decdf57b48d81960468f1515b013a1a88310d4c8b9ad",
+  "fold": "OPENWORLD_DAY_FOLD_2",
+  "g3_protocol_git_blob": "5ca597207bd8379860a3007b6cb7952efdde9b4f",
+  "g4_protocol_git_blob": "e3099b9e792543f283a97172d44a1a53726a2dbd",
+  "limitations": [
+    "G3 test-day outcomes were previously inspected; G4 comparisons are retrospective exploratory, not unbiased confirmation",
+    "Validation-day DKW bands assume independent identically distributed flows; no distribution-free test-day risk guarantee",
+    "Original CIC-IDS2017 class annotations remain uncorrected/provisional",
+    "Attack families and capture-day environmental conditions are confounded",
+    "No verified temporal sequence; no new classifier fitted; no frozen UNSW retest"
+  ],
+  "m0_g3_b1_macro_f1": 0.40149598779627116,
+  "m1_alarm_metrics": {
+    "accuracy": 0.6352376126565065,
+    "attack_support": 252672,
+    "auroc": 0.9537571474039609,
+    "average_precision": 0.9082807092924756,
+    "balanced_accuracy": 0.5,
+    "benign_support": 440031,
+    "binary_f1": 0.0,
+    "cost_5fn_1fp": 1263360,
+    "fn": 252672,
+    "fp": 0,
+    "fpr": 0.0,
+    "macro_f1": 0.3884680781189582,
+    "precision_attack": 0.0,
+    "recall_attack": 0.0,
+    "rows": 692703,
+    "threshold": 1.000001,
+    "tn": 440031,
+    "tp": 0,
+    "unseen_family_recall": {
+      "DoS GoldenEye": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 10293
+      },
+      "DoS Hulk": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 231073
+      },
+      "DoS Slowhttptest": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 5499
+      },
+      "DoS slowloris": {
+        "low_support": false,
+        "recall": 0.0,
+        "support": 5796
+      },
+      "Heartbleed": {
+        "low_support": true,
+        "recall": 0.0,
+        "support": 11
+      }
+    }
+  },
+  "m2_selective_metrics": {
+    "abstention_rate": 1.0,
+    "attack_misses_declared_benign": 0,
+    "attacks_alerted": 0,
+    "auto_attack_alerts": 0,
+    "auto_benign_decisions": 0,
+    "coverage": 0.0,
+    "decided_rows": 0,
+    "false_alarms": 0,
+    "rows": 692703,
+    "selective_accuracy": null,
+    "selective_error": null,
+    "test_attack_alert_recall": 0.0,
+    "test_attack_deferred_fraction": 1.0,
+    "test_attack_miss_fraction": 0.0,
+    "test_benign_deferred_fraction": 1.0,
+    "test_benign_fpr": 0.0,
+    "test_coverage_below_0_50": true,
+    "unseen_family_diagnostics": {
+      "DoS GoldenEye": {
+        "alert_recall_all_attack_rows": 0.0,
+        "auto_benign_miss_fraction": 0.0,
+        "defer_fraction": 1.0,
+        "low_support": false,
+        "support": 10293
+      },
+      "DoS Hulk": {
+        "alert_recall_all_attack_rows": 0.0,
+        "auto_benign_miss_fraction": 0.0,
+        "defer_fraction": 1.0,
+        "low_support": false,
+        "support": 231073
+      },
+      "DoS Slowhttptest": {
+        "alert_recall_all_attack_rows": 0.0,
+        "auto_benign_miss_fraction": 0.0,
+        "defer_fraction": 1.0,
+        "low_support": false,
+        "support": 5499
+      },
+      "DoS slowloris": {
+        "alert_recall_all_attack_rows": 0.0,
+        "auto_benign_miss_fraction": 0.0,
+        "defer_fraction": 1.0,
+        "low_support": false,
+        "support": 5796
+      },
+      "Heartbleed": {
+        "alert_recall_all_attack_rows": 0.0,
+        "auto_benign_miss_fraction": 0.0,
+        "defer_fraction": 1.0,
+        "low_support": true,
+        "support": 11
+      }
+    }
+  },
+  "original_g3_metrics_blob": "05f94c55acc02901cc941e08ac91fab5f1fc7d97",
+  "original_label_provenance": "UNVERIFIED_ORIGINAL_CICIDS2017_LABELS",
+  "original_model_sha256": "a06f64a6c953de49f8e4d9b4c9f5688da597ff10e951bcf2073bb40e21b7f3f9",
+  "original_source_hashes": {
+    "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": "1f779b4f0d78f9225554c4de53b5a2c07912b60dcd136ee4c5c1d0d2496b7cc4",
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": "7e2ddaa80a5849ba629463296b6128436c161b4a32e8034bb5beae06b0c45e08",
+    "Friday-WorkingHours-Morning.pcap_ISCX.csv": "c061cd98f39d8054aeaed6244a5129a20b3985983d0d022b860ae8aa07fe8d21",
+    "Monday-WorkingHours.pcap_ISCX.csv": "96f26aea87d513073769b48ce204c2921791149e1c6225f7db65a3fed7973820",
+    "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": "d74238e054023c8bd4d8056650463cadb25c100fb0e26ebd4272c07b5c022c4b",
+    "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": "e3deaff483d18b53b100a441dff9b8919416df8876b4edcc0f0d1e4bf48397d0",
+    "Tuesday-WorkingHours.pcap_ISCX.csv": "ae9c88e10c41a8eb1ff454ae98bc513454925097d0b0b57180f94e79de445815",
+    "Wednesday-workingHours.pcap_ISCX.csv": "ed538e85b84181e8897dedb3d37d365982f44b27eccd67c477581a8b65f3d170"
+  },
+  "parent_experiment": "E7-G3-OPENWORLD-DAYHOLDOUT-001",
+  "schema": "E7_G4_CALIBRATION_REPORT_001",
+  "scientific_status": "RETROSPECTIVE_EXPLORATORY_REUSED_G3_TEST",
+  "seed": 43,
+  "test_day": "Wednesday",
+  "train_days": [
+    "Monday",
+    "Tuesday",
+    "Friday"
+  ],
+  "validation_day": "Thursday",
+  "validation_only_selection": {
+    "alarm_bound_feasible": true,
+    "alarm_high": 1.000001,
+    "auto_benign_low": 0.0,
+    "benign_bound_feasible": true,
+    "confidence_tuning": "DKW simultaneous CDF band on this validation day; NO cross-day guarantee",
+    "fnr_dkw_epsilon": 0.028850102195423114,
+    "fpr_dkw_epsilon": 0.0020095184830235717,
+    "max_alarm_fpr": 0.01,
+    "max_auto_benign_fnr": 0.05,
+    "selection_policy": "val-only maximize TP under FPR+Dkw cap; largest-high tie; largest allowed low",
+    "val_empirical_alarm_fpr": 0.0,
+    "val_empirical_alarm_fpr_plus_dkw": 0.0020095184830235717,
+    "val_empirical_auto_benign_fnr": 0.0,
+    "val_empirical_auto_benign_fnr_plus_dkw": 0.028850102195423114,
+    "validation_attack_rows": 2216,
+    "validation_auto_coverage": 0.0,
+    "validation_benign_rows": 456752
+  }
+}
