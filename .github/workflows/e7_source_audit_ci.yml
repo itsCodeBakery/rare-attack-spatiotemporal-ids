@@ -26,7 +26,7 @@ jobs:
       - name: Install audit test dependencies
         run: python -m pip install -q numpy pandas pytest scikit-learn lightgbm
       - name: Run synthetic source and GitHub archive regression tests
-        run: python -m pytest -q research/E7_CICIDS2017/tests/test_e7_g0_external_source_audit.py research/E7_CICIDS2017/tests/test_e7_g0_publish.py research/E7_CICIDS2017/tests/test_e7_g0_timestamp_registry.py research/E7_CICIDS2017/tests/test_e7_g0_publish_v2.py research/E7_CICIDS2017/tests/test_e7_g0_extended_audit.py research/E7_CICIDS2017/tests/test_e7_csv_encoding_gate.py research/E7_CICIDS2017/tests/test_e7_g1_label_clock_diagnostic.py research/E7_CICIDS2017/tests/test_e7_g2_source_clock_forensics.py research/E7_CICIDS2017/tests/test_e7_g2_publish.py research/E7_CICIDS2017/tests/test_e7_g3_openworld_baseline.py research/E7_CICIDS2017/tests/test_e7_g3_archive.py research/E7_CICIDS2017/tests/test_e7_g3_archive_v2.py research/E7_CICIDS2017/tests/test_e7_g3_preflight_v3.py research/E7_CICIDS2017/tests/test_e7_g4_risk_calibration.py
+        run: python -m pytest -q research/E7_CICIDS2017/tests/test_e7_g0_external_source_audit.py research/E7_CICIDS2017/tests/test_e7_g0_publish.py research/E7_CICIDS2017/tests/test_e7_g0_timestamp_registry.py research/E7_CICIDS2017/tests/test_e7_g0_publish_v2.py research/E7_CICIDS2017/tests/test_e7_g0_extended_audit.py research/E7_CICIDS2017/tests/test_e7_csv_encoding_gate.py research/E7_CICIDS2017/tests/test_e7_g1_label_clock_diagnostic.py research/E7_CICIDS2017/tests/test_e7_g2_source_clock_forensics.py research/E7_CICIDS2017/tests/test_e7_g2_publish.py research/E7_CICIDS2017/tests/test_e7_g3_openworld_baseline.py research/E7_CICIDS2017/tests/test_e7_g3_archive.py research/E7_CICIDS2017/tests/test_e7_g3_archive_v2.py research/E7_CICIDS2017/tests/test_e7_g3_preflight_v3.py research/E7_CICIDS2017/tests/test_e7_g4_risk_calibration.py research/E7_CICIDS2017/tests/test_e7_g4_publish.py
       - name: Parse and compile all overnight Notebook 27 and 27B and 27C Python cells
         run: |
           python - <<'PY'
@@ -42,11 +42,12 @@ jobs:
               '30_e7_g3_openworld_dayholdout_b012_lightgbm.ipynb',
               '30b_e7_g3_recovery.ipynb',
               '30c_e7_g3_resume.ipynb',
+              '31_e7_g4_validation_risk_and_abstention.ipynb',
           ):
               p=Path('research/E7_CICIDS2017/notebooks')/filename
               notebook=json.loads(p.read_text(encoding='utf-8'))
               cells=[c for c in notebook['cells'] if c['cell_type']=='code']
-              assert len(cells)==(3 if filename.startswith(('28_','29_')) else 4), 'Unexpected notebook code cell count'
+              assert len(cells)==(3 if filename.startswith(('28_','29_')) else 5 if filename.startswith('31_') else 4), 'Unexpected notebook code cell count'
               for i,cell in enumerate(cells,1):
                   source=''.join(cell['source'])
                   compile(source,str(p)+f':cell-{i}','exec')
@@ -128,4 +129,29 @@ jobs:
               actual=hashlib.sha1(b'blob '+str(len(raw)).encode()+bytes([0])+raw).hexdigest()
               assert actual==sha,(file,actual)
           print('PASS: source-authenticated Notebook 30C recovery entrypoint')
+          PY
+
+      - name: Verify G4 Notebook 31 pinned source and preregistration
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json,hashlib
+          root=Path('research/E7_CICIDS2017')
+          nb=json.loads((root/'notebooks/31_e7_g4_validation_risk_and_abstention.ipynb').read_text())
+          code=''.join(next(c['source'] for c in nb['cells'] if c['cell_type']=='code'))
+          assert 'COMMIT="337cd629b857ed67d2888419e6a6428de93e75c7"' in code
+          checks={
+           'scripts/e7_g4_risk_calibration.py':'718bdae118e757ece719d5143447caff47c22b00',
+           'scripts/e7_g4_publish.py':'d1472882a83ba617dd355e249947eaafde3259bb',
+           'scripts/e7_g3_openworld_baseline.py':'f882154ff9757abe66a7fe588039eb26c9758170',
+           'scripts/e7_g3_archive_v3.py':'033fbc2f7957f54bdaf7b6ad9ad6da6b26d8f619',
+           'configs/G3_OPENWORLD_DAYHOLDOUT_PROTOCOL_001.json':'5ca597207bd8379860a3007b6cb7952efdde9b4f',
+           'configs/G4_RISK_CALIBRATION_PROTOCOL_001.json':'e3099b9e792543f283a97172d44a1a53726a2dbd'}
+          for path,sha in checks.items():
+              b=(root/path).read_bytes()
+              actual=hashlib.sha1(b'blob '+str(len(b)).encode()+bytes([0])+b).hexdigest()
+              assert actual==sha,(path,actual)
+              assert sha in code
+          assert 'PRIVATE G3 MODEL BACKUPS VERIFIED AVAILABLE: 20/20' in ''.join(c for c in nb['cells'][4]['source'])
+          print('PASS: Notebook 31 frozen G4 source and six pinned originals verified')
           PY
