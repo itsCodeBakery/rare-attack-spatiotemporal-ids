@@ -1,0 +1,149 @@
+{
+  "experiment": "E7-G4-RISK-ABSTENTION-001",
+  "features_sha256": "ded371ba559c78b8d8f3decdf57b48d81960468f1515b013a1a88310d4c8b9ad",
+  "fold": "OPENWORLD_DAY_FOLD_3",
+  "g3_protocol_git_blob": "5ca597207bd8379860a3007b6cb7952efdde9b4f",
+  "g4_protocol_git_blob": "e3099b9e792543f283a97172d44a1a53726a2dbd",
+  "limitations": [
+    "G3 test-day outcomes were previously inspected; G4 comparisons are retrospective exploratory, not unbiased confirmation",
+    "Validation-day DKW bands assume independent identically distributed flows; no distribution-free test-day risk guarantee",
+    "Original CIC-IDS2017 class annotations remain uncorrected/provisional",
+    "Attack families and capture-day environmental conditions are confounded",
+    "No verified temporal sequence; no new classifier fitted; no frozen UNSW retest"
+  ],
+  "m0_g3_b1_macro_f1": 0.6204710498188526,
+  "m1_alarm_metrics": {
+    "accuracy": 0.9958145230168552,
+    "attack_support": 2216,
+    "auroc": 0.9808617995614364,
+    "average_precision": 0.687065133749927,
+    "balanced_accuracy": 0.9401910779474574,
+    "benign_support": 456752,
+    "binary_f1": 0.6710053091282754,
+    "cost_5fn_1fp": 2949,
+    "fn": 257,
+    "fp": 1664,
+    "fpr": 0.003643114863208043,
+    "macro_f1": 0.8344495867435002,
+    "precision_attack": 0.5407121170300856,
+    "recall_attack": 0.8840252707581228,
+    "rows": 458968,
+    "threshold": 0.01,
+    "tn": 455088,
+    "tp": 1959,
+    "unseen_family_recall": {
+      "Infiltration": {
+        "low_support": true,
+        "recall": 0.0,
+        "support": 36
+      },
+      "Web Attack – Brute Force": {
+        "low_support": false,
+        "recall": 0.8825481088254811,
+        "support": 1507
+      },
+      "Web Attack – Sql Injection": {
+        "low_support": true,
+        "recall": 0.9047619047619048,
+        "support": 21
+      },
+      "Web Attack – XSS": {
+        "low_support": false,
+        "recall": 0.9355828220858896,
+        "support": 652
+      }
+    }
+  },
+  "m2_selective_metrics": {
+    "abstention_rate": 0.9921062034825957,
+    "attack_misses_declared_benign": 0,
+    "attacks_alerted": 1959,
+    "auto_attack_alerts": 3623,
+    "auto_benign_decisions": 0,
+    "coverage": 0.007893796517404263,
+    "decided_rows": 3623,
+    "false_alarms": 1664,
+    "rows": 458968,
+    "selective_accuracy": 0.5407121170300855,
+    "selective_error": 0.45928788296991446,
+    "test_attack_alert_recall": 0.8840252707581228,
+    "test_attack_deferred_fraction": 0.11597472924187725,
+    "test_attack_miss_fraction": 0.0,
+    "test_benign_deferred_fraction": 0.996356885136792,
+    "test_benign_fpr": 0.003643114863208043,
+    "test_coverage_below_0_50": true,
+    "unseen_family_diagnostics": {
+      "Infiltration": {
+        "alert_recall_all_attack_rows": 0.0,
+        "auto_benign_miss_fraction": 0.0,
+        "defer_fraction": 1.0,
+        "low_support": true,
+        "support": 36
+      },
+      "Web Attack – Brute Force": {
+        "alert_recall_all_attack_rows": 0.8825481088254811,
+        "auto_benign_miss_fraction": 0.0,
+        "defer_fraction": 0.11745189117451892,
+        "low_support": false,
+        "support": 1507
+      },
+      "Web Attack – Sql Injection": {
+        "alert_recall_all_attack_rows": 0.9047619047619048,
+        "auto_benign_miss_fraction": 0.0,
+        "defer_fraction": 0.09523809523809523,
+        "low_support": true,
+        "support": 21
+      },
+      "Web Attack – XSS": {
+        "alert_recall_all_attack_rows": 0.9355828220858896,
+        "auto_benign_miss_fraction": 0.0,
+        "defer_fraction": 0.06441717791411043,
+        "low_support": false,
+        "support": 652
+      }
+    }
+  },
+  "original_g3_metrics_blob": "64f09d78c12998ecf3b837c9e2e80909018a0505",
+  "original_label_provenance": "UNVERIFIED_ORIGINAL_CICIDS2017_LABELS",
+  "original_model_sha256": "b8417c78663de74ab8de85fdebb564f06ad0984216fc37b3fab34248e177213d",
+  "original_source_hashes": {
+    "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": "1f779b4f0d78f9225554c4de53b5a2c07912b60dcd136ee4c5c1d0d2496b7cc4",
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": "7e2ddaa80a5849ba629463296b6128436c161b4a32e8034bb5beae06b0c45e08",
+    "Friday-WorkingHours-Morning.pcap_ISCX.csv": "c061cd98f39d8054aeaed6244a5129a20b3985983d0d022b860ae8aa07fe8d21",
+    "Monday-WorkingHours.pcap_ISCX.csv": "96f26aea87d513073769b48ce204c2921791149e1c6225f7db65a3fed7973820",
+    "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": "d74238e054023c8bd4d8056650463cadb25c100fb0e26ebd4272c07b5c022c4b",
+    "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": "e3deaff483d18b53b100a441dff9b8919416df8876b4edcc0f0d1e4bf48397d0",
+    "Tuesday-WorkingHours.pcap_ISCX.csv": "ae9c88e10c41a8eb1ff454ae98bc513454925097d0b0b57180f94e79de445815",
+    "Wednesday-workingHours.pcap_ISCX.csv": "ed538e85b84181e8897dedb3d37d365982f44b27eccd67c477581a8b65f3d170"
+  },
+  "parent_experiment": "E7-G3-OPENWORLD-DAYHOLDOUT-001",
+  "schema": "E7_G4_CALIBRATION_REPORT_001",
+  "scientific_status": "RETROSPECTIVE_EXPLORATORY_REUSED_G3_TEST",
+  "seed": 42,
+  "test_day": "Thursday",
+  "train_days": [
+    "Monday",
+    "Tuesday",
+    "Wednesday"
+  ],
+  "validation_day": "Friday",
+  "validation_only_selection": {
+    "alarm_bound_feasible": true,
+    "alarm_high": 0.01,
+    "auto_benign_low": 0.0,
+    "benign_bound_feasible": true,
+    "confidence_tuning": "DKW simultaneous CDF band on this validation day; NO cross-day guarantee",
+    "fnr_dkw_epsilon": 0.0025266272519685745,
+    "fpr_dkw_epsilon": 0.0021099066294162634,
+    "max_alarm_fpr": 0.01,
+    "max_auto_benign_fnr": 0.05,
+    "selection_policy": "val-only maximize TP under FPR+Dkw cap; largest-high tie; largest allowed low",
+    "val_empirical_alarm_fpr": 0.004479607648157713,
+    "val_empirical_alarm_fpr_plus_dkw": 0.006589514277573977,
+    "val_empirical_auto_benign_fnr": 0.0,
+    "val_empirical_auto_benign_fnr_plus_dkw": 0.0025266272519685745,
+    "validation_attack_rows": 288923,
+    "validation_auto_coverage": 0.11979324417521632,
+    "validation_benign_rows": 414322
+  }
+}
