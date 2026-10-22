@@ -1,0 +1,125 @@
+{
+  "experiment": "E7-G4-RISK-ABSTENTION-001",
+  "features_sha256": "ded371ba559c78b8d8f3decdf57b48d81960468f1515b013a1a88310d4c8b9ad",
+  "fold": "OPENWORLD_DAY_FOLD_1",
+  "g3_protocol_git_blob": "5ca597207bd8379860a3007b6cb7952efdde9b4f",
+  "g4_protocol_git_blob": "e3099b9e792543f283a97172d44a1a53726a2dbd",
+  "limitations": [
+    "G3 test-day outcomes were previously inspected; G4 comparisons are retrospective exploratory, not unbiased confirmation",
+    "Validation-day DKW bands assume independent identically distributed flows; no distribution-free test-day risk guarantee",
+    "Original CIC-IDS2017 class annotations remain uncorrected/provisional",
+    "Attack families and capture-day environmental conditions are confounded",
+    "No verified temporal sequence; no new classifier fitted; no frozen UNSW retest"
+  ],
+  "m0_g3_b1_macro_f1": 0.49217647079821575,
+  "m1_alarm_metrics": {
+    "accuracy": 0.9776142665880259,
+    "attack_support": 13835,
+    "auroc": 0.9739054990511729,
+    "average_precision": 0.5417175232786782,
+    "balanced_accuracy": 0.7235573492185419,
+    "benign_support": 432074,
+    "binary_f1": 0.5565132397369824,
+    "cost_5fn_1fp": 40270,
+    "fn": 7572,
+    "fp": 2410,
+    "fpr": 0.005577748256085763,
+    "macro_f1": 0.7725152847866447,
+    "precision_attack": 0.7221261385910296,
+    "recall_attack": 0.4526924466931695,
+    "rows": 445909,
+    "threshold": 0.005,
+    "tn": 429664,
+    "tp": 6263,
+    "unseen_family_recall": {
+      "FTP-Patator": {
+        "low_support": false,
+        "recall": 0.42655580750818844,
+        "support": 7938
+      },
+      "SSH-Patator": {
+        "low_support": false,
+        "recall": 0.4878751907749703,
+        "support": 5897
+      }
+    }
+  },
+  "m2_selective_metrics": {
+    "abstention_rate": 0.9805498431294277,
+    "attack_misses_declared_benign": 0,
+    "attacks_alerted": 6263,
+    "auto_attack_alerts": 8673,
+    "auto_benign_decisions": 0,
+    "coverage": 0.019450156870572246,
+    "decided_rows": 8673,
+    "false_alarms": 2410,
+    "rows": 445909,
+    "selective_accuracy": 0.7221261385910296,
+    "selective_error": 0.27787386140897036,
+    "test_attack_alert_recall": 0.4526924466931695,
+    "test_attack_deferred_fraction": 0.5473075533068305,
+    "test_attack_miss_fraction": 0.0,
+    "test_benign_deferred_fraction": 0.9944222517439142,
+    "test_benign_fpr": 0.005577748256085763,
+    "test_coverage_below_0_50": true,
+    "unseen_family_diagnostics": {
+      "FTP-Patator": {
+        "alert_recall_all_attack_rows": 0.42655580750818844,
+        "auto_benign_miss_fraction": 0.0,
+        "defer_fraction": 0.5734441924918116,
+        "low_support": false,
+        "support": 7938
+      },
+      "SSH-Patator": {
+        "alert_recall_all_attack_rows": 0.4878751907749703,
+        "auto_benign_miss_fraction": 0.0,
+        "defer_fraction": 0.5121248092250297,
+        "low_support": false,
+        "support": 5897
+      }
+    }
+  },
+  "original_g3_metrics_blob": "2db50a726fe299776892fd95096a2a366907dc65",
+  "original_label_provenance": "UNVERIFIED_ORIGINAL_CICIDS2017_LABELS",
+  "original_model_sha256": "f73aff88e23e2071844593657bcd294f693b0b1f82f3838c44d3948dc8405afd",
+  "original_source_hashes": {
+    "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv": "1f779b4f0d78f9225554c4de53b5a2c07912b60dcd136ee4c5c1d0d2496b7cc4",
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv": "7e2ddaa80a5849ba629463296b6128436c161b4a32e8034bb5beae06b0c45e08",
+    "Friday-WorkingHours-Morning.pcap_ISCX.csv": "c061cd98f39d8054aeaed6244a5129a20b3985983d0d022b860ae8aa07fe8d21",
+    "Monday-WorkingHours.pcap_ISCX.csv": "96f26aea87d513073769b48ce204c2921791149e1c6225f7db65a3fed7973820",
+    "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv": "d74238e054023c8bd4d8056650463cadb25c100fb0e26ebd4272c07b5c022c4b",
+    "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv": "e3deaff483d18b53b100a441dff9b8919416df8876b4edcc0f0d1e4bf48397d0",
+    "Tuesday-WorkingHours.pcap_ISCX.csv": "ae9c88e10c41a8eb1ff454ae98bc513454925097d0b0b57180f94e79de445815",
+    "Wednesday-workingHours.pcap_ISCX.csv": "ed538e85b84181e8897dedb3d37d365982f44b27eccd67c477581a8b65f3d170"
+  },
+  "parent_experiment": "E7-G3-OPENWORLD-DAYHOLDOUT-001",
+  "schema": "E7_G4_CALIBRATION_REPORT_001",
+  "scientific_status": "RETROSPECTIVE_EXPLORATORY_REUSED_G3_TEST",
+  "seed": 43,
+  "test_day": "Tuesday",
+  "train_days": [
+    "Monday",
+    "Thursday",
+    "Friday"
+  ],
+  "validation_day": "Wednesday",
+  "validation_only_selection": {
+    "alarm_bound_feasible": true,
+    "alarm_high": 0.005,
+    "auto_benign_low": 0.0,
+    "benign_bound_feasible": true,
+    "confidence_tuning": "DKW simultaneous CDF band on this validation day; NO cross-day guarantee",
+    "fnr_dkw_epsilon": 0.0027018029711003517,
+    "fpr_dkw_epsilon": 0.002047342949382112,
+    "max_alarm_fpr": 0.01,
+    "max_auto_benign_fnr": 0.05,
+    "selection_policy": "val-only maximize TP under FPR+Dkw cap; largest-high tie; largest allowed low",
+    "val_empirical_alarm_fpr": 0.005526883333219705,
+    "val_empirical_alarm_fpr_plus_dkw": 0.007574226282601817,
+    "val_empirical_auto_benign_fnr": 0.0,
+    "val_empirical_auto_benign_fnr_plus_dkw": 0.0027018029711003517,
+    "validation_attack_rows": 252672,
+    "validation_auto_coverage": 0.21052745548958213,
+    "validation_benign_rows": 440031
+  }
+}
